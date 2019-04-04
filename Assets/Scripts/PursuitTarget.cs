@@ -44,6 +44,7 @@ public class PursuitTarget : MonoBehaviour {
     public void SetSpawner(Spawner spawn)
     {
         spawner = spawn;
+        generated = true;
     }
     public bool GetGenerated() { return generated; }
 }

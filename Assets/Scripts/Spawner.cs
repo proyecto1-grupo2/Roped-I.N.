@@ -50,7 +50,7 @@ public class Spawner : MonoBehaviour {
             InvokeRepeating("instanciaOga", spawnRate, spawnRate);
             isSpawning = true;
         }
-        //Debug.Log(cont);
+        Debug.Log(cont);
     }
     private void instanciaOga()
     {
@@ -62,6 +62,7 @@ public class Spawner : MonoBehaviour {
     //Disminuye el contador y reinicia el spawn
     public void ResetSpawn()
     {
+        Debug.Log("SI");
         cont--;
         isSpawning = true;
     }
