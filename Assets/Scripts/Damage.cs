@@ -12,7 +12,7 @@ public class Damage : MonoBehaviour {
         if (other.GetComponent<Vida>())
         {
             if (!isInmune)
-            {
+            {   if(gameObject.CompareTag("Enemy") && gameObject.GetComponent<ImpQuimicos>().daEstado()!=EnemyState.Congelado )
                 other.GetComponent<Vida>().LoseLife(damage);
                 //transform.GetComponent<PlayerController>().EnemyKnockBack(transform.position.x);
                 isInmune = true;

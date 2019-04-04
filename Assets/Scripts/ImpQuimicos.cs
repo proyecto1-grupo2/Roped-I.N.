@@ -7,8 +7,9 @@ public class ImpQuimicos : MonoBehaviour {
     int time;
     Vida vida;
     
-    public int DañoporSegundo;
+    public int DañoporSegundo, dañoElectrico;
     bool quemado;
+    public float tStun;
     // Use this for initialization
     void Start () {
         estadoEnemigo = EnemyState.Nada;
@@ -38,9 +39,23 @@ public class ImpQuimicos : MonoBehaviour {
 
             case EnemyState.Congelado:
                 //mientras esta congelado no se puede mover ni hace daño
+                //Desactivar el daño al jugador
+                Debug.Log("Congelado");
+                gameObject.GetComponent<PingPongMovement>().enabled = false;
+                gameObject.GetComponent<Damage>().enabled = false;
+                gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+               
+                //Cambiar sprite (De momento solo cambia el tono a un más azulado)
+                SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
+                sprit.material.color = Color.blue;
+                Invoke("cambiaEstadoNada", tStun);
                 break;
             case EnemyState.Paralizado:
                 //mientras esta paralizado no se puede mover
+                Debug.Log("PARALIZADO");
+                vida.LoseLife(dañoElectrico);
+                gameObject.GetComponent<PingPongMovement>().enabled = false;
+                Invoke("cambiaEstadoNada", tStun);
                 break;
         }
         
@@ -54,6 +69,14 @@ public class ImpQuimicos : MonoBehaviour {
     {
         estadoEnemigo = estado;
     }
+    public void cambiaEstadoNada()
+    {
+        estadoEnemigo = EnemyState.Nada;
+        gameObject.GetComponent<PingPongMovement>().enabled = true;
+        gameObject.GetComponent<Damage>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         //si colisiona con el quimico de fuego cambiamos de estado a quemado y hacemos que el gancho vuelva
@@ -65,7 +88,17 @@ public class ImpQuimicos : MonoBehaviour {
             if (mov!=null) mov.cambiaEstado(HookState.Vuelta);
             
         }
-        
+        else if (other.gameObject.CompareTag("QuimicoElectrico"))
+        {
+            estadoEnemigo = EnemyState.Paralizado;
+            Destroy(other.gameObject);
+        }
+        else if (other.gameObject.CompareTag("QuimicoHielo"))
+        {
+            estadoEnemigo = EnemyState.Congelado;
+            Destroy(other.gameObject);
+        }
+
     }
     //quita vida al jugador
     void QuitaVida()
