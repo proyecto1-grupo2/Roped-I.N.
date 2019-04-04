@@ -35,7 +35,9 @@ public class MovGancho : MonoBehaviour
         {
             case HookState.Quieto:
                 {
+                    
                     transform.SetParent(Player.transform);
+                    transform.rotation = transform.parent.rotation;
                     //Player.EnabledMovement(true);
                     //if (Input.GetButtonDown("Agarre"))
                     //{
@@ -62,8 +64,6 @@ public class MovGancho : MonoBehaviour
                 break;
             case HookState.Ida:
                 {
-                    
-                    
                     //Player.EnabledMovement(false);
                     transform.Translate(movement);
                     //Debug.Log("Current State: " + currState);
@@ -75,8 +75,8 @@ public class MovGancho : MonoBehaviour
             case HookState.Vuelta:
                 {
                     // Player.EnabledMovement(false);
-                    
-                    transform.Translate(-movement);
+                    //transform.Translate(-movement);
+                    transform.position = Vector2.MoveTowards(transform.position, puntoLanzamiento.position, speed*Time.deltaTime);
                     //Debug.Log(Vector2.Distance(puntoSalida.position, transform.position));
                     if (Vector2.Distance(puntoLanzamiento.position, transform.position) < 0.5f) //0.5 es un valor de error, 
                     {
@@ -89,9 +89,10 @@ public class MovGancho : MonoBehaviour
             //este caso contempla cuando el gancho impacta sobre una zona viscosa (rosa)
             case HookState.Enganchado:
                 {
+
                     transform.parent = null;//Desvinculamos el gancho como hijo del jugador
                     Player.CambiaEstado(true);//Cambia a true el bool "enganchado" en el PlayerController
-                    //Player.gameObject.transform.position = Vector2.MoveTowards(Player.gameObject.transform.position, transform.position, 0.06f);
+                    //
 
                 }
                 break;

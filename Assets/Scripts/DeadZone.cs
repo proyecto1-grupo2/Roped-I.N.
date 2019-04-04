@@ -6,22 +6,32 @@ public class DeadZone : MonoBehaviour
 {
     public Transform spawnPoint;
     public int damage;
-    //si el objeto que activa el trigger tiene un componente PlayerDead, llama al metodo onDead de ese componente
+    int i = 0;//sirve para evitar un bug
+    bool congelada = false;
+
+    //si el Player, llama al metodo onDead de ese componente
     private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<PlayerController>() && i == 0 && !congelada)
+        {
+            i = 1;
+            other.GetComponent<Vida>().OnDeadZone(spawnPoint);
+            other.GetComponent<Vida>().LoseLife(damage);
+        }
+
+    }
+    
+    //Si no ponemos esto, ocurre un bug que el jugador pierde dos vidas si cae rapido al DeadZone
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.GetComponent<PlayerController>())
         {
-           
-            other.GetComponent<Vida>().OnDeadZone(spawnPoint);
-            other.GetComponent<Vida>().LoseLife(damage);
-            
+            i = 0;
         }
-
-        //esto seria por si la caja toca el agua para destruirla, no es necesario pero por si ocurre algun fallo
-        /*else if (other.GetComponent<ArrastraCaja>())
-        {
-            Destroy(other.gameObject);
-        }*/
+    }
+    public void DeadZoneOnOff()
+    {
+        congelada = !congelada;
     }
 }
 

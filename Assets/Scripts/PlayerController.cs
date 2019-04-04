@@ -7,11 +7,11 @@ public class PlayerController : MonoBehaviour
     const float maxSpeed = 5;//ponemos un maximo de velocidad se puede poner publico
     public float acceleration, jumpForce;
     private float moveX;
+    public LayerMask Mask;
     bool saltando;
     public GameObject Suelo;
 
     bool jump;
-    int tiempoinmune;
     Vector2 movement, dirGancho;
     Rigidbody2D rb;
 
@@ -42,18 +42,15 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-
+        if (!saltando && Input.GetButtonUp("Derecha") || (!saltando && Input.GetButtonUp("Izquierda")))
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
         //Nos aseguramos de que sea dinámico  
         if (!enganchado && mov)
         {
-
             //Leo entrada de teclado para moverme en el ejeX
             moveX = Input.GetAxis("Horizontal");
-            // Para que el jugador se pare al soltal el teclado
-             if (!saltando && Input.GetButtonUp("Derecha") || (!saltando && Input.GetButtonUp("Izquierda")))
-             {
-                 rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-             }
             if (!mov) { moveX = 0; }
 
             //Salto  si estoy en el suelo
@@ -66,12 +63,11 @@ public class PlayerController : MonoBehaviour
             //(para saber donde disparar el gancho)
             if (Input.GetButton("Derecha"))
             {
-                //dirGancho = Vector2.right;
                 dirGancho = Vector2.right;
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
                 if (gancho.daEstado() == HookState.Quieto)
                 {
-                    //cambia la rotacion en el eje Y del player cuando se mueve a la izquierda
+                    //Pone la rotacion a 0 cuando se mueve a la derecha
                     transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, 0);
                 }
                 rb.constraints = RigidbodyConstraints2D.None;
@@ -84,7 +80,7 @@ public class PlayerController : MonoBehaviour
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
                 if (gancho.daEstado() == HookState.Quieto)
                 {
-                    //pone la rotacion en el eje Y del jugador a 0 si se mueve a la derecha
+                    //Rota el sprite en 180 si se mueve a la izquierda
                     transform.rotation = new Quaternion(transform.rotation.x, -180, transform.rotation.z, 0);
                 }
                 rb.constraints = RigidbodyConstraints2D.None;
@@ -106,12 +102,7 @@ public class PlayerController : MonoBehaviour
             posGancho = gancho.GetComponent<Transform>().position;
             if (transform.position.x < posGancho.x) posGancho -= posGanchoInicio;
             else posGancho += posGanchoInicio;
-            //var heading = posGancho - transform.position;
-            //Debug.Log("heading"+heading);
-            // if(transform.position.x<posGancho.x) transform.Translate(heading.x * Time.deltaTime, heading.y * Time.deltaTime, 0);
-            //else transform.Translate(-heading.x * Time.deltaTime, heading.y * Time.deltaTime, 0);
             transform.position = Vector2.MoveTowards(transform.position, posGancho, step);
-            //transform.position = Vector2.Lerp(transform.position, posGancho, step);
             if (Vector2.Distance(transform.position, gancho.transform.position) < 0.8f)
             {
                 gancho.cambiaEstado(HookState.Quieto);
@@ -120,7 +111,6 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down) * 0.6f, Color.red);
     }
     private void FixedUpdate()//Mueve al personaje
     {
@@ -130,14 +120,6 @@ public class PlayerController : MonoBehaviour
             movement = new Vector2(moveX, 0);
             if (rb != null && Mathf.Abs(rb.velocity.x) < maxSpeed) //Limitamos la velocidad del jugador con el rb.velocity.x
             {
-                /* //para que no se deslice
-                  if (cambio)
-                  {
-                      rb.velocity = new Vector2(0, rb.velocity.y);
-                  }
-                  //para que se pueda volver a mover
-                  if (movement.x == 0)  cambio = false;*/
-
                 rb.AddForce(movement * acceleration); //Movimiento 
             }
             if (rb.velocity.y < -5)//para que no caiga muy rapido
@@ -173,10 +155,10 @@ public class PlayerController : MonoBehaviour
             CambiaEstado(false);
         }
     }
-     private void OnCollisionEnter2D(Collision2D Suelo)
-     {
-         saltando = false;
-     }
+    private void OnCollisionEnter2D(Collision2D Suelo)
+    {
+        saltando = false;
+    }
 
     //realiza un pequeño salto al entrar en contacto con un enemigo y sufrir daño
     public void EnemyKnockBack(float enemyPosX)
@@ -203,7 +185,6 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().simulated = false;
             if (Input.GetButtonDown("Jump"))
             {
-                Debug.Log("SOÑEMOS");
                 jump = true;
                 gancho.cambiaEstado(HookState.Vuelta);
                 CambiaEstado(false);

@@ -11,6 +11,8 @@ TagManager:
   - Boton
   - QuimicoFuego
   - Quebradizo
+  - QuimicoElectrico
+  - QuimicoHielo
   layers:
   - Default
   - TransparentFX

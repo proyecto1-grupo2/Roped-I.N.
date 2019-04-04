@@ -7,7 +7,7 @@ public class PingPongMovement : MonoBehaviour {
     public float speed;
     public Vector2 Ainicio, Bfin;
     Vector2 destino;
-
+    
     void Start()
     {
         destino = new Vector2(1, 1);
@@ -15,21 +15,23 @@ public class PingPongMovement : MonoBehaviour {
 
     void Update()
     {
-        //movimiento (comprueba hacia qué punto hay que ir)
-        if (transform.position.x >= Bfin.x)
-        {
-            destino = Ainicio;
-        }
+        
+            //movimiento (comprueba hacia qué punto hay que ir)
+            if (transform.position.x >= Bfin.x)
+            {
+                destino = Ainicio;
+            }
 
-        else if (transform.position.x <= Ainicio.x)
-        {
-            destino = Bfin;
-        }
+            else if (transform.position.x <= Ainicio.x)
+            {
+                destino = Bfin;
+            }
 
-        float step = speed * Time.deltaTime;
+            float step = speed * Time.deltaTime;
 
-        // mover el sprite hacia la posición de destino
-        transform.position = Vector2.MoveTowards(transform.position, destino, step);
+            // mover el sprite hacia la posición de destino
+            transform.position = Vector2.MoveTowards(transform.position, destino, step);
+        
     }
     
     //Cambia de direccion si colisiona con algo

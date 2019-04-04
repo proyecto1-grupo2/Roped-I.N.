@@ -14,12 +14,12 @@ public class UIManager : MonoBehaviour
 
     public void LifeLost(int vida)
     {
-        
+        if (vida <= 0) vida = 0; //Para evitar algun posible bug
         lives[vida].enabled = false;
     }
     public void GanaVida(int vida)
     {
-        //Debug.Log(vida);
+        if (vida >= lives.Length - 1) vida = lives.Length - 1;//Para evitar algun posible bug
         lives[vida].enabled = true;
     }
 }

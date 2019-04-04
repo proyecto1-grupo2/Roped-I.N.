@@ -15,7 +15,7 @@ public class AtraeQuimicos : MonoBehaviour {
    
     void OnTriggerEnter2D(Collider2D other)// metodo para detectar colision
     {
-        // condicion para detectar si colisiona con el gancho del player y 
+        // condicion para detectar si colisiona con el gancho del player 
         
         MovGancho hook = other.gameObject.GetComponent<MovGancho>();
         if (hook != null)
@@ -46,10 +46,11 @@ public class AtraeQuimicos : MonoBehaviour {
 
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.left) * 0.5f, Color.black); // "
+        //Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.left) * 0.5f, Color.black); // "
         if (colision)
         {
             transform.SetParent(target.transform);
+            if (transform.GetComponentInParent<MovGancho>().daEstado() == HookState.Quieto) transform.position = transform.parent.position;
             //Debug.Log("siiiii");
             transform.GetComponent<Rigidbody2D>().isKinematic = true;
             

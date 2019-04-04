@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     int vidasplayer;
     //bool isInmune = false;
     UIManager UIManager;// hace referencia al script UIManager
-
+    float tStun;
     void Awake()
     {
         if (instance == null)//creamos un GameManager si no existe
@@ -23,18 +23,6 @@ public class GameManager : MonoBehaviour {
         }
     }
    
-    
-    public void direccion(Vector2 direc)//metodo para obtener la direccion (se llama desde PlayerController)
-    {
-       
-        dir = direc;
-    }
-    public Vector2 dirGancho()//sirve para dar la direccion al gancho
-    {
-        
-        return dir;
-    }
-
     //establece el atributo uimanager
     internal void SetUI(UIManager ui)
     {
@@ -48,28 +36,23 @@ public class GameManager : MonoBehaviour {
 
     }
     public void PlayerGanaVida(int vidasplayer)
-    {
-        
-        if (vidasplayer < 3)
-        {
-            
-            UIManager.GanaVida(vidasplayer);
-            vidasplayer += 1;
-        }
-        
+    {   
+        UIManager.GanaVida(vidasplayer);
+        vidasplayer += 1;
     }
     //devuelve el num de vidas
-    public int getVidas()
+    public int GetVidas()
     {
         return vidasplayer;
     }
-    public void resetGame()
+    public void ResetGame()
     {
         SceneManager.LoadScene("pruebasGancho");
     }
 
-    public void finishGame()
+    public void FinishGame()
     {
-        resetGame();
+        ResetGame();
     }
+ 
 }
