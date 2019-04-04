@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114529522746141048}
   - component: {fileID: 114386212397662162}
   - component: {fileID: 50664011788937366}
+  - component: {fileID: 114833111698024206}
   m_Layer: 8
   m_Name: Oga
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018796079996840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.848732, y: 2.2018375, z: 0.041446682}
+  m_LocalPosition: {x: 19.048397, y: 0.64324963, z: -0.040584568}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,6 +117,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e079d1675b57d9946849d341c9146d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114833111698024206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018796079996840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d87828a10ce1d439e993a6ca44892f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  tiempoinmune: 0
 --- !u!212 &212020414843750956
 SpriteRenderer:
   m_ObjectHideFlags: 1

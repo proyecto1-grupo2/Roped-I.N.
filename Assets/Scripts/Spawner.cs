@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
-* cont lleva la cuenta de enemigos spawneados y spawnLimit es el numero máximo de estos enemigos
-* spawnRate es el tiempo que hay entre spawn de enemigos y range es la distancia máxima que tiene que haber entre el jugador y el spawner para que se active
-* pool es el objeto vacío donde se crean los enemigos, target es la referencia del jugador
-* oga es el prefab que instanciamos
-* isSpawning indica si el spawner está spawneando enemigos (para controlar cuando spawnearlos)
-*/
-public class Spawner : MonoBehaviour {
 
+public class Spawner : MonoBehaviour
+{
+    /*
+     * cont lleva la cuenta de enemigos spawneados y spawnLimit es el numero máximo de estos enemigos
+     * spawnRate es el tiempo que hay entre spawn de enemigos y range es la distancia máxima que tiene que haber entre el jugador y el spawner para que se active
+     * pool es el objeto vacío donde se crean los enemigos, target es la referencia del jugador
+     * oga es el prefab que instanciamos
+     * isSpawning indica si el spawner está spawneando enemigos (para controlar cuando spawnearlos)
+     */
     int cont;
     public int spawnLimit;
     public float spawnRate, range;
@@ -33,10 +34,10 @@ public class Spawner : MonoBehaviour {
         isSpawning = false;
     }
 
-   /*
-    * Solo se spawnean enemigos si el jugador está dentro del rango
-    * Cuando se alcanza el límite de spawns, se detiene
-    */
+    /*
+     * Solo se spawnean enemigos si el jugador está dentro del rango
+     * Cuando se alcanza el límite de spawns, se detiene
+     */
     private void Update()
     {
         if (cont >= spawnLimit)
@@ -52,6 +53,8 @@ public class Spawner : MonoBehaviour {
         }
         Debug.Log(cont);
     }
+
+    //Instancia un oga y lo relaciona con este spawner
     private void instanciaOga()
     {
         PursuitTarget newOga = Instantiate(oga, transform.position, transform.rotation, pool.transform);
@@ -62,8 +65,8 @@ public class Spawner : MonoBehaviour {
     //Disminuye el contador y reinicia el spawn
     public void ResetSpawn()
     {
-        Debug.Log("SI");
         cont--;
         isSpawning = true;
     }
+
 }

@@ -5006,6 +5006,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114833111698024206, guid: 92ca54f8471a1eb498811ab815324bf9,
+        type: 2}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92ca54f8471a1eb498811ab815324bf9, type: 2}
   m_IsPrefabAsset: 0

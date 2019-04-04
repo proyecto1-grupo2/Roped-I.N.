@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Death : MonoBehaviour {
-
+public class Death : MonoBehaviour
+{
     PursuitTarget oga;
     //Distingue el caso de la muerte de un enemigo spawneado y hace que los otros objetos mueran
     public void OnDead()
@@ -17,7 +17,7 @@ public class Death : MonoBehaviour {
         }
         else
         {
-           //Debug.Log("Soy otra cosa");
+            Debug.Log("Soy otra cosa");
             Destroy(this.gameObject);
         }
     }

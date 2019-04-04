@@ -34,10 +34,10 @@ public class Vida : MonoBehaviour {
             }
             else if (!this.gameObject.CompareTag("Player"))
             {
-                Destroy(this.gameObject);
+                this.GetComponent<Death>().OnDead();
             }
         }
-        else if (vida <= 0) { Destroy(this.gameObject); }
+        else if (vida <= 0) { this.GetComponent<Death>().OnDead(); }
     }
     public void OnDeadZone(Transform spawnPoint)
     {

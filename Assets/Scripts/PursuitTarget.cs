@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*
- * speed es la velocidad del enemigo y range el rango máximo a partir del cual empieza a perseguirte
- * target es el GO al que se persigue
- * generated sirve para saber si ha sido spawneado y spawner es el spawner que le ha spawneado (si es el caso)
- */
-public class PursuitTarget : MonoBehaviour {
+
+public class PursuitTarget : MonoBehaviour
+{
+    /*
+     * speed es la velocidad del enemigo y range el rango máximo a partir del cual empieza a perseguirte
+     * target es el GO al que se persigue
+     * generated sirve para saber si ha sido spawneado y spawner es el spawner que le ha spawneado (si es el caso)
+     */
     Rigidbody2D rb;
     public float speed, range;
     private GameObject target;
     Spawner spawner;
     private bool generated = false;
 
-    void Start ()
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         //Si no tiene Rigidbody
@@ -28,7 +30,6 @@ public class PursuitTarget : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
     //Si el jugador esta dentro del rango, el enemigo le seguirá
     private void Update()
     {
@@ -46,5 +47,6 @@ public class PursuitTarget : MonoBehaviour {
         spawner = spawn;
         generated = true;
     }
-    public bool GetGenerated() { return generated; }
+    public bool GetGenerated() {
+        Debug.Log("GENERADO"); return generated; }
 }
