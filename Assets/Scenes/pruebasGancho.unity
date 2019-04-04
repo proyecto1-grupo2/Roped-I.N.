@@ -1355,6 +1355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 15
   jumpForce: 5.5
+  Suelo: {fileID: 0}
   Timedmg: 0.7
   velocidadEnganchado: 5
 --- !u!114 &952295516
