@@ -52,6 +52,12 @@ public class Spawner : MonoBehaviour {
         }
         //Debug.Log(cont);
     }
+    private void instanciaOga()
+    {
+        PursuitTarget newOga = Instantiate(oga, transform.position, transform.rotation, pool.transform);
+        newOga.SetSpawner(this);
+        cont++;
+    }
 
     //Disminuye el contador y reinicia el spawn
     public void ResetSpawn()
