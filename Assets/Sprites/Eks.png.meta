@@ -1,0 +1,1067 @@
+fileFormatVersion: 2
+guid: 75ea3ff5f4436ad4cb97788d1eb70b1f
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: supermetroid_metroids_sheet_0
+    21300002: supermetroid_metroids_sheet_1
+    21300004: supermetroid_metroids_sheet_2
+    21300006: supermetroid_metroids_sheet_3
+    21300008: supermetroid_metroids_sheet_4
+    21300010: supermetroid_metroids_sheet_5
+    21300012: supermetroid_metroids_sheet_6
+    21300014: supermetroid_metroids_sheet_7
+    21300016: supermetroid_metroids_sheet_8
+    21300018: supermetroid_metroids_sheet_9
+    21300020: supermetroid_metroids_sheet_10
+    21300022: supermetroid_metroids_sheet_11
+    21300024: supermetroid_metroids_sheet_12
+    21300026: supermetroid_metroids_sheet_13
+    21300028: supermetroid_metroids_sheet_14
+    21300030: supermetroid_metroids_sheet_15
+    21300032: supermetroid_metroids_sheet_16
+    21300034: supermetroid_metroids_sheet_17
+    21300036: supermetroid_metroids_sheet_18
+    21300038: supermetroid_metroids_sheet_19
+    21300040: supermetroid_metroids_sheet_20
+    21300042: supermetroid_metroids_sheet_21
+    21300044: supermetroid_metroids_sheet_22
+    21300046: supermetroid_metroids_sheet_23
+    21300048: supermetroid_metroids_sheet_24
+    21300050: supermetroid_metroids_sheet_25
+    21300052: supermetroid_metroids_sheet_26
+    21300054: supermetroid_metroids_sheet_27
+    21300056: supermetroid_metroids_sheet_28
+    21300058: supermetroid_metroids_sheet_29
+    21300060: supermetroid_metroids_sheet_30
+    21300062: supermetroid_metroids_sheet_31
+    21300064: supermetroid_metroids_sheet_32
+    21300066: supermetroid_metroids_sheet_33
+    21300068: supermetroid_metroids_sheet_34
+    21300070: supermetroid_metroids_sheet_35
+    21300072: supermetroid_metroids_sheet_36
+    21300074: supermetroid_metroids_sheet_37
+    21300076: supermetroid_metroids_sheet_38
+    21300078: supermetroid_metroids_sheet_39
+    21300080: supermetroid_metroids_sheet_40
+    21300082: supermetroid_metroids_sheet_41
+    21300084: supermetroid_metroids_sheet_42
+    21300086: supermetroid_metroids_sheet_43
+    21300088: Eks_0
+    21300090: Eks_1
+    21300092: Eks_2
+    21300094: Eks_3
+    21300096: Eks_4
+    21300098: Eks_5
+    21300100: Eks_6
+    21300102: Eks_7
+    21300104: Eks_8
+    21300106: Eks_9
+    21300108: Eks_10
+    21300110: Eks_11
+    21300112: Eks_12
+    21300114: Eks_13
+    21300116: Eks_14
+    21300118: Eks_15
+    21300120: Eks_16
+    21300122: Eks_17
+    21300124: Eks_18
+    21300126: Eks_19
+    21300128: Eks_20
+    21300130: Eks_21
+    21300132: Eks_22
+    21300134: Eks_23
+    21300136: Eks_24
+    21300138: Eks_25
+    21300140: Eks_26
+    21300142: Eks_27
+    21300144: Eks_28
+    21300146: Eks_29
+    21300148: Eks_30
+    21300150: Eks_31
+    21300152: Eks_32
+    21300154: Eks_33
+    21300156: Eks_34
+    21300158: Eks_35
+    21300160: Eks_36
+    21300162: Eks_37
+    21300164: Eks_38
+    21300166: Eks_39
+    21300168: Eks_40
+    21300170: Eks_41
+    21300172: Eks_42
+    21300174: Eks_43
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 21
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eks_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77fcc00e9ef598b4db4cf9d27ddb568f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27e784a6ef3af344aa15ef1a991e790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10cb0b532f674944ebf41f46fe6e588c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0108f34c117a094eb5b0dd806e30227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_4
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7728b41cc8430334286d1ec7c29feab4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_5
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f525ee87937084e94cdeffb12684a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_6
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41dc5216b062306439b2e1bbf39cea2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_7
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3f956f7e0bd7943a94ad9fd0874b75
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_8
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787360773871ab24ea995dd05b71e8ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_9
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e438297b445f2a4a9f956a8afd439e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_10
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99589c46e43e7f54a8b2266030111656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_11
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 357
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f8b4694b337f94c84ca28e8ab60bd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 365
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392c1f733467bcd4a854149df694cd8d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_13
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 365
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa7d24cb4c763e45bf1ee55cd9cdc58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_14
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 365
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6769fec441da04a8db15e1221cd748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_15
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 363
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a2d381467f09249ae296871d9cdb05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 316
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b385e1cbaa2ac6a46b2ebcd405a33acc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_17
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 316
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80c633b1761ee114880bad1b0526edd6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_18
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 316
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8544e8feea46dc9408890e29a9a0175f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_19
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 316
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd2fc0f4e41bdb4c80595a2cc310697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_20
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 316
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d5dfe63c95ae342b1f52224234dbc8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_21
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 316
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d972410d4a7a074438812ede0e706554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_22
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 316
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fab43d030285994fa7388514ab2c2f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_23
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 332
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b007d096ea2b9b4e8f1a3360bdd68b2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 276
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac031fca7fa7293459666938cb9965ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_25
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 276
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404418bfaf4f2e94997acddbee802e86
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_26
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 276
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd649b3db1029745ac5d32d712a97f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_27
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 276
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e548745101125e1489cacedff362b53b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_28
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 276
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362a62fe33786974d95c9e57f9ec79b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_29
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 276
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fa065ddd2bce046b5265c7308a88c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_30
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 276
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef27469fdcef274aaee9e93e935a587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_31
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 299
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1f70ad13a1bad4e8de6c4598844647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_32
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 269
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d140ec764e45234cba0369fa4409b26
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 181
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c3f1cf75f6fae46be29c209f73e97e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_34
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 181
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea64a406a291b64daf51c8a94c099b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_35
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 183
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4fad2714c703b45a764e4637229b91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_36
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 180
+        width: 78
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95d6270aed37f94cba0722b84f7bf66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_37
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 180
+        width: 78
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b7f5732f94863428e6014e94fef08e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 91
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79fa593843950942b95330bf977a7d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_39
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 91
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c5c97dcc3e1dd41878880b423582ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_40
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 91
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a8fa99e2a857548ab37687ee31cb43
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_41
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 93
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc5a9bb5f5f30247800fa442f4a1456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_42
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 93
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ab390a2f2718a45974b61cae355fbd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eks_43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 78
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f13951a2a87044ba575d582be40a52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 655befa7d3949e34fbabd24c30158fae
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
