@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.SetUI(this);
         if (pauseMenu != null)
-            pauseMenu.SetActive(true);
+            pauseMenu.SetActive(false);
     }
 
     //cambia a la escena indicada en el parámetro del OnClick() del botón correspondiente
@@ -39,5 +39,9 @@ public class UIManager : MonoBehaviour
     {
         //Debug.Log(vida);
         lives[vida].enabled = true;
+    }
+    public void ModifyMenu(bool mode)
+    {
+        pauseMenu.SetActive(mode);
     }
 }
