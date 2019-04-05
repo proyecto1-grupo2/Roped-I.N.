@@ -32,7 +32,7 @@ public class QuimicoExplosivo : MonoBehaviour
         }
     }
 
-    //Coge la componente MovGancho del gancho
+    //Coge la componente MovGancho del gancho 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -112,6 +112,10 @@ public class QuimicoExplosivo : MonoBehaviour
     void Destruccion()
     {
         Destroy(this.gameObject);
+        vecesDañadoEne = 0;
+        vecesDañadoJug = 0;
+        dañar = false;
+        ida = false;
     }
 
     //Cambia el tamaño del collider cuando inicia la explosion

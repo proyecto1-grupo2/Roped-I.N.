@@ -16,27 +16,22 @@ public class Vida : MonoBehaviour {
 
     }
 
-    /*public void SetUI(UIManager ui)
-    {
-        UIManager = ui;
-    }*/
-
-
     public void LoseLife(int dmg)
     {
         vida -= dmg;
-        if (this.gameObject.GetComponent<PlayerController>()) //si el jugador sufre daño
+        if (gameObject.GetComponent<PlayerController>()) //si el jugador sufre daño
         {
-            Debug.Log("vidas:"+vida);
-            GameManager.instance.PlayerLoseLife(vida);
-            if (vida <= 0)
+            Debug.Log("vidas:" + vida);
+            if (!isInmune)
             {
-                GameManager.instance.resetGame();
+                GameManager.instance.PlayerLoseLife(vida);
+                if (vida <= 0)
+                {
+                    GameManager.instance.resetGame();
+                }
             }
-            else if (!this.gameObject.CompareTag("Player"))
-            {
-                this.GetComponent<Death>().OnDead();
-            }
+
+
         }
         else if (vida <= 0) { this.GetComponent<Death>().OnDead(); }
     }
@@ -60,6 +55,7 @@ public class Vida : MonoBehaviour {
     //Lo hacemos inmune durante un tiempo 
     public void Inmune()
     {
+       
         isInmune = true;
         Invoke("NoInmune", tiempoinmune);
 

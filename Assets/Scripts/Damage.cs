@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damage : MonoBehaviour {
+public class Damage : MonoBehaviour
+{
     public int damage;
-    bool isInmune = false;
-    public float tiempoinmune;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Vida>())
         {
-            if (!isInmune)
+            //daño a enemigos
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                
+                    other.GetComponent<Vida>().LoseLife(damage);
+                
+            }
+            //daño a jugador si no es inmune. Lo hacemos inmune 
+            else if (other.gameObject.CompareTag("Player") && !other.gameObject.GetComponent<Vida>().DaInmune())
             {
                 other.GetComponent<Vida>().LoseLife(damage);
                 //transform.GetComponent<PlayerController>().EnemyKnockBack(transform.position.x);
-                isInmune = true;
 
-                Invoke("noInmune", tiempoinmune);
+                other.transform.GetComponent<Vida>().Inmune();
             }
+
+
         }
     }
 
-    void noInmune()
-    {
-        isInmune = false;
-    }
+
 }
