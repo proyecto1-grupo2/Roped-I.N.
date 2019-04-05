@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
     }
     public void resetGame()
     {
-        SceneManager.LoadScene("pruebasGancho");
+        SceneManager.LoadScene("Final");
     }
 
     public void finishGame()

@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
             }
             if (rb.velocity.y < -5)//para que no caiga muy rapido
             {
-                rb.velocity = new Vector2(rb.velocity.x, -10);
+                rb.velocity = new Vector2(rb.velocity.x, -5);
             }
             //Salto
             //La variable jump se hace falsa despues de hacer el salto para que no se ejecute el salto mas veces en el FixedUpdate

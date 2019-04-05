@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Vida : MonoBehaviour {
 
     public int vida;
+    public float tiempoinmune;
     Rigidbody2D rb;
     //UIManager UIManager;
     bool isInmune = false;
@@ -51,8 +52,21 @@ public class Vida : MonoBehaviour {
         }
     }
 
-    void noInmune()
+    void NoInmune()
     {
         isInmune = false;
     }
+
+    //Lo hacemos inmune durante un tiempo 
+    public void Inmune()
+    {
+        isInmune = true;
+        Invoke("NoInmune", tiempoinmune);
+
+    }
+    public bool DaInmune()
+    {
+        return isInmune;
+    }
+
 }
