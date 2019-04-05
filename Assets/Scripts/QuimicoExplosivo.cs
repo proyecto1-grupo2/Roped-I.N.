@@ -7,10 +7,10 @@ public class QuimicoExplosivo : MonoBehaviour
     Animator ani;
     HookState estadoGancho;
     MovGancho estadoAct;
-    public int daño;
-    bool dañar;
-    bool ida;
-
+    public int daño;//el daño que causa a los enemigos
+    bool dañar;//variable para poder hacer daño
+    bool ida;//variable para soltar el quimico
+    int vecesDañadoJug, vecesDañadoEne;//variables para causar daño solo una vez
 
     void Start()
     {
@@ -18,6 +18,8 @@ public class QuimicoExplosivo : MonoBehaviour
         ida = false;
         ani = GetComponent<Animator>();
         estadoAct = null;
+        vecesDañadoJug = 0;
+        vecesDañadoEne = 0;
     }
 
     //Coge el estado del gancho y llama a soltar el quimico
@@ -28,44 +30,43 @@ public class QuimicoExplosivo : MonoBehaviour
             estadoGancho = estadoAct.daEstado();
             SoltarQuimico();
         }
-        
-           // Debug.Log("perdida");
-        
-       
     }
 
     //Coge la componente MovGancho del gancho
-    //private void OnTriggerStay2D(Collider2D other)
-    //{
-    //    estadoAct = other.gameObject.GetComponent<MovGancho>();
-    //    Debug.Log("Cogido");
-
-    //}
-  
-    
-
-
-
-
-    //Causa daño a los enemigos
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.CompareTag("Enemy") && dañar))
+
+        //cogemos la referencia al gancho
+        if (other.gameObject.CompareTag("Gancho"))
         {
-            other.gameObject.GetComponent<Vida>().LoseLife(daño);
+            estadoAct = other.gameObject.GetComponent<MovGancho>();
         }
-        else if ((other.gameObject.CompareTag("Player") && dañar))
+        //daño jugador
+        else if (other.gameObject.CompareTag("Player") && dañar && vecesDañadoJug == 0)
         {
             other.gameObject.GetComponent<Vida>().LoseLife(1);
+            vecesDañadoJug = 1;
         }
-        else if (other.gameObject.CompareTag("Quebradizo") && dañar)
+        //daño enemigo
+        else if (other.gameObject.CompareTag("Enemy") && dañar && vecesDañadoEne == 0)
+        {
+            other.gameObject.GetComponent<Vida>().LoseLife(daño);
+            vecesDañadoEne = 1;
+        }
+
+    }
+
+
+    //destruccion Muro Quebradizo
+    void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Quebradizo") && dañar)
         {
             //Debug.Log("adio655s");
             Destroy(other.gameObject);
         }
 
     }
-  
 
     /*
      * Suelta el quimico cuando el gancho vuelve por segunda vez
@@ -77,7 +78,7 @@ public class QuimicoExplosivo : MonoBehaviour
         //la primera vez que va
         if (estadoGancho == HookState.Ida && !ida)
         {
-            
+
             ida = true;
             //Debug.Log(ida);
         }
@@ -93,7 +94,7 @@ public class QuimicoExplosivo : MonoBehaviour
             transform.parent = null;
             transform.GetComponent<Rigidbody2D>().isKinematic = false;
             transform.GetComponent<BoxCollider2D>().isTrigger = false;
-            gameObject.GetComponent<AtraeQuimicos>().enabled = false;
+            Destroy(gameObject.GetComponent<AtraeQuimicos>());
             Invoke("Explosion", 2);
         }
         //Debug.Log("Current State: " + estadoGancho);
@@ -118,5 +119,5 @@ public class QuimicoExplosivo : MonoBehaviour
     {
         transform.GetComponent<BoxCollider2D>().size *= 2;
     }
-    
+
 }

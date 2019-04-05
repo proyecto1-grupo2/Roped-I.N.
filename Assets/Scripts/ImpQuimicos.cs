@@ -64,7 +64,7 @@ public class ImpQuimicos : MonoBehaviour
                 //Debug.Log("PARALIZADO");
                 if (time < 1)
                 {
-                    Debug.Log("Veces");
+                    //Debug.Log("Veces");
                     QuitaVida();
                 }
                 gameObject.GetComponent<PingPongMovement>().enabled = false;
