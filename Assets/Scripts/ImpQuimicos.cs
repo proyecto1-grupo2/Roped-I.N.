@@ -8,9 +8,9 @@ public class ImpQuimicos : MonoBehaviour
     int time;
     Vida vida;
 
-    public int dpsFuego, dañoElectrico;
+    public int dpsFuego=10, dañoEleco=10;//daño del quimico electrico y fuego por defecto
     bool quemado;
-    public float tStun;
+    public float tStun=4;//tiempo de stun por defecto
 
 
     void Start()
@@ -48,11 +48,25 @@ public class ImpQuimicos : MonoBehaviour
 
             case EnemyState.Congelado:
                 //mientras esta congelado no se mueve ni hace daño
+                if(gameObject.GetComponent<PingPongMovement>())
+                {
+                    gameObject.GetComponent<PingPongMovement>().enabled = false;
+                }
+                else if (gameObject.GetComponent<PursuitTarget>())
+                {
+                    gameObject.GetComponent<PursuitTarget>().enabled = false;
+                }
                 //Desactivar el daño al jugador
-                //Debug.Log("Congelado");
-                gameObject.GetComponent<PingPongMovement>().enabled = false;
                 gameObject.GetComponent<Damage>().enabled = false;
-                gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+                //Desactiva que sea Trigger
+                if (gameObject.GetComponent<BoxCollider2D>())
+                {
+                    gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+                }
+                else if (gameObject.GetComponent<CircleCollider2D>())
+                {
+                    gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
+                }
 
                 //Cambiar sprite (De momento solo cambia el tono a un más azulado)
                 SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
@@ -85,10 +99,24 @@ public class ImpQuimicos : MonoBehaviour
     public void cambiaEstadoNada()
     {
         estadoEnemigo = EnemyState.Nada;
-        gameObject.GetComponent<PingPongMovement>().enabled = true;
+        if (gameObject.GetComponent<PingPongMovement>())
+        {
+            gameObject.GetComponent<PingPongMovement>().enabled = true;
+        }
+        else if (gameObject.GetComponent<PursuitTarget>())
+        {
+            gameObject.GetComponent<PursuitTarget>().enabled = true;
+        }
         gameObject.GetComponent<Damage>().enabled = true;
         gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        if (gameObject.GetComponent<BoxCollider2D>())
+        {
+            gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+        else if (gameObject.GetComponent<CircleCollider2D>())
+        {
+            gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {

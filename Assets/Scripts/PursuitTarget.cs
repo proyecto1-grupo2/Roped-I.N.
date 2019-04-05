@@ -48,5 +48,7 @@ public class PursuitTarget : MonoBehaviour
         generated = true;
     }
     public bool GetGenerated() {
-        Debug.Log("GENERADO"); return generated; }
+        //Debug.Log("GENERADO");
+        return generated; 
+    }
 }

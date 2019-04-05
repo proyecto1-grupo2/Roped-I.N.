@@ -10,12 +10,13 @@ public class Vida : MonoBehaviour {
     Rigidbody2D rb;
     //UIManager UIManager;
     bool isInmune = false;
-    // Use this for initialization
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
 
     }
 
+    //Quitamos vida en funcion del daño que llega
     public void LoseLife(int dmg)
     {
         vida -= dmg;

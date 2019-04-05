@@ -140,9 +140,9 @@ public class PlayerController : MonoBehaviour
 
                 rb.AddForce(movement * acceleration); //Movimiento 
             }
-            if (rb.velocity.y < -5)//para que no caiga muy rapido
+            if (rb.velocity.y < -10)//para que no caiga muy rapido
             {
-                rb.velocity = new Vector2(rb.velocity.x, -5);
+                rb.velocity = new Vector2(rb.velocity.x, -10);
             }
             //Salto
             //La variable jump se hace falsa despues de hacer el salto para que no se ejecute el salto mas veces en el FixedUpdate

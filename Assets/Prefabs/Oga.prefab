@@ -26,9 +26,10 @@ GameObject:
   - component: {fileID: 114386212397662162}
   - component: {fileID: 50664011788937366}
   - component: {fileID: 114833111698024206}
+  - component: {fileID: 114944561023632990}
   m_Layer: 8
   m_Name: Oga
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 1
+  tiempoinmune: 0
 --- !u!114 &114638637380208192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +131,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  tiempoinmune: 0
+--- !u!114 &114944561023632990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018796079996840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba625e005480e6f4fb777d347bfd1c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dpsFuego: 10
+  "da\xF1oEleco": 10
+  tStun: 4
 --- !u!212 &212020414843750956
 SpriteRenderer:
   m_ObjectHideFlags: 1

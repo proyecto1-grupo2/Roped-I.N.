@@ -9,7 +9,7 @@ public class MovGancho : MonoBehaviour
     //Referencia del Player para permitir la comunicación entre ambos 
     public PlayerController Player;
     //posicion de un objeto estático para desvincular (podria ahorrarse)
-    public Transform Padre1;
+    //public Transform Padre1;
     //La posicion (dentro del jugador) desde la que el jugador lanza el gancho
     private Transform puntoLanzamiento;
     //booleano para saber si está en modo agarre o en modo gancho
@@ -36,6 +36,7 @@ public class MovGancho : MonoBehaviour
             case HookState.Quieto:
                 {
                     transform.SetParent(Player.transform);
+                    transform.rotation = transform.parent.rotation;
                     //Player.EnabledMovement(true);
                     //if (Input.GetButtonDown("Agarre"))
                     //{
@@ -62,8 +63,6 @@ public class MovGancho : MonoBehaviour
                 break;
             case HookState.Ida:
                 {
-                    
-                    
                     //Player.EnabledMovement(false);
                     transform.Translate(movement);
                     //Debug.Log("Current State: " + currState);
@@ -75,15 +74,15 @@ public class MovGancho : MonoBehaviour
             case HookState.Vuelta:
                 {
                     // Player.EnabledMovement(false);
-                    
-                    transform.Translate(-movement);
+                    //transform.Translate(-movement);
+                    transform.position = Vector2.MoveTowards(transform.position, puntoLanzamiento.position, speed * Time.deltaTime);
                     //Debug.Log(Vector2.Distance(puntoSalida.position, transform.position));
                     if (Vector2.Distance(puntoLanzamiento.position, transform.position) < 0.5f) //0.5 es un valor de error, 
                     {
                         currState = HookState.Quieto;
-                        
+
                     }
-                   // Debug.Log("Current State MovGancho: " + currState);
+                    // Debug.Log("Current State MovGancho: " + currState);
                 }
                 break;
             //este caso contempla cuando el gancho impacta sobre una zona viscosa (rosa)
@@ -91,12 +90,10 @@ public class MovGancho : MonoBehaviour
                 {
                     transform.parent = null;//Desvinculamos el gancho como hijo del jugador
                     Player.CambiaEstado(true);//Cambia a true el bool "enganchado" en el PlayerController
-                    //Player.gameObject.transform.position = Vector2.MoveTowards(Player.gameObject.transform.position, transform.position, 0.06f);
-
                 }
                 break;
         }
-       
+
     }
 
     //Establece el movimiento que va a seguir el gancho según la dirección a la que se mire
