@@ -30,7 +30,13 @@ public class AtraeQuimicos : MonoBehaviour {
         else colision = false;
         
     }
-
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (hook!=null && other.gameObject.CompareTag("Suelo"))
+        {
+            hook.cambiaEstado(HookState.Vuelta);
+        }
+    }
 
     void Start()
     {
@@ -52,17 +58,20 @@ public class AtraeQuimicos : MonoBehaviour {
 
     void Update()
     {
+
         /*
          *Si un quimico colisiona con el gancho se hace hijo del gancho
          * para ello es necesario que el gancho no tenga hijos(no tenga mas quimicos)
          */ 
         if (colision)
         {
-            if (hook.transform.childCount==0) {
+            if (hook.transform.childCount == 0)
+            {
                 transform.GetComponent<BoxCollider2D>().isTrigger = true;
                 transform.SetParent(target.transform);
                 transform.GetComponent<Rigidbody2D>().isKinematic = true;
             }
+            else colision = false;
             
             //hook.cambiaEstado(HookState.Vuelta);
 
