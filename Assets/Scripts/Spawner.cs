@@ -23,12 +23,12 @@ public class Spawner : MonoBehaviour
         pool = GameObject.Find("ogaPool");
         if (pool == null)
         {
-            Debug.Log("No hay pool para los ogas");
+            //Debug.Log("No hay pool para los ogas");
         }
         target = GameObject.Find("Player");
         if (target == null)
         {
-            Debug.Log("No encuentro al jugador");
+            //Debug.Log("No encuentro al jugador");
         }
         cont = 0;
         isSpawning = false;
@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
             InvokeRepeating("instanciaOga", spawnRate, spawnRate);
             isSpawning = true;
         }
-        Debug.Log(cont);
+        //Debug.Log(cont);
     }
 
     //Instancia un oga y lo relaciona con este spawner

@@ -49,7 +49,7 @@ public class ImpQuimicos : MonoBehaviour
             case EnemyState.Congelado:
                 //mientras esta congelado no se mueve ni hace daño
                 //Desactivar el daño al jugador
-                Debug.Log("Congelado");
+                //Debug.Log("Congelado");
                 gameObject.GetComponent<PingPongMovement>().enabled = false;
                 gameObject.GetComponent<Damage>().enabled = false;
                 gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
@@ -61,12 +61,12 @@ public class ImpQuimicos : MonoBehaviour
                 break;
             case EnemyState.Paralizado:
                 //mientras esta paralizado no se puede mover
-                Debug.Log("PARALIZADO");
+                //Debug.Log("PARALIZADO");
                 if (time < 1)
                 {
+                    Debug.Log("Veces");
                     QuitaVida();
                 }
-                vida.LoseLife(dañoElectrico);
                 gameObject.GetComponent<PingPongMovement>().enabled = false;
                 Invoke("cambiaEstadoNada", tStun);
                 break;
