@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114713152372933588}
   - component: {fileID: 114194779576916930}
   - component: {fileID: 114493182382824296}
+  - component: {fileID: 114232842351243218}
   m_Layer: 8
   m_Name: 'Enemy '
   m_TagString: Enemy
@@ -39,8 +40,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659894362648662}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.75, y: -7.65, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 48.92, y: 3.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,8 +117,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  Ainicio: {x: 33.83, y: -7.65}
-  Bfin: {x: 37, y: -7.65}
+  Ainicio: {x: 43.97, y: 3.16}
+  Bfin: {x: 50.98, y: 3.16}
+--- !u!114 &114232842351243218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659894362648662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e079d1675b57d9946849d341c9146d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114493182382824296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba625e005480e6f4fb777d347bfd1c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "Da\xF1oporSegundo": 10
+  dpsFuego: 10
+  "da\xF1oElectrico": 10
+  tStun: 5
 --- !u!114 &114713152372933588
 MonoBehaviour:
   m_ObjectHideFlags: 1
