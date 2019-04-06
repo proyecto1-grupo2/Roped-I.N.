@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212097250032450818}
   - component: {fileID: 61704816637265510}
   - component: {fileID: 114454404677615680}
+  - component: {fileID: 114479153694955874}
+  - component: {fileID: 50640143926636274}
   m_Layer: 12
   m_Name: AguaContaminada
   m_TagString: Untagged
@@ -35,13 +37,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563822365589408}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.79, y: -9.74, z: -0.08203125}
-  m_LocalScale: {x: 5.0875, y: 0.5, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 47.79, y: -9.7, z: -0.08203125}
+  m_LocalScale: {x: 3.3062193, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50640143926636274
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563822365589408}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61704816637265510
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -79,7 +101,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
-  damage: 0
+  damage: 1
+--- !u!114 &114479153694955874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563822365589408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c474727e0123d714da076ff28fffd9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragHielo: 0
+  tCong: 0
 --- !u!212 &212097250032450818
 SpriteRenderer:
   m_ObjectHideFlags: 1

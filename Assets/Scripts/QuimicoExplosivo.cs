@@ -25,7 +25,7 @@ public class QuimicoExplosivo : MonoBehaviour
     //Coge el estado del gancho y llama a soltar el quimico
     void Update()
     {
-        if (estadoAct != null)
+        if (estadoAct != null && transform.parent)
         {
             estadoGancho = estadoAct.daEstado();
             SoltarQuimico();
