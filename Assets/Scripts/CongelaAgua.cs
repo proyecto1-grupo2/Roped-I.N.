@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CongelaAgua : MonoBehaviour
 {
-    public float dragHielo, tCong;
+    //public float dragHielo, tCong;
     DeadZone dz;
     BoxCollider2D bc2D;
 
@@ -22,7 +22,7 @@ public class CongelaAgua : MonoBehaviour
         {
             dz.DeadZoneOnOff();
             bc2D.isTrigger = false;
-            gameObject.GetComponent<Rigidbody2D>().drag = dragHielo;
+            //gameObject.GetComponent<Rigidbody2D>().drag = dragHielo;
             Destroy(other.gameObject);
             //Debug.Log("Drag " + gameObject.GetComponent<Rigidbody2D>().drag);
             //Invoke("FreezeOff", tCong);
