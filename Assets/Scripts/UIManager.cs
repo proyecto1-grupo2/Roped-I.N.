@@ -14,9 +14,9 @@ public class UIManager : MonoBehaviour
 
     public void LifeLost(int vida)
     {
-        Debug.Log("antes"+vida);
+
         if (vida <= 0) { vida = 0; } //Para evitar algun posible bug
-        Debug.Log("despues"+vida);
+        else if (vida >= lives.Length - 1) vida = lives.Length - 1;//para evitar bugs 
         lives[vida].enabled = false;
     }
     public void GanaVida(int vida)

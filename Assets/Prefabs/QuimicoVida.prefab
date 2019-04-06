@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50426205388971982}
   - component: {fileID: 114199795742221394}
   - component: {fileID: 114506442500166236}
+  - component: {fileID: 114095125551798074}
   m_Layer: 0
   m_Name: QuimicoVida
   m_TagString: Untagged
@@ -89,6 +90,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96533334, y: 1.2666667}
   m_EdgeRadius: 0
+--- !u!114 &114095125551798074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1189992194261190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5ae323ee5a9cd43acabdbfd4422544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114199795742221394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +126,6 @@ MonoBehaviour:
   Mask:
     serializedVersion: 2
     m_Bits: 512
-  target: {fileID: 0}
 --- !u!212 &212890531808497052
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -147,9 +158,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 581344883
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1e652ddad002d0342b639e804b889584, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -9,7 +9,7 @@ public class CajaArrastre : MonoBehaviour
     Vector3 boxsize;
     bool colision;
     //bool colisionTerreno;
-    public Transform target;
+    public Transform target;//Gancho 
     
 
     void Start()

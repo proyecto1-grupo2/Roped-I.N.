@@ -49,10 +49,7 @@ public class Vida : MonoBehaviour {
             rb.velocity = Vector2.zero;
         }
     }
-    void Update()
-    {
-        Debug.Log(isInmune);
-    }
+
     void NoInmune()
     {
         isInmune = false;

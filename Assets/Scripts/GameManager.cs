@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
     }
     public void resetGame()
     {
-        SceneManager.LoadScene("Final");
+        SceneManager.LoadScene("Nivel1");
     }
 
     public void finishGame()

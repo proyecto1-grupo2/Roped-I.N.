@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61827994512110220}
   - component: {fileID: 95976432899597160}
   - component: {fileID: 114488307318342936}
-  - component: {fileID: 114726870094306990}
+  - component: {fileID: 114980914170082182}
   m_Layer: 16
   m_Name: QuimicoExplosivo
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666879514774580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 53.3, y: -8.74, z: 0}
+  m_LocalPosition: {x: -2.8763876, y: -2.9074066, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "da\xF1o": 15
---- !u!114 &114726870094306990
+--- !u!114 &114980914170082182
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,9 +178,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 581344883
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c1002a5b01c5a5847abfe954411bc913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

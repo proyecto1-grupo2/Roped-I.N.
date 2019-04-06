@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61555621538115126}
   - component: {fileID: 50159404792590860}
   - component: {fileID: 114304500507041822}
+  - component: {fileID: 114436861047149554}
   m_Layer: 0
   m_Name: QuimicoFuego
   m_TagString: QuimicoFuego
@@ -102,7 +103,17 @@ MonoBehaviour:
   Mask:
     serializedVersion: 2
     m_Bits: 512
-  target: {fileID: 0}
+--- !u!114 &114436861047149554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1247208050553502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5ae323ee5a9cd43acabdbfd4422544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212282844374666788
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -135,9 +146,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 581344883
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b82a0bdbac8b40d4094a11cc94415a27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
