@@ -93,7 +93,12 @@ public class MovGancho : MonoBehaviour
                 }
                 break;
         }
-
+        if (transform.childCount > 0 && Input.GetButtonDown("Soltar"))
+        {
+            //transform.GetComponentInChildren<AtraeQuimicos>().DesenganchaQuimico();
+            transform.GetComponentInChildren<AtraeQuimicos>().Enganche();
+            currState = HookState.Vuelta;
+        }
     }
 
     //Establece el movimiento que va a seguir el gancho según la dirección a la que se mire

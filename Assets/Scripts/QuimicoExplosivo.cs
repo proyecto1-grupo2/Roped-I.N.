@@ -53,7 +53,6 @@ public class QuimicoExplosivo : MonoBehaviour
             other.gameObject.GetComponent<Vida>().LoseLife(daño);
             vecesDañadoEne = 1;
         }
-
     }
 
 
