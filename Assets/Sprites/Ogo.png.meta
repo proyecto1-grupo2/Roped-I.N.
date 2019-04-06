@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 4c0f4d59ccc54b54895862070ab05c81
+guid: e8c2d4ce50125b540ac037f4e2584335
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Oga_0
-    21300002: Oga_1
-    21300004: Oga_2
-    21300006: Oga_3
+    21300000: Ogo_0
+    21300002: Ogo_1
+    21300004: Ogo_2
+    21300006: Ogo_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -88,81 +88,81 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Oga_0
+      name: Ogo_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 7
-        width: 14
-        height: 19
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        y: 0
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78bf92da9d9297b4b802084aae29193d
+      spriteID: c7d7a6aeaa6bf4d41823023459bb2b7c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oga_1
+      name: Ogo_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 5
-        width: 14
-        height: 19
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        y: 1
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f9d2478d403bd546b52d887fde98e50
+      spriteID: 364c8f57ae8d9134788eb8d2bee7ed6d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oga_2
+      name: Ogo_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 4
-        width: 14
-        height: 18
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        y: 0
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bdce72e4848d54449e0d01e8077d023
+      spriteID: 6bbfdb3918a86dd40b5b0be635ddd4e1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oga_3
+      name: Ogo_3
       rect:
         serializedVersion: 2
-        x: 100
+        x: 96
         y: 0
-        width: 14
-        height: 14
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f857efafa974c444b458887ff89cecc
+      spriteID: 49051af3cdcf785488079e3ecf6fb0c4
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: de0fd6762d14bc94b9c9c8a8976be9bc
+    spriteID: 08ae841a10e01704685c718cedd2a438
     vertices: []
     indices: 
     edges: []
