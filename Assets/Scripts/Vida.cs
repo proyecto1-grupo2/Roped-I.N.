@@ -22,19 +22,21 @@ public class Vida : MonoBehaviour {
         vida -= dmg;
         if (gameObject.GetComponent<PlayerController>()) //si el jugador sufre daño
         {
-            Debug.Log("vidas:" + vida);
+            
             if (!isInmune)
             {
+                Debug.Log("vidas:" + vida);
                 GameManager.instance.PlayerLoseLife(vida);
                 if (vida <= 0)
                 {
+                    
                     GameManager.instance.resetGame();
                 }
             }
 
 
         }
-        else if (vida <= 0) { this.GetComponent<Death>().OnDead(); }
+        else if (vida <= 0) { GetComponent<Death>().OnDead(); }
     }
     public void OnDeadZone(Transform spawnPoint)
     {
@@ -47,7 +49,10 @@ public class Vida : MonoBehaviour {
             rb.velocity = Vector2.zero;
         }
     }
-
+    void Update()
+    {
+        Debug.Log(isInmune);
+    }
     void NoInmune()
     {
         isInmune = false;
@@ -56,7 +61,6 @@ public class Vida : MonoBehaviour {
     //Lo hacemos inmune durante un tiempo 
     public void Inmune()
     {
-       
         isInmune = true;
         Invoke("NoInmune", tiempoinmune);
 

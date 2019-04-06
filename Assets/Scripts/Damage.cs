@@ -28,7 +28,7 @@ public class Damage : MonoBehaviour
                 other.GetComponent<Vida>().LoseLife(damage);
                 //transform.GetComponent<PlayerController>().EnemyKnockBack(transform.position.x);
 
-                other.transform.GetComponent<Vida>().Inmune();
+               other.transform.GetComponent<Vida>().Inmune();
             }
 
 
