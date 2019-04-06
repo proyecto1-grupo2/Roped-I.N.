@@ -50,8 +50,12 @@ public class QuimicoExplosivo : MonoBehaviour
         //daño enemigo
         else if (other.gameObject.CompareTag("Enemy") && dañar && vecesDañadoEne == 0)
         {
-            other.gameObject.GetComponent<Vida>().LoseLife(daño);
-            vecesDañadoEne = 1;
+            if (other.gameObject.GetComponent<Vida>()!=null)
+            {
+                other.gameObject.GetComponent<Vida>().LoseLife(daño);
+                vecesDañadoEne = 1;
+            }
+            
         }
     }
 

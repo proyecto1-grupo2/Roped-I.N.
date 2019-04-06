@@ -10,7 +10,7 @@ public class AtraeQuimicos : MonoBehaviour {
     MovGancho hook;
 
     bool colision;
-    public Transform target;
+    //public Transform target;
 
    
     void OnTriggerEnter2D(Collider2D other)// metodo para detectar colision
@@ -33,13 +33,13 @@ public class AtraeQuimicos : MonoBehaviour {
         else colision = false;
         
     }
-    void OnCollisionEnter2D(Collision2D other)
+    /*void OnCollisionEnter2D(Collision2D other)
     {
         if (hook!=null && other.gameObject.CompareTag("Suelo"))
         {
             hook.cambiaEstado(HookState.Vuelta);
         }
-    }
+    }*/
 
     void Start()
     {
@@ -50,10 +50,10 @@ public class AtraeQuimicos : MonoBehaviour {
         {
             Debug.LogError("Falta RigidBody");
         }
-        if (target == null)
+        /*if (target == null)
         {
             Debug.Log("No encuentro al gancho");
-        }
+        }*/
         colision = false;
 
     }
@@ -92,7 +92,7 @@ public class AtraeQuimicos : MonoBehaviour {
     {
        if (hook.transform.childCount == 0)
        {
-            Debug.Log("enganchado");
+           //Debug.Log("enganchado");
            ModifyQuimico(true, hook.transform);
        }
        else
@@ -105,6 +105,7 @@ public class AtraeQuimicos : MonoBehaviour {
     {
         transform.GetComponent<BoxCollider2D>().isTrigger = enganchado;
         transform.SetParent(parent);
+        transform.position = new Vector3(transform.position.x , transform.position.y + 0.2f, transform.position.z);
         transform.GetComponent<Rigidbody2D>().isKinematic = enganchado;
     }
     //void EnganchaQuimico()

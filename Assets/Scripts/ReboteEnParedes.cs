@@ -5,11 +5,11 @@ using UnityEngine;
 public class ReboteEnParedes : MonoBehaviour
 {
     //Diferencia las colisiones con paredes normales y con paredes pegajosas
-    int layerMask;
+    //int layerMask;
     MovGancho gancho;
     private void Start()
     {
-        layerMask = LayerMask.GetMask("Gancho", "Terreno", "Enganches");
+        //layerMask = LayerMask.GetMask("Gancho", "Terreno", "Enganches");
         gancho = this.GetComponent<MovGancho>();
     }
     private void OnTriggerEnter2D(Collider2D other)

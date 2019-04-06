@@ -11,6 +11,8 @@ TagManager:
   - Boton
   - QuimicoFuego
   - Quebradizo
+  - QuimicoHielo
+  - QuimicoElectrico
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - Enganches
   - "Telara\xF1a"
   - Quebradizo
-  - 
+  - Quimicos
   - 
   - 
   - 
