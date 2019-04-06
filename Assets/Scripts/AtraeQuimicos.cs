@@ -60,58 +60,9 @@ public class AtraeQuimicos : MonoBehaviour
     }
 
 
-    //void Update()
-    //{
+    
 
-    //    /*
-    //     *Si un quimico colisiona con el gancho se hace hijo del gancho
-    //     * para ello es necesario que el gancho no tenga hijos(no tenga mas quimicos)
-    //     */ 
-    //    if (colision)
-    //    {
-    //        if (hook.transform.childCount == 0)
-    //        {
-    //            transform.GetComponent<BoxCollider2D>().isTrigger = true;
-    //            transform.SetParent(target.transform);
-    //            transform.GetComponent<Rigidbody2D>().isKinematic = true;
-    //        }
-    //        else colision = false;
-<<<<<<< HEAD
 
-    //        //hook.cambiaEstado(HookState.Vuelta);
-
-    //    }
-
-=======
-            
-    //        //hook.cambiaEstado(HookState.Vuelta);
-
-    //    }
-       
->>>>>>> 3fec06d7ba2a7eb7ee215c710d1dff332bf6cd76
-
-    //    /*else
-    //    {
-    //        transform.GetComponent<Rigidbody2D>().isKinematic = false;
-    //    }*/
-
-    //}
-<<<<<<< HEAD
-
-    public void Enganche()
-    {
-        if (hook.transform.childCount == 0)
-        {
-            Debug.Log("enganchado");
-            ModifyQuimico(true, hook.transform);
-        }
-        else
-        {
-            ModifyQuimico(false, null);
-        }
-    }
-
-=======
 
     public void Enganche()
     {
@@ -126,7 +77,6 @@ public class AtraeQuimicos : MonoBehaviour
        }
     }
 
->>>>>>> 3fec06d7ba2a7eb7ee215c710d1dff332bf6cd76
     void ModifyQuimico(bool enganchado, Transform parent)
     {
         transform.GetComponent<BoxCollider2D>().isTrigger = enganchado;
@@ -143,11 +93,7 @@ public class AtraeQuimicos : MonoBehaviour
     //        transform.GetComponent<Rigidbody2D>().isKinematic = true;
     //    }
     //}
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 3fec06d7ba2a7eb7ee215c710d1dff332bf6cd76
     //public void DesenganchaQuimico()
     //{
     //    transform.GetComponent<BoxCollider2D>().isTrigger = false;

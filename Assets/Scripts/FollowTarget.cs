@@ -7,6 +7,8 @@ public class FollowTarget : MonoBehaviour
 
     public Transform target;
     Vector3 posicion;
+    public int mueveCamara;
+    Vector3 pos;
 
     void Start()
     {
@@ -15,11 +17,27 @@ public class FollowTarget : MonoBehaviour
 
     void LateUpdate()
     {
-        
-       
+        if(Input.GetKey("left shift") && Input.GetButton("Arriba"))
         {
+            if (transform.position.y < pos.y + mueveCamara)
+            {
+                transform.Translate(0, 15 * Time.deltaTime, 0);
+            }
+        }
+        else if (Input.GetKey("left shift") && Input.GetButton("Abajo"))
+        {
+            if (transform.position.y > pos.y - mueveCamara)
+            {
+                transform.Translate(0, -15 * Time.deltaTime, 0);
+            }
+        }
+
+        else
+        {
+
             posicion = new Vector3(target.position.x, target.position.y, -5);
             transform.position = posicion;
+            pos = transform.position;
         }
         
 
