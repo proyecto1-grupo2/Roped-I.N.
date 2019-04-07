@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114853515210674140}
   - component: {fileID: 114004410941485476}
   - component: {fileID: 114173877772829064}
+  - component: {fileID: 114412852792931940}
   - component: {fileID: 61949599852901380}
   - component: {fileID: 50434556413711538}
   m_Layer: 8
@@ -135,7 +136,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  range: 200
+  range: 8
+--- !u!114 &114412852792931940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1315391848260266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba625e005480e6f4fb777d347bfd1c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dpsFuego: 10
+  "da\xF1oEleco": 10
+  tStun: 4
 --- !u!114 &114668755193212102
 MonoBehaviour:
   m_ObjectHideFlags: 1
