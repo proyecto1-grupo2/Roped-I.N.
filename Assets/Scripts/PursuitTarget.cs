@@ -14,9 +14,11 @@ public class PursuitTarget : MonoBehaviour
     private GameObject target;
     Spawner spawner;
     private bool generated = false;
+    bool lookingRight = true;
 
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         //Si no tiene Rigidbody
         if (rb == null)
@@ -33,6 +35,12 @@ public class PursuitTarget : MonoBehaviour
     //Si el jugador esta dentro del rango, el enemigo le seguirá
     private void Update()
     {
+        CheckPosition();
+        if (lookingRight)
+            transform.localRotation = new Quaternion(transform.rotation.x, 180, transform.rotation.z, transform.rotation.w);
+        else
+            transform.localRotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, transform.rotation.w);
+
         if (target != null && Vector2.Distance(transform.position, target.transform.position) <= range)
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
@@ -48,7 +56,14 @@ public class PursuitTarget : MonoBehaviour
         generated = true;
     }
     public bool GetGenerated() {
-        //Debug.Log("GENERADO");
-        return generated; 
+        Debug.Log("GENERADO"); 
+        return generated; }
+
+    private void CheckPosition()
+    {
+        if (transform.position.x < target.transform.position.x)
+            lookingRight = true;
+        else if (transform.position.x >= target.transform.position.x)
+            lookingRight = false;
     }
 }
