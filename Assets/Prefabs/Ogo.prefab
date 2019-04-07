@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4662062369214656}
   - component: {fileID: 114861281956693952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: OgaSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,13 +36,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4966398842856188}
   - component: {fileID: 212140786472320810}
+  - component: {fileID: 114941367421726790}
   - component: {fileID: 114173245187802030}
   - component: {fileID: 114870194119316922}
   - component: {fileID: 95958989373670760}
   - component: {fileID: 61595980777247520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ogo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +158,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &114941367421726790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414929899065768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e079d1675b57d9946849d341c9146d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212140786472320810
 SpriteRenderer:
   m_ObjectHideFlags: 1

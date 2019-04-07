@@ -21,14 +21,15 @@ GameObject:
   - component: {fileID: 4190341099570056}
   - component: {fileID: 212607880524108680}
   - component: {fileID: 95387651172496710}
+  - component: {fileID: 114668755193212102}
   - component: {fileID: 114853515210674140}
   - component: {fileID: 114004410941485476}
   - component: {fileID: 114173877772829064}
   - component: {fileID: 61949599852901380}
   - component: {fileID: 50434556413711538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Oga
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7ad057af70af042b042436f3823f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 1
+  vida: 10
   tiempoinmune: 0
 --- !u!114 &114173877772829064
 MonoBehaviour:
@@ -134,7 +135,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  range: 8
+  range: 200
+--- !u!114 &114668755193212102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1315391848260266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e079d1675b57d9946849d341c9146d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114853515210674140
 MonoBehaviour:
   m_ObjectHideFlags: 1
