@@ -24,6 +24,10 @@ public class CongelaAgua : MonoBehaviour
             bc2D.isTrigger = false;
             //gameObject.GetComponent<Rigidbody2D>().drag = dragHielo;
             Destroy(other.gameObject);
+            //Cambiar sprite (De momento solo cambia el tono a un más azulado)
+            SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
+            sprit.material.color = Color.blue;
+            
             //Debug.Log("Drag " + gameObject.GetComponent<Rigidbody2D>().drag);
             //Invoke("FreezeOff", tCong);
         }
