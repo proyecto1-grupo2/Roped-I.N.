@@ -66,7 +66,7 @@ public class AtraeQuimicos : MonoBehaviour
 
     public void Enganche()
     {
-       if (hook.transform.childCount == 0)
+       if (hook.transform.childCount == 1)
        {
            //Debug.Log("enganchado");
            ModifyQuimico(true, hook.transform);
