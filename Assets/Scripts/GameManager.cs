@@ -85,8 +85,10 @@ public class GameManager : MonoBehaviour {
     }
 
     public void ChangeScene(string sceneName)
-    {
+    {        
         SceneManager.LoadScene(sceneName);
+        pausado = true;
+        Pausa();
     }
 
     public void Save()
