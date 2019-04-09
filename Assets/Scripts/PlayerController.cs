@@ -9,7 +9,10 @@ public class PlayerController : MonoBehaviour
     private float moveX;
     bool saltando;
     public GameObject Suelo;
-
+    bool grounded;
+    bool camaraMov = false;
+    int shooting;
+    private Animator anim;
     bool jump;
     int tiempoinmune;
     Vector2 movement, dirGancho;
@@ -39,9 +42,17 @@ public class PlayerController : MonoBehaviour
         dirGancho = Vector2.right;
         posGanchoInicio = gancho.transform.localPosition;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        anim = GetComponent<Animator>();
+
     }
     private void Update()
     {
+        //Animaciones
+        shooting = gancho.GetShooting();
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        anim.SetBool("Grounded", grounded);
+        anim.SetBool("Jump", jump);
+        anim.SetInteger("Shooting", shooting);
 
         //Nos aseguramos de que sea dinámico  
         if (!enganchado && mov)
@@ -120,7 +131,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down) * 0.6f, Color.red);
+        //Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down) * 0.6f, Color.red);
     }
     private void FixedUpdate()//Mueve al personaje
     {
@@ -222,7 +233,10 @@ public class PlayerController : MonoBehaviour
     {
         return dirGancho;
     }
-
+    public void SetGrounded(bool ground)
+    {
+        grounded = ground;
+    }
 }
 
 
