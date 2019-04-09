@@ -214,7 +214,6 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().simulated = false;
             if (Input.GetButtonDown("Jump"))
             {
-                Debug.Log("SOÑEMOS");
                 jump = true;
                 gancho.cambiaEstado(HookState.Vuelta);
                 CambiaEstado(false);
