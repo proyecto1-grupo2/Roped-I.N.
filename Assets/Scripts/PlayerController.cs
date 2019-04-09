@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     public float acceleration, jumpForce;
     private float moveX;
     bool saltando;
+    public bool grounded;
     public GameObject Suelo;
+    private Animator anim;
 
     bool jump;
     int tiempoinmune;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         gancho = transform.GetChild(0).GetComponent<MovGancho>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         //Si no tiene Rigidbody
         if (rb == null)
         {
@@ -42,6 +45,11 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        //Animaciones
+
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        anim.SetBool("Grounded", grounded);
+        anim.SetBool("Jump", jump);
 
         //Nos aseguramos de que sea dinámico  
         if (!enganchado && mov)
