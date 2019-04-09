@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
                 }
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                SoundManager.instance.RandomizeSfx(playerRun);
+                //SoundManager.instance.RandomizeSfx(playerRun);
             }
 
             else if (Input.GetButton("Izquierda"))
@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
                 }
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                //SoundManager.instance.RandomizeSfx(playerRun);
             }
             else if (Input.GetKey(KeyCode.S))
             {
@@ -117,7 +118,7 @@ public class PlayerController : MonoBehaviour
             {
                 dirGancho = Vector2.up;
             }
-            SoundManager.instance.RandomizeSfx(playerRun);
+            
         }
         else if (enganchado)  //Estado Enganchado
         {
