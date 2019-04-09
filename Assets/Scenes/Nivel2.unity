@@ -13962,6 +13962,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4190341099570056, guid: 6f44bec0bba732a44a2bd0b44c9fd52c,
     type: 2}
   m_PrefabInternal: {fileID: 955411662}
+--- !u!212 &964128314 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212146630276602696, guid: 5227f3ad70fbc1e4b80542848fb36e25,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342344663}
 --- !u!1001 &996264150
 Prefab:
   m_ObjectHideFlags: 0
@@ -14282,6 +14287,33 @@ Prefab:
       propertyPath: gancho
       value: 
       objectReference: {fileID: 247604766}
+    - target: {fileID: 4778775826848518, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778775826848518, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 212096182718983634, guid: 5227f3ad70fbc1e4b80542848fb36e25,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995456442442470, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114721662107241760, guid: 5227f3ad70fbc1e4b80542848fb36e25,
+        type: 2}
+      propertyPath: spriteGancho
+      value: 
+      objectReference: {fileID: 1986362889}
+    - target: {fileID: 114721662107241760, guid: 5227f3ad70fbc1e4b80542848fb36e25,
+        type: 2}
+      propertyPath: cadena
+      value: 
+      objectReference: {fileID: 964128314}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
   m_IsPrefabAsset: 0
@@ -16591,6 +16623,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
   m_IsPrefabAsset: 0
+--- !u!212 &1986362889 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212096182718983634, guid: 5227f3ad70fbc1e4b80542848fb36e25,
+    type: 2}
+  m_PrefabInternal: {fileID: 1342344663}
 --- !u!4 &1996392909 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4907214002049224, guid: 9877d4266ff1b604c84ea79effddd065,

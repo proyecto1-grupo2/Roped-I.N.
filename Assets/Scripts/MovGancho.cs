@@ -24,6 +24,9 @@ public class MovGancho : MonoBehaviour
     //Estado actual del gancho (los estados están explicados en el script EstadosGancho)
     HookState currState;
 
+    public SpriteRenderer spriteGancho;
+    public SpriteRenderer cadena;
+
     void Start()
     {
         puntoLanzamiento = Player.transform.GetChild(1);
@@ -31,6 +34,8 @@ public class MovGancho : MonoBehaviour
         currState = HookState.Quieto;
         movement = Vector2.zero;
         shooting = 0;
+        spriteGancho.enabled = false;
+        cadena.enabled = false;
     }
 
     void Update()
@@ -42,6 +47,8 @@ public class MovGancho : MonoBehaviour
                     shooting = 0;
                     transform.SetParent(Player.transform);
                     transform.rotation = transform.parent.rotation;
+                    spriteGancho.enabled = false;
+                    cadena.enabled = false;
                     //Player.EnabledMovement(true);
                     //if (Input.GetButtonDown("Agarre"))
                     //{
@@ -68,6 +75,8 @@ public class MovGancho : MonoBehaviour
                 break;
             case HookState.Ida:
                 {
+                    spriteGancho.enabled = true;
+                    cadena.enabled = true;
                     shooting = 1;
                     if (dir.y > 0)
                     {
@@ -83,6 +92,8 @@ public class MovGancho : MonoBehaviour
                 break;
             case HookState.Vuelta:
                 {
+                    spriteGancho.enabled = true;
+                    cadena.enabled = true;
                     shooting = 1;
                     if (dir.y > 0)
                     {
@@ -103,6 +114,8 @@ public class MovGancho : MonoBehaviour
             //este caso contempla cuando el gancho impacta sobre una zona viscosa (rosa)
             case HookState.Enganchado:
                 {
+                    cadena.enabled = true;
+                    spriteGancho.enabled = true;
                     shooting = 2;
                     transform.parent = null;//Desvinculamos el gancho como hijo del jugador
                     Player.CambiaEstado(true);//Cambia a true el bool "enganchado" en el PlayerController
