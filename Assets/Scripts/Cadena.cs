@@ -18,28 +18,30 @@ public class Cadena : MonoBehaviour {
 	
 
 	void Update () {
-        
+        transform.position = ptoLanzamiento.position;
         if (gancho.GetComponent<MovGancho>().daEstado() == HookState.Quieto)
         {
             dir = GetComponentInParent<PlayerController>().DevuelveDireccion();
             cadena.size = scale;
+            //transform.rotation = transform.parent.transform.rotation;
             transform.rotation = rot;
         }
         else { 
             if (dir == Vector2.up)
             {
-                transform.rotation = new Quaternion(rot.x, rot.y, 0, rot.w);
+                transform.rotation = new Quaternion(rot.x, rot.y, transform.parent.transform.rotation.z, rot.w);
                 cadena.size = new Vector2(cadena.size.x,- Vector2.Distance(transform.position, gancho.position) );
             }
             else if (dir == Vector2.down)
             {
-                transform.rotation = new Quaternion(rot.x, rot.y, 0, rot.w);
+                transform.rotation = new Quaternion(rot.x, rot.y, transform.parent.transform.rotation.z, rot.w);
                 cadena.size = new Vector2(cadena.size.x, Vector2.Distance(transform.position, gancho.position));
             }
             else if (dir == Vector2.right)
             {
                 if (transform.parent.transform.rotation.y == 0)
                 {
+
                     cadena.size = new Vector2(cadena.size.x, Vector2.Distance(transform.position, gancho.position));
                 }
                 else
