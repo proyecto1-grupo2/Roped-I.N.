@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private float moveX;
     bool saltando;
     public GameObject Suelo;
+    public AudioClip hurt;
+    public AudioClip playerJump;
+    public AudioClip playerRun;
+    public AudioClip dead;
 
     bool jump;
     int tiempoinmune;
@@ -60,6 +64,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.01f) //Nos aseguramos de que el jugador esté en el suelo comparando su rb.velocity.y
             {
                 jump = true;
+                SoundManager.instance.RandomizeSfx(playerJump);
             }
 
             //esta serie de else if es para determinar la direccion donde mira el personaje
@@ -76,6 +81,7 @@ public class PlayerController : MonoBehaviour
                 }
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                SoundManager.instance.RandomizeSfx(playerRun);
             }
 
             else if (Input.GetButton("Izquierda"))
@@ -99,6 +105,7 @@ public class PlayerController : MonoBehaviour
             {
                 dirGancho = Vector2.up;
             }
+            SoundManager.instance.RandomizeSfx(playerRun);
         }
         else if (enganchado)  //Estado Enganchado
         {
