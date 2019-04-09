@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
     int vidasplayer;
     //bool isInmune = false;
     UIManager UIManager;// hace referencia al script UIManager
+    bool savedData = false;
+    bool pausado = false;
 
     void Awake()
     {
@@ -20,6 +22,14 @@ public class GameManager : MonoBehaviour {
         else
         {
             Destroy(this.gameObject);//si ya existe un objeto GameObject, no necestiamos otro
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Pausa();
         }
     }
    
@@ -47,6 +57,7 @@ public class GameManager : MonoBehaviour {
         
 
     }
+
     public void PlayerGanaVida(int vidasplayer)
     {
         
@@ -71,5 +82,44 @@ public class GameManager : MonoBehaviour {
     public void finishGame()
     {
         resetGame();
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void Save()
+    {
+        Debug.Log("Saved");
+        PlayerPrefs.SetInt("lives", vidasplayer);
+        PlayerPrefs.SetString("scene", SceneManager.GetActiveScene().name);
+        savedData = true;
+    }
+
+    public void Load()
+    {
+        Debug.Log("Loaded");
+        if(savedData)
+        {
+            vidasplayer = PlayerPrefs.GetInt("lives");
+            ChangeScene(PlayerPrefs.GetString("scene"));
+        }
+    }
+
+    public void Pausa()
+    {
+        pausado = !pausado;
+
+        if (pausado)
+        {
+            Time.timeScale = 0;
+            UIManager.ModifyMenu(true);
+        }
+        else if (!pausado)
+        {
+            Time.timeScale = 1;
+            UIManager.ModifyMenu(false);
+        }
     }
 }
