@@ -76,7 +76,9 @@ public class GameManager : MonoBehaviour {
     }
     public void resetGame()
     {
-        SceneManager.LoadScene("Nivel1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        pausado = true;
+        Pausa();
     }
 
     public void finishGame()

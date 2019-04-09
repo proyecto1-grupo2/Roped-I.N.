@@ -9,6 +9,7 @@ public class Vida : MonoBehaviour {
     public float tiempoinmune;
     Rigidbody2D rb;
     //UIManager UIManager;
+    public GameObject deathMenu;
     bool isInmune = false;
 
     void Start() {
@@ -29,8 +30,9 @@ public class Vida : MonoBehaviour {
                 GameManager.instance.PlayerLoseLife(vida);
                 if (vida <= 0)
                 {
-                    
-                    GameManager.instance.resetGame();
+                    GameManager.instance.Pausa();
+                    deathMenu.SetActive(true);
+
                 }
             }
 
