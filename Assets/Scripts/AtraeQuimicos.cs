@@ -59,6 +59,11 @@ public class AtraeQuimicos : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        //transform.rotation = new Quaternion(0, 0, 0, 0);
+    }
+
 
     
 
@@ -69,7 +74,7 @@ public class AtraeQuimicos : MonoBehaviour
        if (hook.transform.childCount == 1)
        {
            //Debug.Log("enganchado");
-           ModifyQuimico(true, hook.transform);
+           ModifyQuimico(true, hook.transform.GetChild(0));
        }
        else
        {
