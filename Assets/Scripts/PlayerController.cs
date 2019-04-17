@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    const float maxSpeed = 5;//ponemos un maximo de velocidad se puede poner publico
-    public float acceleration, jumpForce;
+    public float maxSpeed;//ponemos un maximo de velocidad se puede poner publico
+    public float acceleration, jumpForce; //acceleration no haría falta si se utiliza velocity
     private float moveX;
-    bool saltando;
     public GameObject Suelo;
     bool grounded;
     bool camaraMov = false;
@@ -17,10 +16,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip playerJump;
     public AudioClip playerRun;
     public AudioClip dead;
-
-    bool jump;
+    public Transform debugDir;//para pruebas
+    bool jump, landed; //landed no se si se podria utilizar como grounded
     int tiempoinmune;
-    Vector2 movement, dirGancho;
+    Vector2 dirGancho; //movement eliminado
     Rigidbody2D rb;
 
     //daño
@@ -65,25 +64,24 @@ public class PlayerController : MonoBehaviour
 
             //Leo entrada de teclado para moverme en el ejeX
             moveX = Input.GetAxis("Horizontal");
-            // Para que el jugador se pare al soltal el teclado
-             if (!saltando && Input.GetButtonUp("Derecha") || (!saltando && Input.GetButtonUp("Izquierda")))
-             {
-                 rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-             }
-            if (!mov) { moveX = 0; }
+            //// Para que el jugador se pare al soltal el teclado
+            // if (Input.GetButtonUp("Derecha") ||  Input.GetButtonUp("Izquierda"))
+            // {
+            //     rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            // }
+            //if (!mov)                moveX = 0;
 
-            //Salto  si estoy en el suelo
-            if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.01f) //Nos aseguramos de que el jugador esté en el suelo comparando su rb.velocity.y
-            {
-                jump = true;
-                SoundManager.instance.RandomizeSfx(playerJump);
-            }
+            //Salto  si estoy en el suelo, landed lo comprueba 
+
+            jump = Input.GetButtonDown("Jump");
+            landed = Mathf.Abs(rb.velocity.y) < 0.01f;
+            //SoundManager.instance.RandomizeSfx(playerJump);
+
 
             //esta serie de else if es para determinar la direccion donde mira el personaje
             //(para saber donde disparar el gancho)
-            if (Input.GetButton("Derecha"))
+            if (Input.GetAxisRaw("Horizontal") == 1) //Mira dcha.
             {
-                //dirGancho = Vector2.right;
                 dirGancho = Vector2.right;
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
                 if (gancho.daEstado() == HookState.Quieto)
@@ -91,12 +89,13 @@ public class PlayerController : MonoBehaviour
                     //cambia la rotacion en el eje Y del player cuando se mueve a la izquierda
                     transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, 0);
                 }
-                rb.constraints = RigidbodyConstraints2D.None;
+                //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                debugDir.localPosition = dirGancho;
                 //SoundManager.instance.RandomizeSfx(playerRun);
             }
 
-            else if (Input.GetButton("Izquierda"))
+            else if (Input.GetAxisRaw("Horizontal") == -1) //Mira izq
             {
                 dirGancho = Vector2.right;
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
@@ -105,20 +104,25 @@ public class PlayerController : MonoBehaviour
                     //pone la rotacion en el eje Y del jugador a 0 si se mueve a la derecha
                     transform.rotation = new Quaternion(transform.rotation.x, -180, transform.rotation.z, 0);
                 }
-                rb.constraints = RigidbodyConstraints2D.None;
+                //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 //SoundManager.instance.RandomizeSfx(playerRun);
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
+                debugDir.localPosition = dirGancho;
 
-                dirGancho = Vector2.down;
             }
-            else if (Input.GetKey(KeyCode.W))
+            else if (Input.GetAxisRaw("Vertical") == -1) //Mira abajo
+            {
+                dirGancho = Vector2.down;
+                debugDir.localPosition = dirGancho;
+
+            }
+            else if (Input.GetAxisRaw("Vertical") == 1) //Mira arriba
             {
                 dirGancho = Vector2.up;
+                debugDir.localPosition = dirGancho;
+
             }
-            
+
         }
         else if (enganchado)  //Estado Enganchado
         {
@@ -140,37 +144,28 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        Debug.Log(Input.GetAxisRaw("Horizontal"));
         //Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down) * 0.6f, Color.red);
     }
     private void FixedUpdate()//Mueve al personaje
     {
         if (enganchado == false) //aseguramos que no se ejecute cuando sea cinematico
         {
-            //Vector de movimiento
-            movement = new Vector2(moveX, 0);
-            if (rb != null && Mathf.Abs(rb.velocity.x) < maxSpeed) //Limitamos la velocidad del jugador con el rb.velocity.x
-            {
-                /* //para que no se deslice
-                  if (cambio)
-                  {
-                      rb.velocity = new Vector2(0, rb.velocity.y);
-                  }
-                  //para que se pueda volver a mover
-                  if (movement.x == 0)  cambio = false;*/
 
-                rb.AddForce(movement * acceleration); //Movimiento 
+            rb.velocity = new Vector2(moveX * maxSpeed, rb.velocity.y);
+            //if (Mathf.Abs(rb.velocity.x) < maxSpeed)
+            //    rb.AddForce(new Vector2(moveX * acceleration, 0)); //Movimiento           
+            //Salto
+            //La variable jump se hace falsa despues de hacer el salto para que no se ejecute el salto mas veces en el FixedUpdate
+            if (landed && jump)
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                jump = false;
+                //saltando = true;
             }
             if (rb.velocity.y < -10)//para que no caiga muy rapido
             {
                 rb.velocity = new Vector2(rb.velocity.x, -10);
-            }
-            //Salto
-            //La variable jump se hace falsa despues de hacer el salto para que no se ejecute el salto mas veces en el FixedUpdate
-            if (jump)
-            {
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                jump = false;
-                saltando = true;
             }
         }
 
@@ -193,10 +188,10 @@ public class PlayerController : MonoBehaviour
             CambiaEstado(false);
         }
     }
-     private void OnCollisionEnter2D(Collision2D Suelo)
-     {
-         saltando = false;
-     }
+     //private void OnCollisionEnter2D(Collision2D Suelo)
+     //{
+     //    saltando = false;
+     //}
 
     //realiza un pequeño salto al entrar en contacto con un enemigo y sufrir daño
     public void EnemyKnockBack(float enemyPosX)
