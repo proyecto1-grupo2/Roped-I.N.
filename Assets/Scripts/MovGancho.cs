@@ -26,7 +26,7 @@ public class MovGancho : MonoBehaviour
 
     public SpriteRenderer spriteGancho;
     public SpriteRenderer cadena;
-
+    bool mierda;
     void Start()
     {
         puntoLanzamiento = Player.transform.GetChild(1);
@@ -40,6 +40,8 @@ public class MovGancho : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log("Posicion de " + transform.name + " : " + transform.position);
+        Debug.Log("Rotacion de " + transform.name + " : " + transform.rotation);
         switch (currState)
         {
             case HookState.Quieto:
@@ -66,7 +68,7 @@ public class MovGancho : MonoBehaviour
                     //}
                     if (Input.GetButtonDown("Gancho"))
                     {
-                        dir = Player.DevuelveDireccion();
+                        dir = Player.DevuelveDireccion(out mierda);
                         SetMovement(dir);
                         currState = HookState.Ida;
                     }

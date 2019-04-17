@@ -10,6 +10,8 @@ public class AtraeQuimicos : MonoBehaviour
     //Animator ani;
     MovGancho hook;
 
+    bool mierda;
+
     bool colision;
     //public Transform target;
 
@@ -62,9 +64,9 @@ public class AtraeQuimicos : MonoBehaviour
     void Update()
     {
 
-        if (hook != null)
+        if (hook != null && hook.GetComponent<MovGancho>().daEstado()==HookState.Quieto)
         {
-            Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
+            Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion(out mierda);
             if (dir == Vector2.up)
             {
                 transform.rotation = new Quaternion(0, 0, 0, 0);
@@ -75,7 +77,7 @@ public class AtraeQuimicos : MonoBehaviour
             }
             else if (dir == Vector2.right)
             {
-                transform.rotation = new Quaternion(0, 0, 90, 0);
+                transform.rotation = new Quaternion(0, 0, 0, 0);
             }
         }
         

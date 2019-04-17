@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip playerRun;
     public AudioClip dead;
 
+
+    bool izq = false;
+
     bool jump;
     int tiempoinmune;
     Vector2 movement, dirGancho;
@@ -83,6 +86,7 @@ public class PlayerController : MonoBehaviour
             //(para saber donde disparar el gancho)
             if (Input.GetButton("Derecha"))
             {
+                izq = false;
                 //dirGancho = Vector2.right;
                 dirGancho = Vector2.right;
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
@@ -98,6 +102,7 @@ public class PlayerController : MonoBehaviour
 
             else if (Input.GetButton("Izquierda"))
             {
+                izq = true;
                 dirGancho = Vector2.right;
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
                 if (gancho.daEstado() == HookState.Quieto)
@@ -111,11 +116,12 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.S))
             {
-
+                izq = false;
                 dirGancho = Vector2.down;
             }
             else if (Input.GetKey(KeyCode.W))
             {
+                izq = false;
                 dirGancho = Vector2.up;
             }
             
@@ -237,8 +243,9 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    public Vector2 DevuelveDireccion()
+    public Vector2 DevuelveDireccion(out bool izquierda)
     {
+        izquierda = izq;
         return dirGancho;
     }
     public void SetGrounded(bool ground)
