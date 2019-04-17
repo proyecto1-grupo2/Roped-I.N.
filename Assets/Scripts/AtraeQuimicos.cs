@@ -61,7 +61,25 @@ public class AtraeQuimicos : MonoBehaviour
 
     void Update()
     {
-        //transform.rotation = new Quaternion(0, 0, 0, 0);
+
+        if (hook != null)
+        {
+            Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
+            if (dir == Vector2.up)
+            {
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+            else if (dir == Vector2.down)
+            {
+                transform.rotation = new Quaternion(0, 0, 180, 0);
+            }
+            else if (dir == Vector2.right)
+            {
+                transform.rotation = new Quaternion(0, 0, 90, 0);
+            }
+        }
+        
+
     }
 
 
