@@ -86,11 +86,8 @@ public class AtraeQuimicos : MonoBehaviour
 
     }
 
-
     
-
-
-
+    //Hace hijo al quimico del spritegancho 
     public void Enganche()
     {
        if (hook.transform.GetChild(0).childCount == 0)
@@ -103,13 +100,15 @@ public class AtraeQuimicos : MonoBehaviour
            ModifyQuimico(false, null);
        }
     }
-
+    //Metodo auxiliar para hacer hijo al quimico del spritegancho (es el que más hace realmente)
     void ModifyQuimico(bool enganchado, Transform parent)
     {
         transform.GetComponent<BoxCollider2D>().isTrigger = enganchado;
         transform.SetParent(parent);
-        transform.position = new Vector3(hook.transform.GetChild(0).position.x , hook.transform.GetChild(0).transform.position.y+0.2f, transform.position.z);
-        //transform.position = new Vector3(hook.transform.GetChild(0).position.x , hook.transform.GetChild(0).transform.position.y , transform.position.z);
+        //este es mejor visualmente pero da problemas cuando coges el quimico cuando el gancho esta en vuelta
+        //transform.position = new Vector3(transform.position.x , transform.position.y + 0.9f, transform.position.z); 
+        transform.position = new Vector3(hook.transform.GetChild(0).position.x, hook.transform.GetChild(0).transform.position.y + 0.2f, transform.position.z);
+
 
         transform.GetComponent<Rigidbody2D>().isKinematic = enganchado;
     }

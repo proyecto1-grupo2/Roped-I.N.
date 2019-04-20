@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotacionSpriteGancho : MonoBehaviour {
+
+    /*
+     * Lo que hace es rotar al sprite del gancho para que salga bien girado dependiendo de hacia donde se mueva
+     */ 
+
     public Transform gancho;
     Vector2 dir;
     Quaternion rot;
     bool izquierda = false;
-    // Use this for initialization
     void Start () {
         dir = Vector2.right;
         rot = transform.rotation;
 
     }
 
-    // Update is called once per frame
+
     void Update () {
         if (gancho.GetComponent<MovGancho>().daEstado() == HookState.Quieto)
         {
