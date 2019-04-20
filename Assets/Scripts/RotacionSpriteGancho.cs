@@ -18,7 +18,10 @@ public class RotacionSpriteGancho : MonoBehaviour {
     void Update () {
         if (gancho.GetComponent<MovGancho>().daEstado() == HookState.Quieto)
         {
-            dir = GetComponentInParent<PlayerController>().DevuelveDireccion(out izquierda);
+            if (transform.GetComponentInParent<PlayerController>()!=null)//por si cuando estas enganchado saltas puede dar error
+                dir = GetComponentInParent<PlayerController>().DevuelveDireccion(out izquierda);
+            
+            
             //transform.rotation = transform.parent.transform.rotation;
             transform.rotation = rot;
         }

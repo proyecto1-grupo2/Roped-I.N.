@@ -127,8 +127,11 @@ public class MovGancho : MonoBehaviour
         if (transform.childCount > 0 && Input.GetButtonDown("Soltar"))
         {
             //transform.GetComponentInChildren<AtraeQuimicos>().DesenganchaQuimico();
-            transform.GetComponentInChildren<AtraeQuimicos>().Enganche();
-            currState = HookState.Vuelta;
+            if (transform.GetChild(0).GetComponentInChildren<AtraeQuimicos>() != null)
+            {
+                transform.GetChild(0).GetComponentInChildren<AtraeQuimicos>().Enganche();
+                currState = HookState.Vuelta;
+            }
         }
     }
 
