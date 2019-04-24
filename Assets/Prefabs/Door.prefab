@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212891489992170246}
   - component: {fileID: 61932812446846732}
   - component: {fileID: 114760821682590670}
+  - component: {fileID: 95449782247790684}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -35,13 +36,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1187803499857528}
-  m_LocalRotation: {x: 0, y: -0.45181212, z: 0, w: 0.89211315}
-  m_LocalPosition: {x: -4.245, y: -0.91, z: 0.041015625}
-  m_LocalScale: {x: 0.06937669, y: 0.14626832, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.297, y: 1.035, z: 24.62}
+  m_LocalScale: {x: 0.53578466, y: 0.8767385, z: 0.75009847}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -53.72, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &61932812446846732
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -54,19 +55,37 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.16, y: -0.32}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.048, y: 4.096}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 0.32, y: 0.64}
     newSize: {x: 2.048, y: 4.096}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.048, y: 4.096}
+  m_Size: {x: 0.32, y: 0.64}
   m_EdgeRadius: 0
+--- !u!95 &95449782247790684
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187803499857528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a70e3239aca2c9c4ebf237cade2b3a28, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114760821682590670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +132,7 @@ SpriteRenderer:
   m_SortingLayerID: 1483714609
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e4edd60742a2de4a89bc2b4a5328c72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76ecf367e3726ae46a58d1f831db1f57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
