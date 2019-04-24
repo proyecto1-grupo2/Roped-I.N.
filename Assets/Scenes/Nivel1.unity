@@ -14426,7 +14426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9ef86660b2fac42bb331a60599f69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 0
   acceleration: 15
   jumpForce: 6.5
   Suelo: {fileID: 0}
@@ -14434,7 +14434,7 @@ MonoBehaviour:
   playerJump: {fileID: 8300000, guid: 64439af529a32564abe783321f1df719, type: 3}
   playerRun: {fileID: 8300000, guid: eb727ed373a71dd458d2f9edec81b305, type: 3}
   dead: {fileID: 8300000, guid: 62d6fed950b397947b4bd416ffac9380, type: 3}
-  debugDir: {fileID: 557171956}
+  debugDir: {fileID: 0}
   Timedmg: 0.7
   velocidadEnganchado: 5
 --- !u!114 &1230789773
@@ -14588,9 +14588,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde8a5eddf503674185ede5a486392ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  accel: 1
+  maxSpeed: 0
+  acceleration: 0
   jumpForce: 10
+  Suelo: {fileID: 0}
+  hurt: {fileID: 0}
+  playerJump: {fileID: 0}
+  playerRun: {fileID: 0}
+  dead: {fileID: 0}
+  debugDir: {fileID: 0}
+  Timedmg: 0
+  velocidadEnganchado: 0
 --- !u!1001 &1268389183
 Prefab:
   m_ObjectHideFlags: 0
