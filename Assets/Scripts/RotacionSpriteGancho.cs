@@ -33,27 +33,27 @@ public class RotacionSpriteGancho : MonoBehaviour {
         {
             
             transform.rotation = new Quaternion(0, 0, 0,1);//Rotacion del spritegancho
-            Debug.Log("Rotacion arriba de " + transform.name + " : " + transform.rotation);
+           // Debug.Log("Rotacion arriba de " + transform.name + " : " + transform.rotation);
             //transform.rotation = new Quaternion(rot.x, rot.y, transform.parent.transform.rotation.z, rot.w);
         }
         else if (dir == Vector2.down)
         {
             
             transform.rotation = new Quaternion(0, 0, 1, 0);//Rotacion del spritegancho
-            Debug.Log("Rotacion abajo de " + transform.name + " : " + transform.rotation);
+           // Debug.Log("Rotacion abajo de " + transform.name + " : " + transform.rotation);
             //transform.rotation = new Quaternion(rot.x, rot.y, transform.parent.transform.rotation.z, rot.w);
         }
         else if (dir == Vector2.right)
         {
             if (transform.parent.transform.rotation.y == 0)
             {
-                Debug.Log("Rotacion derecha de " + transform.name + " : " + transform.rotation);
+                //Debug.Log("Rotacion derecha de " + transform.name + " : " + transform.rotation);
                 transform.rotation = new Quaternion(0.7f, 0.7f, 0, 0);//rotacion del sprite gancho
 
             }
             else if(izquierda)
             {
-                Debug.Log("Rotacion izquierda de " + transform.name + " : " + transform.rotation);
+                //Debug.Log("Rotacion izquierda de " + transform.name + " : " + transform.rotation);
                 transform.rotation = new Quaternion(-0.7f, 0.7f, 0, 0);//Rotacion del spritegancho
 
             }

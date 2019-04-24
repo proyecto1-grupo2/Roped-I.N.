@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     bool izq = false;
 
-    bool jump;
+   
     int tiempoinmune;
     Vector2 dirGancho; //movement eliminado
     Rigidbody2D rb;

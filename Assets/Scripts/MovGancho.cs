@@ -41,7 +41,7 @@ public class MovGancho : MonoBehaviour
     void Update()
     {
         //Debug.Log("Posicion de " + transform.name + " : " + transform.position);
-        Debug.Log("Rotacion de " + transform.name + " : " + transform.rotation);
+        //Debug.Log("Rotacion de " + transform.name + " : " + transform.rotation);
         switch (currState)
         {
             case HookState.Quieto:
