@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: 8b8566f277f085247a47b1ef66d989f3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: TilesUtiles_0
+    21300002: TilesUtiles_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -82,7 +84,47 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TilesUtiles_0
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 363
+        width: 128
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35649e7ccc47a84b969788129259620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesUtiles_1
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 234
+        width: 101
+        height: 101
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c12fb4b8959d04d8df6f126364e9be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
