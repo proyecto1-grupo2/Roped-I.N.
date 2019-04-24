@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413536634811804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.27, y: -1.78, z: 0}
+  m_LocalPosition: {x: -3.84, y: -1.31, z: 0}
   m_LocalScale: {x: 1.016, y: 1.076625, z: 1}
   m_Children:
   - {fileID: 4780630879989768}
@@ -243,7 +243,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1413536634811804}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 23fa1ca658f64294ba55a91deed698e6, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -304,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 3
   tiempoinmune: 0
+  deathMenu: {fileID: 0}
 --- !u!114 &114514126412874742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,9 +316,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9ef86660b2fac42bb331a60599f69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 15
-  jumpForce: 5.5
-  Suelo: {fileID: 0}
+  Speed: 5
+  jumpForce: 6.5
+  hurt: {fileID: 8300000, guid: f9bb2804299baca40baf8aae05464ffb, type: 3}
+  playerJump: {fileID: 8300000, guid: 64439af529a32564abe783321f1df719, type: 3}
+  playerRun: {fileID: 8300000, guid: eb727ed373a71dd458d2f9edec81b305, type: 3}
+  dead: {fileID: 8300000, guid: 62d6fed950b397947b4bd416ffac9380, type: 3}
+  debugDir: {fileID: 0}
   Timedmg: 0.7
   velocidadEnganchado: 5
 --- !u!114 &114572753316451808

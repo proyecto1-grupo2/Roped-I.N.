@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float maxSpeed;//ponemos un maximo de velocidad se puede poner publico
-    public float acceleration, jumpForce; //acceleration no haría falta si se utiliza velocity
+    public float Speed,//ponemos un maximo de velocidad se puede poner publico
+                 jumpForce; //acceleration no haría falta si se utiliza velocity
     private float moveX;
-    public GameObject Suelo;
     bool grounded;
     bool camaraMov = false;
     int shooting;
@@ -17,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip playerRun;
     public AudioClip dead;
     public Transform debugDir;//para pruebas
-    bool jump, landed; //landed no se si se podria utilizar como grounded
+    bool jump, landed, puedeSaltar; //landed no se si se podria utilizar como grounded
     int tiempoinmune;
     Vector2 dirGancho; //movement eliminado
     Rigidbody2D rb;
@@ -47,7 +46,7 @@ public class PlayerController : MonoBehaviour
         posGanchoInicio = gancho.transform.localPosition;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         anim = GetComponent<Animator>();
-
+        puedeSaltar = false;
     }
     private void Update()
     {
@@ -75,6 +74,10 @@ public class PlayerController : MonoBehaviour
 
             jump = Input.GetButtonDown("Jump");
             landed = Mathf.Abs(rb.velocity.y) < 0.01f;
+            if (jump && landed)
+            {
+                puedeSaltar = true;
+            }
             //SoundManager.instance.RandomizeSfx(playerJump);
 
 
@@ -91,7 +94,6 @@ public class PlayerController : MonoBehaviour
                 }
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                debugDir.localPosition = dirGancho;
                 //SoundManager.instance.RandomizeSfx(playerRun);
             }
 
@@ -107,20 +109,16 @@ public class PlayerController : MonoBehaviour
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 //SoundManager.instance.RandomizeSfx(playerRun);
-                debugDir.localPosition = dirGancho;
 
             }
             else if (Input.GetAxisRaw("Vertical") == -1) //Mira abajo
             {
                 dirGancho = Vector2.down;
-                debugDir.localPosition = dirGancho;
 
             }
             else if (Input.GetAxisRaw("Vertical") == 1) //Mira arriba
             {
                 dirGancho = Vector2.up;
-                debugDir.localPosition = dirGancho;
-
             }
 
         }
@@ -130,12 +128,7 @@ public class PlayerController : MonoBehaviour
             posGancho = gancho.GetComponent<Transform>().position;
             if (transform.position.x < posGancho.x) posGancho -= posGanchoInicio;
             else posGancho += posGanchoInicio;
-            //var heading = posGancho - transform.position;
-            //Debug.Log("heading"+heading);
-            // if(transform.position.x<posGancho.x) transform.Translate(heading.x * Time.deltaTime, heading.y * Time.deltaTime, 0);
-            //else transform.Translate(-heading.x * Time.deltaTime, heading.y * Time.deltaTime, 0);
             transform.position = Vector2.MoveTowards(transform.position, posGancho, step);
-            //transform.position = Vector2.Lerp(transform.position, posGancho, step);
             if (Vector2.Distance(transform.position, gancho.transform.position) < 0.8f)
             {
                 gancho.cambiaEstado(HookState.Quieto);
@@ -144,31 +137,35 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        Debug.Log(Input.GetAxisRaw("Horizontal"));
-        //Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down) * 0.6f, Color.red);
     }
     private void FixedUpdate()//Mueve al personaje
     {
+
         if (enganchado == false) //aseguramos que no se ejecute cuando sea cinematico
         {
 
-            rb.velocity = new Vector2(moveX * maxSpeed, rb.velocity.y);
-            //if (Mathf.Abs(rb.velocity.x) < maxSpeed)
-            //    rb.AddForce(new Vector2(moveX * acceleration, 0)); //Movimiento           
+            rb.velocity = new Vector2(moveX * Speed, rb.velocity.y);
+            
             //Salto
             //La variable jump se hace falsa despues de hacer el salto para que no se ejecute el salto mas veces en el FixedUpdate
-            if (landed && jump)
+
+            if (Salto())
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 jump = false;
-                //saltando = true;
+                puedeSaltar = false;
             }
+
             if (rb.velocity.y < -10)//para que no caiga muy rapido
             {
                 rb.velocity = new Vector2(rb.velocity.x, -10);
             }
         }
 
+    }
+    private bool Salto()
+    { 
+        return puedeSaltar;
     }
 
     /*****************************************************************************
@@ -188,20 +185,16 @@ public class PlayerController : MonoBehaviour
             CambiaEstado(false);
         }
     }
-     //private void OnCollisionEnter2D(Collision2D Suelo)
-     //{
-     //    saltando = false;
-     //}
 
     //realiza un pequeño salto al entrar en contacto con un enemigo y sufrir daño
-    public void EnemyKnockBack(float enemyPosX)
-    {
-        jump = true;
-        float side = Mathf.Sign(enemyPosX - transform.position.x); //devuelve -1, 0 o 1 dependiendo de si un numero es positivo, negativo o 0. Asi sabremos la direccion donde aplicar la fuerza. 
-        rb.AddForce(Vector2.left * side * jumpForce / 2, ForceMode2D.Impulse); //aplicamos una fuerza diagonal
-        mov = false;//desactivamos mov mientras estemos sufriendo daño
-        Invoke("EnableMovementandColision", Timedmg);//volvemos activar mov despues de un tiempo
-    }
+    //public void EnemyKnockBack(float enemyPosX)
+    //{
+    //    jump = true;
+    //    float side = Mathf.Sign(enemyPosX - transform.position.x); //devuelve -1, 0 o 1 dependiendo de si un numero es positivo, negativo o 0. Asi sabremos la direccion donde aplicar la fuerza. 
+    //    rb.AddForce(Vector2.left * side * jumpForce / 2, ForceMode2D.Impulse); //aplicamos una fuerza diagonal
+    //    mov = false;//desactivamos mov mientras estemos sufriendo daño
+    //    Invoke("EnableMovementandColision", Timedmg);//volvemos activar mov despues de un tiempo
+    //}
     //activa/desactiva el movimiento
     public bool EnabledMovement(bool valor)
     {
@@ -241,5 +234,3 @@ public class PlayerController : MonoBehaviour
         grounded = ground;
     }
 }
-
-
