@@ -46,4 +46,10 @@ public class UIManager : MonoBehaviour
     {
         pauseMenu.SetActive(mode);
     }
+
+    public void CierraJuego()
+    {
+        Debug.Log("CerrandoJuego");
+        Application.Quit();
+    }
 }
