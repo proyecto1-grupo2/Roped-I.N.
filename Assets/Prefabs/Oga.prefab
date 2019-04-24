@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1315391848260266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.64, y: 0.51, z: 0.056640625}
+  m_LocalPosition: {x: -35.4, y: -2, z: -0.029296875}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -152,6 +152,7 @@ MonoBehaviour:
   dpsFuego: 10
   "da\xF1oEleco": 10
   tStun: 4
+  hielo: {fileID: 0}
 --- !u!114 &114668755193212102
 MonoBehaviour:
   m_ObjectHideFlags: 1

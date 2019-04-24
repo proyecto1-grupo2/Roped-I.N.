@@ -162,6 +162,7 @@ MonoBehaviour:
   dpsFuego: 10
   "da\xF1oEleco": 10
   tStun: 5
+  hielo: {fileID: 0}
 --- !u!114 &114713152372933588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 30
   tiempoinmune: 0
+  deathMenu: {fileID: 0}
 --- !u!212 &212666853919015964
 SpriteRenderer:
   m_ObjectHideFlags: 1

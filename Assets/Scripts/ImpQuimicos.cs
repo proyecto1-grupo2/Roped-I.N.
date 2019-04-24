@@ -11,7 +11,7 @@ public class ImpQuimicos : MonoBehaviour
     public int dpsFuego=10, dañoEleco=10;//daño del quimico electrico y fuego por defecto
     bool quemado;
     public float tStun=4;//tiempo de stun por defecto
-
+    public GameObject hielo;
 
     void Start()
     {
@@ -67,10 +67,14 @@ public class ImpQuimicos : MonoBehaviour
                 {
                     gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
                 }
-
+                //Instantiate(hielo, transform.position, transform.rotation);
+                hielo.transform.position = transform.position;
+                hielo.GetComponent<SpriteRenderer>().enabled = true;
+                hielo.GetComponent<SpriteRenderer>().enabled = true;
+                hielo.transform.localScale = transform.lossyScale;
                 //Cambiar sprite (De momento solo cambia el tono a un más azulado)
-                SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
-                sprit.material.color = Color.blue;
+                /*SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
+                sprit.material.color = Color.blue;*/
                 Invoke("cambiaEstadoNada", tStun);
                 break;
             case EnemyState.Paralizado:
@@ -108,7 +112,8 @@ public class ImpQuimicos : MonoBehaviour
             gameObject.GetComponent<PursuitTarget>().enabled = true;
         }
         gameObject.GetComponent<Damage>().enabled = true;
-        gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+        // gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+        hielo.GetComponent<SpriteRenderer>().enabled = false;
         if (gameObject.GetComponent<BoxCollider2D>())
         {
             gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
