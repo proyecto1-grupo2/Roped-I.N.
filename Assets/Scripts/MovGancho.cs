@@ -26,7 +26,7 @@ public class MovGancho : MonoBehaviour
 
     public SpriteRenderer spriteGancho;
     public SpriteRenderer cadena;
-
+    bool izquierda;
     void Start()
     {
         puntoLanzamiento = Player.transform.GetChild(1);
@@ -40,6 +40,8 @@ public class MovGancho : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log("Posicion de " + transform.name + " : " + transform.position);
+        Debug.Log("Rotacion de " + transform.name + " : " + transform.rotation);
         switch (currState)
         {
             case HookState.Quieto:
@@ -47,7 +49,7 @@ public class MovGancho : MonoBehaviour
                     shooting = 0;
                     transform.SetParent(Player.transform);
                     transform.rotation = transform.parent.rotation;
-                    spriteGancho.enabled = false;
+                    //spriteGancho.enabled = false;
                     cadena.enabled = false;
                     //Player.EnabledMovement(true);
                     //if (Input.GetButtonDown("Agarre"))
@@ -66,7 +68,7 @@ public class MovGancho : MonoBehaviour
                     //}
                     if (Input.GetButtonDown("Gancho"))
                     {
-                        dir = Player.DevuelveDireccion();
+                        dir = Player.DevuelveDireccion(out izquierda);
                         SetMovement(dir);
                         currState = HookState.Ida;
                     }
@@ -125,8 +127,11 @@ public class MovGancho : MonoBehaviour
         if (transform.childCount > 0 && Input.GetButtonDown("Soltar"))
         {
             //transform.GetComponentInChildren<AtraeQuimicos>().DesenganchaQuimico();
-            transform.GetComponentInChildren<AtraeQuimicos>().Enganche();
-            currState = HookState.Vuelta;
+            if (transform.GetChild(0).GetComponentInChildren<AtraeQuimicos>() != null)
+            {
+                transform.GetChild(0).GetComponentInChildren<AtraeQuimicos>().Enganche();
+                currState = HookState.Vuelta;
+            }
         }
     }
 

@@ -10,6 +10,8 @@ public class AtraeQuimicos : MonoBehaviour
     //Animator ani;
     MovGancho hook;
 
+    bool izquierda;
+
     bool colision;
     //public Transform target;
 
@@ -59,29 +61,55 @@ public class AtraeQuimicos : MonoBehaviour
 
     }
 
+    void Update()
+    {
+
+        if (hook != null && hook.GetComponent<MovGancho>().daEstado()==HookState.Quieto)
+        {
+            Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion(out izquierda);
+            if (dir == Vector2.up)
+            {
+                transform.rotation = new Quaternion(0, 0, 0, 0);
+            }
+            else if (dir == Vector2.down)
+            {
+                transform.rotation = new Quaternion(0, 0, 0, 1);
+            }
+            else if (dir == Vector2.right)
+            {
+                
+                transform.rotation = new Quaternion(0, 0, 0, 1);//Rotacion del spritegancho
+
+            }
+        }
+        
+
+    }
 
     
-
-
-
+    //Hace hijo al quimico del spritegancho 
     public void Enganche()
     {
-       if (hook.transform.childCount == 1)
+       if (hook.transform.GetChild(0).childCount == 0)
        {
            //Debug.Log("enganchado");
-           ModifyQuimico(true, hook.transform);
+           ModifyQuimico(true, hook.transform.GetChild(0));
        }
        else
        {
            ModifyQuimico(false, null);
        }
     }
-
+    //Metodo auxiliar para hacer hijo al quimico del spritegancho (es el que más hace realmente)
     void ModifyQuimico(bool enganchado, Transform parent)
     {
         transform.GetComponent<BoxCollider2D>().isTrigger = enganchado;
         transform.SetParent(parent);
-        transform.position = new Vector3(transform.position.x , transform.position.y + 0.2f, transform.position.z);
+        //este es mejor visualmente pero da problemas cuando coges el quimico cuando el gancho esta en vuelta
+        //transform.position = new Vector3(transform.position.x , transform.position.y + 0.9f, transform.position.z); 
+        transform.position = new Vector3(hook.transform.GetChild(0).position.x, hook.transform.GetChild(0).transform.position.y + 0.2f, transform.position.z);
+
+
         transform.GetComponent<Rigidbody2D>().isKinematic = enganchado;
     }
     //void EnganchaQuimico()

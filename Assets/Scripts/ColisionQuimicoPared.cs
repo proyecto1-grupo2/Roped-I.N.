@@ -13,6 +13,7 @@ public class ColisionQuimicoPared : MonoBehaviour {
         if (transform.parent != null && LayerMask.LayerToName(other.gameObject.layer) == "Terreno")
         {
             //Debug.Log("hola");
+            if(transform.parent.GetComponent<MovGancho>()!=null)
             transform.parent.GetComponent<MovGancho>().cambiaEstado(HookState.Vuelta);
 
         }
