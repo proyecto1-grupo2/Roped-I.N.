@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 50194011839068462}
   - component: {fileID: 114703646378052876}
   - component: {fileID: 114301892111576776}
+  - component: {fileID: 114387214814313444}
+  - component: {fileID: 114823631603653444}
   m_Layer: 8
   m_Name: Turm
   m_TagString: Enemy
@@ -104,6 +106,20 @@ MonoBehaviour:
   timeBetweenShots: 2
   pool: {fileID: 0}
   alcance: 15
+--- !u!114 &114387214814313444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547444706973982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba625e005480e6f4fb777d347bfd1c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dpsFuego: 10
+  "da\xF1oEleco": 10
+  tStun: 4
 --- !u!114 &114703646378052876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +133,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 30
   tiempoinmune: 0
+  deathMenu: {fileID: 0}
+--- !u!114 &114823631603653444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547444706973982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e079d1675b57d9946849d341c9146d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212487292998777118
 SpriteRenderer:
   m_ObjectHideFlags: 1
