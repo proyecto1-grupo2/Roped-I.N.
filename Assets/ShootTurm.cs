@@ -22,7 +22,7 @@ public class ShootTurm : MonoBehaviour {
 	void ShootBullet () {
 
         distancia = Vector3.Distance(Jugador.transform.position, transform.position);
-        Debug.Log(distancia);
+
         if (distancia <= alcance)
         {
             Instantiate(Bullet, transform.position, transform.rotation, pool);
