@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114454404677615680}
   - component: {fileID: 114479153694955874}
   - component: {fileID: 50640143926636274}
+  - component: {fileID: 95994513433154780}
   m_Layer: 12
   m_Name: AguaContaminada
   m_TagString: Untagged
@@ -38,8 +39,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563822365589408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.79, y: -9.7, z: -0.08203125}
-  m_LocalScale: {x: 3.3062193, y: 0.5, z: 1}
+  m_LocalPosition: {x: 5.69, y: 6.94, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,19 +77,37 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 3.0029488, y: -0.46116734}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1.25, y: 1.01}
+    newSize: {x: 6, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.0058975, y: 0.9223347}
   m_EdgeRadius: 0
+--- !u!95 &95994513433154780
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563822365589408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b51ce663882eea44a9122535ca605975, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114454404677615680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,8 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c474727e0123d714da076ff28fffd9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragHielo: 0
-  tCong: 0
 --- !u!212 &212097250032450818
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -150,12 +167,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aff194ef5e7af498694d65b8da277792, type: 3}
-  m_Color: {r: 0.5087665, g: 0.5328544, b: 0.9716981, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 5b8bb4c58e072c3459e538a10da1251f, type: 3}
+  m_Color: {r: 0, g: 0.735849, b: 0.45272943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 2
+  m_Size: {x: 6, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
