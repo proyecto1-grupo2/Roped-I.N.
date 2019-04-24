@@ -14856,9 +14856,30 @@ Prefab:
       propertyPath: BypassReverbZones
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1338939485475708, guid: 1d7831290a5c5fc419e411c07d01b870, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d7831290a5c5fc419e411c07d01b870, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1733323152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1995456442442470, guid: 5227f3ad70fbc1e4b80542848fb36e25,
+    type: 2}
+  m_PrefabInternal: {fileID: 190263559}
+--- !u!114 &1733323154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1733323152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd0b7284dffc9e4093399a6d2637372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gancho: {fileID: 31006453}
 --- !u!4 &1737432286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4907214002049224, guid: 9877d4266ff1b604c84ea79effddd065,

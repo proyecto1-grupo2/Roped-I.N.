@@ -49,7 +49,7 @@ public class MovGancho : MonoBehaviour
                     shooting = 0;
                     transform.SetParent(Player.transform);
                     transform.rotation = transform.parent.rotation;
-                    spriteGancho.enabled = false;
+                    //spriteGancho.enabled = false;
                     cadena.enabled = false;
                     //Player.EnabledMovement(true);
                     //if (Input.GetButtonDown("Agarre"))
