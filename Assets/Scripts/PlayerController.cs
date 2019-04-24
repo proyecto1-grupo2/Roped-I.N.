@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
             posGancho = gancho.GetComponent<Transform>().position;
             if (transform.position.x < posGancho.x) posGancho -= posGanchoInicio;
             else posGancho += posGanchoInicio;
-            transform.position = Vector2.MoveTowards(transform.position, posGancho, step);
+            transform.position = Vector2.MoveTowards(transform.position, gancho.transform.GetChild(0).position, step);
             if (Vector2.Distance(transform.position, gancho.transform.position) < 0.8f)
             {
                 gancho.cambiaEstado(HookState.Quieto);
