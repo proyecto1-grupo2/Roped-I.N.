@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        //se puede pausar el juego siempre que el jugador este vivo
+        //(sino en el menu de muerte podias llamar al menu de pausa)
+        if (Input.GetKeyDown(KeyCode.Escape) && vidasplayer>=0)
         {
             Pausa();
         }
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour {
     public void PlayerLoseLife(int vidasplayer)
     {
         UIManager.LifeLost(vidasplayer);
-        
+        this.vidasplayer = vidasplayer;
 
     }
 
@@ -67,11 +69,12 @@ public class GameManager : MonoBehaviour {
             UIManager.GanaVida(vidasplayer);
             vidasplayer += 1;
         }
-        
+        this.vidasplayer = vidasplayer;
     }
     //devuelve el num de vidas
     public int getVidas()
     {
+        Debug.Log(vidasplayer + "fggh");
         return vidasplayer;
     }
     public void resetGame()

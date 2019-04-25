@@ -30,7 +30,8 @@ public class Vida : MonoBehaviour {
                 GameManager.instance.PlayerLoseLife(vida);
                 if (vida <= 0)
                 {
-                    GameManager.instance.Pausa();
+                    //GameManager.instance.Pausa();
+                    Time.timeScale = 0;
                     deathMenu.SetActive(true);
 
                 }
@@ -51,7 +52,10 @@ public class Vida : MonoBehaviour {
             rb.velocity = Vector2.zero;
         }
     }
-
+    /*public int daVida()
+    {
+        return vida;
+    }*/
     void NoInmune()
     {
         isInmune = false;
