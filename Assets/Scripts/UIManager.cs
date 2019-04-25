@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public Image[] lives;
     public GameObject pauseMenu;
-    // Use this for initialization
+
     void Start()
     {
         GameManager.instance.SetUI(this);
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     }
     public void ModifyMenu(bool mode)
     {
-        pauseMenu.SetActive(mode);
+        pauseMenu.SetActive(mode);            
     }
 
     public void CierraJuego()
