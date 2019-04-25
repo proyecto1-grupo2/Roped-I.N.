@@ -19,7 +19,7 @@ public class FollowTarget : MonoBehaviour
     {
         if (target != null)
         {
-         if(Input.GetKey("left shift") && Input.GetButton("Arriba"))
+            if(Input.GetKey("left shift") && Input.GetButton("Arriba"))
             {
                 if (transform.position.y < pos.y + mueveCamara)
                 {
@@ -33,7 +33,20 @@ public class FollowTarget : MonoBehaviour
                     transform.Translate(0, -15 * Time.deltaTime, 0);
                 }
             }
-
+            /*else if (Input.GetAxisRaw("MueveCamara")==-1)//arriba
+            {
+                if (transform.position.y < pos.y + mueveCamara)
+                {
+                    transform.Translate(0, 15 * Time.deltaTime, 0);
+                }
+            }
+            else if (Input.GetAxisRaw("MueveCamara") == 1)//abajo
+            {
+                if (transform.position.y > pos.y - mueveCamara)
+                {
+                    transform.Translate(0, -15 * Time.deltaTime, 0);
+                }
+            }*/
             else
             {
 
