@@ -37,5 +37,9 @@ public class DeadZone : MonoBehaviour
     {
         congelada = !congelada;
     }
+    public void CambioSpawn(Transform newspawn)
+    {
+        spawnPoint = newspawn;
+    }
 }
 
