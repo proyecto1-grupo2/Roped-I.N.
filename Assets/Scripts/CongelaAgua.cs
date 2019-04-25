@@ -27,6 +27,7 @@ public class CongelaAgua : MonoBehaviour
             //gameObject.GetComponent<Rigidbody2D>().drag = dragHielo;
             Destroy(other.gameObject);
             anim.SetBool("Congelada", true);
+            SoundManager.instance.CallSoundManager("hielo");
             Debug.Log("Congelada");
             //Cambiar sprite (De momento solo cambia el tono a un más azulado)
             //SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();

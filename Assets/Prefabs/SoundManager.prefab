@@ -53,7 +53,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.626
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -148,7 +148,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2d9eb979236653e4b8dbb6a8b1b397da, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -245,5 +245,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fxSource: {fileID: 82321562540838358}
   musicSource: {fileID: 82973072503624192}
+  hielo: {fileID: 8300000, guid: 3457fdc8d7396704e9d73f3ecf8f235f, type: 3}
+  fuego: {fileID: 8300000, guid: 7727491aeab4f4c4fb83fa14177172fb, type: 3}
+  explosivo: {fileID: 8300000, guid: 7b6bc1094c8983b4fa0b6a8e6b00cb13, type: 3}
+  electrico: {fileID: 8300000, guid: bd8d0d7613d88804881dd2e7213fcf01, type: 3}
+  salud: {fileID: 8300000, guid: 34e7e5d047704a24f85b47b38f4c63c4, type: 3}
+  enemyDamage: {fileID: 8300000, guid: a946fc1e476af404c8954759b026e320, type: 3}
+  hurt: {fileID: 8300000, guid: f9bb2804299baca40baf8aae05464ffb, type: 3}
+  playerJump: {fileID: 8300000, guid: 64439af529a32564abe783321f1df719, type: 3}
+  playerRun: {fileID: 8300000, guid: eb727ed373a71dd458d2f9edec81b305, type: 3}
+  dead: {fileID: 8300000, guid: 62d6fed950b397947b4bd416ffac9380, type: 3}
+  repeatRate: 0.5
   lowPitchRange: 0.95
   highPitchRange: 1.05

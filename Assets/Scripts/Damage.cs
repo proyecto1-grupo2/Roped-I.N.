@@ -32,6 +32,7 @@ public class Damage : MonoBehaviour
                     //(por ejemplo balas perdidas que no hagan daño a otros enemigos)
                     if (!gameObject.CompareTag("Enemy"))
                     {
+                        SoundManager.instance.CallSoundManager("enemyDamage");
                         other.GetComponent<Vida>().LoseLife(damage);
                     }
 

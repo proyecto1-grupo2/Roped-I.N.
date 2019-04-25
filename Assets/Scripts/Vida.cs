@@ -32,6 +32,7 @@ public class Vida : MonoBehaviour {
     //Quitamos vida en funcion del daño que llega
     public void LoseLife(int dmg)
     {
+        SoundManager.instance.CallSoundManager("hurt");
         vida -= dmg;
         if (gameObject.GetComponent<PlayerController>()) //si el jugador sufre daño
         {
