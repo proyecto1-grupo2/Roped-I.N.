@@ -30,7 +30,7 @@ public class Death : MonoBehaviour
         else
         {
             dead = true;
-            Invoke("DeadFalse", 2f);
+            Invoke("DeadFalse", 1f);
             //Debug.Log("Soy otra cosa");
             
         }
