@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -51,5 +52,9 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("CerrandoJuego");
         Application.Quit();
+    }
+    public void Retry()
+    {
+        SceneChange(SceneManager.GetActiveScene().name);
     }
 }
