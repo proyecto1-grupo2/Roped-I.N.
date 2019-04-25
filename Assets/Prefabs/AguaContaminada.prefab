@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 95994513433154780}
   m_Layer: 12
   m_Name: AguaContaminada
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

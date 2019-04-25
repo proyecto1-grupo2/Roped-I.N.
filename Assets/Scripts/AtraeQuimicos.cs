@@ -66,7 +66,7 @@ public class AtraeQuimicos : MonoBehaviour
 
         if (hook != null && hook.GetComponent<MovGancho>().daEstado()==HookState.Quieto)
         {
-            Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion(out izquierda);
+            Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
             if (dir == Vector2.up)
             {
                 transform.rotation = new Quaternion(0, 0, 0, 0);

@@ -241,9 +241,9 @@ public class PlayerController : MonoBehaviour
     }
     //Este metodo duelve la direccion del gancho, lleva un parametro para evitar un bug de que 
     //el input de derecha e izquierda hacian que el gancho no se disparaba hacia donde debia
-    public Vector2 DevuelveDireccion(out bool izquierda)
+    public Vector2 DevuelveDireccion()
     {
-        izquierda = izq;
+        //izquierda = izq;
         return dirGancho;
     }
     public void SetGrounded(bool ground)

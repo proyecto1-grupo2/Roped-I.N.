@@ -29,10 +29,11 @@ public class GameManager : MonoBehaviour {
     {
         //se puede pausar el juego siempre que el jugador este vivo
         //(sino en el menu de muerte podias llamar al menu de pausa)
-        if (Input.GetButtonDown("Pausa") && vidasplayer>=0)
+        if (Input.GetButtonDown("Pausa") && vidasplayer>0)
         {
             Pausa();
         }
+        Debug.Log(vidasplayer);
        
     }
    
@@ -61,6 +62,10 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    public void SetPlayerHealth(int playerHealth)
+    {
+        vidasplayer = playerHealth;
+    }
     public void PlayerGanaVida(int vidasplayer)
     {
         

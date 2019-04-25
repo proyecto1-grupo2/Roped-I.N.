@@ -12,12 +12,21 @@ public class Vida : MonoBehaviour {
     //UIManager UIManager;
     public GameObject deathMenu;
     bool isInmune = false;
+    bool hurt = false;
+    private Animator anim;
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<PlayerController>();
+        if (player != null)
+            GameManager.instance.SetPlayerHealth(vida);
+        anim = GetComponent<Animator>();
         
 
+    }
+    private void Update()
+    {
+        anim.SetBool("IsHurt", hurt);
     }
 
     //Quitamos vida en funcion del daño que llega
@@ -43,6 +52,10 @@ public class Vida : MonoBehaviour {
             }
 
 
+        }else if (vida > 0)
+        {
+            hurt = true;
+            Invoke("HurtFalse", 1f);
         }
         else if (vida <= 0) { GetComponent<Death>().OnDead(); }
     }
@@ -78,4 +91,8 @@ public class Vida : MonoBehaviour {
         return isInmune;
     }
 
+    void HurtFalse()
+    {
+        hurt = false;
+    }
 }

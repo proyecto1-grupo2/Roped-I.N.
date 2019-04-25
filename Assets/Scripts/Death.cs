@@ -5,7 +5,7 @@ using UnityEngine;
 public class Death : MonoBehaviour
 {
     PursuitTarget oga;
-    bool dead = false, hurt;
+    bool dead = false;
     private Animator anim;
 
     private void Start()
@@ -43,5 +43,10 @@ public class Death : MonoBehaviour
     {
         Destroy(this.gameObject);
         dead = false;
+    }
+
+    public bool GetDead()
+    {
+        return dead;
     }
 }
