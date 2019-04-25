@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
     public float Speed,//ponemos un maximo de velocidad se puede poner publico
                  jumpForce; //acceleration no haría falta si se utiliza velocity
     private float moveX;
-    bool grounded;
+    bool grounded, hurtanim = false, deadanim = false;
     bool camaraMov = false;
     int shooting;
+    private SpriteRenderer spr;
     private Animator anim;
     public AudioClip hurt;
     public AudioClip playerJump;
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         posGanchoInicio = gancho.transform.localPosition;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         anim = GetComponent<Animator>();
+        spr = GetComponent<SpriteRenderer>();
         puedeSaltar = false;
     }
     private void Update()
@@ -59,6 +61,8 @@ public class PlayerController : MonoBehaviour
         shooting = gancho.GetShooting();
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         anim.SetBool("Grounded", grounded);
+        anim.SetBool("IsHurting", hurtanim);
+        anim.SetBool("IsDead", deadanim);
         anim.SetBool("Jump", jump);
         anim.SetInteger("Shooting", shooting);
 
@@ -245,5 +249,33 @@ public class PlayerController : MonoBehaviour
     public void SetGrounded(bool ground)
     {
         grounded = ground;
+    }
+
+    public void SetHurt(bool hurting)
+    {
+        hurtanim = hurting;
+        spr.color = Color.red;
+        Debug.Log("Daño");
+        Invoke("HurtFalse", 0.1f);
+    }
+
+    void HurtFalse()
+    {
+        hurtanim = false;
+        spr.color = Color.white;
+    }
+
+    public void SetDead(bool dying)
+    {
+        deadanim = dying;
+        spr.color = Color.black;
+
+        Invoke("DeadFalse", 1f);
+    }
+
+    void DeadFalse()
+    {
+        deadanim = false;
+        spr.color = Color.white;
     }
 }

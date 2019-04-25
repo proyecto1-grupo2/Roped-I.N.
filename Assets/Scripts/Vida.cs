@@ -7,6 +7,7 @@ public class Vida : MonoBehaviour {
 
     public int vida;
     public float tiempoinmune;
+    private PlayerController player;
     Rigidbody2D rb;
     //UIManager UIManager;
     public GameObject deathMenu;
@@ -14,6 +15,8 @@ public class Vida : MonoBehaviour {
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+        player = GetComponent<PlayerController>();
+        
 
     }
 
@@ -26,10 +29,12 @@ public class Vida : MonoBehaviour {
             
             if (!isInmune)
             {
+                player.SetHurt(true);
                 Debug.Log("vidas:" + vida);
                 GameManager.instance.PlayerLoseLife(vida);
                 if (vida <= 0)
                 {
+                    player.SetDead(true);
                     //GameManager.instance.Pausa();
                     Time.timeScale = 0;
                     deathMenu.SetActive(true);
