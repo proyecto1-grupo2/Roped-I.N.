@@ -10,10 +10,10 @@ public class Damage : MonoBehaviour
 
     private void Start()
     {
-        dead = GetComponent<Death>();
+        dead = this.GetComponent<Death>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         muerto = dead.GetDead();
     }
@@ -23,7 +23,7 @@ public class Damage : MonoBehaviour
         {
             if (muerto == true)
             {
-                Physics.IgnoreCollision(this.GetComponent<Collider>(), other.GetComponent<Collider>());
+                Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), other.GetComponent<Collider2D>(), true);
             }
             else {
                 if (other.gameObject.CompareTag("Enemy"))
@@ -46,11 +46,7 @@ public class Damage : MonoBehaviour
                 }
             }
             //daño a enemigos
-            
-
-
         }
     }
-
-
+    
 }
