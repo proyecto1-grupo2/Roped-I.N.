@@ -5,6 +5,18 @@ using UnityEngine;
 public class Death : MonoBehaviour
 {
     PursuitTarget oga;
+    bool dead = false, hurt;
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        anim.SetBool("IsDead", dead);
+    }
     //Distingue el caso de la muerte de un enemigo spawneado y hace que los otros objetos mueran
     public void OnDead()
     {
@@ -17,8 +29,17 @@ public class Death : MonoBehaviour
         }
         else
         {
+            dead = true;
+            Invoke("DeadFalse", 2f);
             //Debug.Log("Soy otra cosa");
-            Destroy(this.gameObject);
+            
         }
+
+        
+    }
+    void DeadFalse()
+    {
+        Destroy(this.gameObject);
+        dead = false;
     }
 }
