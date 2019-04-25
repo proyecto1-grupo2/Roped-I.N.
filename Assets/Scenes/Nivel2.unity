@@ -14859,7 +14859,7 @@ GameObject:
   - component: {fileID: 636519619}
   - component: {fileID: 636519621}
   - component: {fileID: 636519620}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: SpawnIz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14927,7 +14927,7 @@ GameObject:
   - component: {fileID: 673957763}
   - component: {fileID: 673957765}
   - component: {fileID: 673957764}
-  m_Layer: 12
+  m_Layer: 17
   m_Name: SpawnDr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18550,6 +18550,10 @@ Prefab:
         type: 2}
       propertyPath: nextLevel
       value: PantallaInicial
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479491770798470, guid: a69716259f99e9f4db21c44b17265bd6, type: 2}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a69716259f99e9f4db21c44b17265bd6, type: 2}
