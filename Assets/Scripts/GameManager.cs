@@ -62,6 +62,10 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    public void SetPlayerHealth(int playerHealth)
+    {
+        vidasplayer = playerHealth;
+    }
     public void PlayerGanaVida(int vidasplayer)
     {
         

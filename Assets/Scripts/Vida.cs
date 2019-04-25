@@ -18,6 +18,8 @@ public class Vida : MonoBehaviour {
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<PlayerController>();
+        if (player != null)
+            GameManager.instance.SetPlayerHealth(vida);
         anim = GetComponent<Animator>();
         
 
