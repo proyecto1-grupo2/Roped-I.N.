@@ -15,7 +15,8 @@ public class Damage : MonoBehaviour
 
     private void FixedUpdate()
     {
-        muerto = dead.GetDead();
+        if (this.GetComponent<MovGancho>() == null)
+            muerto = dead.GetDead();
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
