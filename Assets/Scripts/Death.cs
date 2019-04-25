@@ -25,7 +25,9 @@ public class Death : MonoBehaviour
         {
             //Debug.Log("Soy un oga spawneado");
             oga.DecreaseCount();
-            Destroy(this.gameObject);
+            dead = true;
+            Invoke("DeadFalse", 0.7f);
+            //Debug.Log("Soy otra cosa");
         }
         else
         {
