@@ -44,4 +44,9 @@ public class Death : MonoBehaviour
         Destroy(this.gameObject);
         dead = false;
     }
+
+    public bool GetDead()
+    {
+        return dead;
+    }
 }
