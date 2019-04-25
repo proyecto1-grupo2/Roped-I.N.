@@ -24,8 +24,8 @@ public class MovGancho : MonoBehaviour
     //Estado actual del gancho (los estados están explicados en el script EstadosGancho)
     HookState currState;
 
-    public SpriteRenderer spriteGancho;
-    public SpriteRenderer cadena;
+    //public SpriteRenderer spriteGancho;
+    //public SpriteRenderer cadena;
     bool izquierda;
     void Start()
     {
@@ -34,8 +34,8 @@ public class MovGancho : MonoBehaviour
         currState = HookState.Quieto;
         movement = Vector2.zero;
         shooting = 0;
-        spriteGancho.enabled = false;
-        cadena.enabled = false;
+        //spriteGancho.enabled = false;
+        //cadena.enabled = false;
     }
 
     void Update()
@@ -50,7 +50,7 @@ public class MovGancho : MonoBehaviour
                     transform.SetParent(Player.transform);
                     transform.rotation = transform.parent.rotation;
                     //spriteGancho.enabled = false;
-                    cadena.enabled = false;
+                    //cadena.enabled = false;
                     //Player.EnabledMovement(true);
                     //if (Input.GetButtonDown("Agarre"))
                     //{
@@ -66,19 +66,22 @@ public class MovGancho : MonoBehaviour
                     //    SetMovement(dir); 
                     //    currState = HookState.Ida;
                     //}
+                    dir = Player.DevuelveDireccion();
+                    this.GetComponentInChildren<RotacionSpriteGancho>().SetDir(dir);
                     if (Input.GetButtonDown("Gancho"))
                     {
-                        dir = Player.DevuelveDireccion(out izquierda);
+                        
                         SetMovement(dir);
                         currState = HookState.Ida;
                     }
+                    
                     transform.position = puntoLanzamiento.position;
                 }
                 break;
             case HookState.Ida:
                 {
-                    spriteGancho.enabled = true;
-                    cadena.enabled = true;
+                    //spriteGancho.enabled = true;
+                    //cadena.enabled = true;
                     shooting = 1;
                     if (dir.y > 0)
                     {
@@ -94,8 +97,8 @@ public class MovGancho : MonoBehaviour
                 break;
             case HookState.Vuelta:
                 {
-                    spriteGancho.enabled = true;
-                    cadena.enabled = true;
+                    //spriteGancho.enabled = true;
+                    //cadena.enabled = true;
                     shooting = 1;
                     if (dir.y > 0)
                     {
@@ -116,8 +119,8 @@ public class MovGancho : MonoBehaviour
             //este caso contempla cuando el gancho impacta sobre una zona viscosa (rosa)
             case HookState.Enganchado:
                 {
-                    cadena.enabled = true;
-                    spriteGancho.enabled = true;
+                    //cadena.enabled = true;
+                    //spriteGancho.enabled = true;
                     shooting = 2;
                     transform.parent = null;//Desvinculamos el gancho como hijo del jugador
                     Player.CambiaEstado(true);//Cambia a true el bool "enganchado" en el PlayerController
@@ -133,6 +136,7 @@ public class MovGancho : MonoBehaviour
                 currState = HookState.Vuelta;
             }
         }
+        Debug.Log("DireccionMovGancho: " + dir);
     }
 
     //Establece el movimiento que va a seguir el gancho según la dirección a la que se mire
