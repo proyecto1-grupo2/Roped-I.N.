@@ -12,10 +12,10 @@ public class PlayerController : MonoBehaviour
     int shooting;
     private SpriteRenderer spr;
     private Animator anim;
-    public AudioClip hurt;
-    public AudioClip playerJump;
-    public AudioClip playerRun;
-    public AudioClip dead;
+    //public AudioClip hurt;
+    //public AudioClip playerJump;
+    //public AudioClip playerRun;
+    //public AudioClip dead;
     public Transform debugDir;//para pruebas
     bool jump, landed, puedeSaltar; //landed no se si se podria utilizar como grounded
 
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
             {
                 puedeSaltar = true;
             }
-            //SoundManager.instance.RandomizeSfx(playerJump);
+           
 
 
             //esta serie de else if es para determinar la direccion donde mira el personaje
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 }
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                //SoundManager.instance.RandomizeSfx(playerRun);
+                SoundManager.instance.RunSFX();
             }
 
             else if (Input.GetAxisRaw("Horizontal") == -1) //Mira izq
@@ -120,8 +120,8 @@ public class PlayerController : MonoBehaviour
                 }
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                //SoundManager.instance.RandomizeSfx(playerRun);
 
+                SoundManager.instance.RunSFX();
             }
             else if (Input.GetAxisRaw("Vertical") == -1) //Mira abajo
             {
@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 jump = false;
                 puedeSaltar = false;
+                SoundManager.instance.CallSoundManager("jump");
             }
 
             if (rb.velocity.y < -10)//para que no caiga muy rapido
@@ -257,6 +258,7 @@ public class PlayerController : MonoBehaviour
         spr.color = Color.red;
         Debug.Log("Daño");
         Invoke("HurtFalse", 0.1f);
+        SoundManager.instance.CallSoundManager("hurt");
     }
 
     void HurtFalse()
@@ -269,8 +271,8 @@ public class PlayerController : MonoBehaviour
     {
         deadanim = dying;
         spr.color = Color.black;
-
         Invoke("DeadFalse", 1f);
+        SoundManager.instance.CallSoundManager("dead");
     }
 
     void DeadFalse()

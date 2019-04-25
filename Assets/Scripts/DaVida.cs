@@ -10,8 +10,9 @@ public class DaVida : MonoBehaviour
         // condicion para detectar si colisiona con el gancho del player y 
         //que además el componente daño esté desactivado (lo que implica que esta usando el gancho de agarre)
         
-        if (other.gameObject.CompareTag("Player")) 
+        if (other.gameObject.CompareTag("Player"))
         {
+            SoundManager.instance.CallSoundManager("salud");
             int vida = other.gameObject.GetComponent<Vida>().vida;
             GameManager.instance.PlayerGanaVida(vida);
             if (other.gameObject.GetComponent<Vida>().vida <3) {

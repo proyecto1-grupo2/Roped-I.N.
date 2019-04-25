@@ -46,6 +46,7 @@ public class QuimicoExplosivo : MonoBehaviour
         {
             other.gameObject.GetComponent<Vida>().LoseLife(1);
             vecesDañadoJug = 1;
+            SoundManager.instance.CallSoundManager("explosivo");
         }
         //daño enemigo
         else if (other.gameObject.CompareTag("Enemy") && dañar && vecesDañadoEne == 0)
@@ -55,7 +56,7 @@ public class QuimicoExplosivo : MonoBehaviour
                 other.gameObject.GetComponent<Vida>().LoseLife(daño);
                 vecesDañadoEne = 1;
             }
-            
+            SoundManager.instance.CallSoundManager("explosivo");
         }
     }
 

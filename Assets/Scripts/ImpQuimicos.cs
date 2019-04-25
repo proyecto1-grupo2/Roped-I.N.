@@ -76,6 +76,7 @@ public class ImpQuimicos : MonoBehaviour
                 /*SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
                 sprit.material.color = Color.blue;*/
                 Invoke("cambiaEstadoNada", tStun);
+
                 break;
             case EnemyState.Paralizado:
                 //mientras esta paralizado no se puede mover
@@ -87,6 +88,7 @@ public class ImpQuimicos : MonoBehaviour
                 }
                 gameObject.GetComponent<PingPongMovement>().enabled = false;
                 Invoke("cambiaEstadoNada", tStun);
+           
                 break;
         }
 
@@ -132,17 +134,19 @@ public class ImpQuimicos : MonoBehaviour
             Destroy(other.gameObject);
             MovGancho mov = other.GetComponentInParent<MovGancho>();
             if (mov != null) mov.cambiaEstado(HookState.Vuelta);
-
+            SoundManager.instance.CallSoundManager("fuego");
         }
         else if (other.gameObject.CompareTag("QuimicoElectrico"))
         {
             estadoEnemigo = EnemyState.Paralizado;
             Destroy(other.gameObject);
+            SoundManager.instance.CallSoundManager("electrico");
         }
         else if (other.gameObject.CompareTag("QuimicoHielo"))
         {
             estadoEnemigo = EnemyState.Congelado;
             Destroy(other.gameObject);
+            SoundManager.instance.CallSoundManager("hielo");
         }
 
     }
