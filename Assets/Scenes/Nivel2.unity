@@ -15150,6 +15150,10 @@ Prefab:
       propertyPath: m_Size.x
       value: 15.028042
       objectReference: {fileID: 0}
+    - target: {fileID: 1563822365589408, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
   m_IsPrefabAsset: 0
@@ -16472,6 +16476,10 @@ Prefab:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 673957763}
+    - target: {fileID: 1563822365589408, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
   m_IsPrefabAsset: 0
