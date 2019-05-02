@@ -17,6 +17,8 @@ public class MovGancho : MonoBehaviour
     //Recoge el vector de la dirección a la que mira el personaje y el del propio movimiento del gancho
     Vector2 dir,
             movement;
+    float Ndegrees = 90;
+    Vector3 degrees;
 
     //AnimacionGancho
     int shooting;
@@ -34,6 +36,7 @@ public class MovGancho : MonoBehaviour
         currState = HookState.Quieto;
         movement = Vector2.zero;
         shooting = 0;
+        degrees = new Vector3(0, 0, 90);
         //spriteGancho.enabled = false;
         //cadena.enabled = false;
     }
@@ -48,7 +51,7 @@ public class MovGancho : MonoBehaviour
                 {
                     shooting = 0;
                     transform.SetParent(Player.transform);
-                    transform.rotation = transform.parent.rotation;
+                    //transform.rotation = transform.parent.rotation;
                     //spriteGancho.enabled = false;
                     //cadena.enabled = false;
                     //Player.EnabledMovement(true);
@@ -66,11 +69,14 @@ public class MovGancho : MonoBehaviour
                     //    SetMovement(dir); 
                     //    currState = HookState.Ida;
                     //}
-                    dir = Player.DevuelveDireccion();
-                    this.GetComponentInChildren<RotacionSpriteGancho>().SetDir(dir);
+
+                    //dir = Player.DevuelveDireccion();
+                    //this.GetComponentInChildren<RotacionSpriteGancho>().SetDir(dir);
+                    transform.localEulerAngles = Vector3.zero;
+                    SetDir();
                     if (Input.GetButtonDown("Gancho"))
                     {
-                        
+                       
                         SetMovement(dir);
                         currState = HookState.Ida;
                     }
@@ -139,10 +145,23 @@ public class MovGancho : MonoBehaviour
         Debug.Log("DireccionMovGancho: " + dir);
     }
 
+    void SetDir()
+    {
+        dir = Player.DevuelveDireccion();
+        switch((int)dir.y)
+        {
+            case 1:
+                transform.Rotate(0, 0, Ndegrees, Space.Self);
+                break;
+            case -1:
+                transform.Rotate(0, 0, 3 * Ndegrees, Space.Self);
+                break;
+        }
+    }
     //Establece el movimiento que va a seguir el gancho según la dirección a la que se mire
     void SetMovement(Vector2 direction)
     {
-        movement = new Vector2(direction.x * speed * Time.deltaTime, direction.y * speed * Time.deltaTime);
+        movement = new Vector2(speed * Time.deltaTime, 0);
         if (direction.y > 0)
         {
             shooting = 3;

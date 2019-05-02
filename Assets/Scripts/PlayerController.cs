@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 }
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                SoundManager.instance.RunSFX();
+                //SoundManager.instance.RunSFX();
             }
 
             else if (Input.GetAxisRaw("Horizontal") == -1) //Mira izq
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-                SoundManager.instance.RunSFX();
+                //SoundManager.instance.RunSFX();
             }
             else if (Input.GetAxisRaw("Vertical") == -1) //Mira abajo
             {
