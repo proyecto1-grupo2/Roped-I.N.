@@ -14,12 +14,14 @@ public class ReboteEnParedes : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
+
         if (LayerMask.LayerToName(other.gameObject.layer) == "Enganches")
         {
             gancho.cambiaEstado(HookState.Enganchado);
+            gancho.Player.CambiaEstado(true);
         }
         else gancho.cambiaEstado(HookState.Vuelta);
+
 
     }
 }

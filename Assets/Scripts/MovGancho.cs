@@ -76,7 +76,6 @@ public class MovGancho : MonoBehaviour
                     SetDir();
                     if (Input.GetButtonDown("Gancho"))
                     {
-                       
                         SetMovement(dir);
                         currState = HookState.Ida;
                     }
@@ -112,7 +111,7 @@ public class MovGancho : MonoBehaviour
                     }
                     // Player.EnabledMovement(false);
                     //transform.Translate(-movement);
-                    transform.position = Vector2.MoveTowards(transform.position, puntoLanzamiento.position, speed * Time.deltaTime);
+                    transform.position = Vector2.MoveTowards(transform.position, puntoLanzamiento.position, 3*  speed * Time.deltaTime);
                     //Debug.Log(Vector2.Distance(puntoSalida.position, transform.position));
                     if (Vector2.Distance(puntoLanzamiento.position, transform.position) < 0.5f) //0.5 es un valor de error, 
                     {
@@ -123,13 +122,25 @@ public class MovGancho : MonoBehaviour
                 }
                 break;
             //este caso contempla cuando el gancho impacta sobre una zona viscosa (rosa)
-            case HookState.Enganchado:
+            case HookState.Enganchado: //modificado
                 {
                     //cadena.enabled = true;
                     //spriteGancho.enabled = true;
-                    shooting = 2;
+                    //if (!enganchado)
+                    //{
+                    //    shooting = 2;
+                    //    transform.parent = null;//Desvinculamos el gancho como hijo del jugador
+                    //    Player.CambiaEstado(true);//Cambia a true el bool "enganchado" en el PlayerController
+                    //}
+                    //enganchado = true;
                     transform.parent = null;//Desvinculamos el gancho como hijo del jugador
-                    Player.CambiaEstado(true);//Cambia a true el bool "enganchado" en el PlayerController
+                    if (Input.GetButtonDown("Jump"))
+                    {
+                        Debug.Log("Me solté");
+                        Player.CambiaEstado(false);
+                        currState = HookState.Vuelta;
+                        
+                    }
                 }
                 break;
         }
@@ -142,7 +153,7 @@ public class MovGancho : MonoBehaviour
                 currState = HookState.Vuelta;
             }
         }
-        Debug.Log("DireccionMovGancho: " + dir);
+        Debug.Log("EstadoGancho; " + currState);
     }
 
     void SetDir()
