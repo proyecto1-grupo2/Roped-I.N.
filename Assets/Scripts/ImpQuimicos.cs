@@ -70,8 +70,8 @@ public class ImpQuimicos : MonoBehaviour
                 //Instantiate(hielo, transform.position, transform.rotation);
                 hielo.transform.position = transform.position;
                 hielo.GetComponent<SpriteRenderer>().enabled = true;
-                hielo.GetComponent<SpriteRenderer>().enabled = true;
-                hielo.transform.localScale = transform.lossyScale;
+                //hielo.GetComponent<SpriteRenderer>().enabled = true;
+                hielo.transform.localScale = transform.localScale*2;
                 //Cambiar sprite (De momento solo cambia el tono a un más azulado)
                 /*SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
                 sprit.material.color = Color.blue;*/

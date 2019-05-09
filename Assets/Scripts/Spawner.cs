@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
 
         if (!isSpawning && Vector2.Distance(transform.parent.position, target.transform.position) < range)
         {
-            InvokeRepeating("instanciaOga", spawnRate, spawnRate);
+            InvokeRepeating("instanciaOga", 0, spawnRate);
             isSpawning = true;
         }
         //Debug.Log(cont);
@@ -57,9 +57,12 @@ public class Spawner : MonoBehaviour
     //Instancia un oga y lo relaciona con este spawner
     private void instanciaOga()
     {
-        PursuitTarget newOga = Instantiate(oga, transform.position, transform.rotation, pool.transform);
-        newOga.SetSpawner(this);
-        cont++;
+        if (transform.GetComponent<ImpQuimicos>().daEstado() != EnemyState.Congelado) {
+            PursuitTarget newOga = Instantiate(oga, transform.position, transform.rotation, pool.transform);
+            newOga.SetSpawner(this);
+            cont++;
+        }
+        
     }
 
     //Disminuye el contador y reinicia el spawn
