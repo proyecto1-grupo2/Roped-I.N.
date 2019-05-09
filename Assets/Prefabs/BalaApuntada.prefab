@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 70203089442067804}
   - component: {fileID: 114148518751720092}
   - component: {fileID: 114879083215085510}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: BalaApuntada
   m_TagString: Enemy
   m_Icon: {fileID: 0}
