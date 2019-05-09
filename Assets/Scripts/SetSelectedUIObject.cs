@@ -11,7 +11,8 @@ public class SetSelectedUIObject : MonoBehaviour {
         eventSystem = EventSystem.current;
     }
     void Start () {
-        eventSystem.SetSelectedGameObject(this.gameObject);
+         eventSystem.SetSelectedGameObject(this.gameObject);
+        
 	}
 	
 }

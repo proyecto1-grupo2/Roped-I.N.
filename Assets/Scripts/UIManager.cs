@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
     }
     public void ModifyMenu(bool mode)
     {
+        if(pauseMenu!=null)
         pauseMenu.SetActive(mode);            
     }
 

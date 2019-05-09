@@ -81,7 +81,7 @@ public class RotacionSpriteGancho : MonoBehaviour {
 
             }
         }
-        Debug.Log("DireccionSprite: " + dir);
+        //Debug.Log("DireccionSprite: " + dir);
         //Debug.Log("Cadena Tamaño" + cadena.size);
        
     }
