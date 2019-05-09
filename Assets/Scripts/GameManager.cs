@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
         {
             Pausa();
         }
-        Debug.Log(vidasplayer);
+        //Debug.Log(vidasplayer);
        
     }
    

@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class ReboteEnParedes : MonoBehaviour
 {
-    //Diferencia las colisiones con paredes normales y con paredes pegajosas
-    //int layerMask;
+    //Diferencia las colisiones con enganches y el resto de paredes
+
     MovGancho gancho;
     private void Start()
     {
-        //layerMask = LayerMask.GetMask("Gancho", "Terreno", "Enganches");
+
         gancho = this.GetComponent<MovGancho>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        if (LayerMask.LayerToName(other.gameObject.layer) == "Enganches")
+
+        if (other.CompareTag("Enganches"))
         {
             gancho.cambiaEstado(HookState.Enganchado);
+            gancho.Player.CambiaEstado(true);
         }
         else gancho.cambiaEstado(HookState.Vuelta);
+
 
     }
 }

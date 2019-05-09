@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     //public AudioClip playerJump;
     //public AudioClip playerRun;
     //public AudioClip dead;
+    private ContactFilter2D contactFilter; //Para detectar colisiones cuando el jugador está enganchado
     public Transform debugDir;//para pruebas
     bool jump, landed, puedeSaltar; //landed no se si se podria utilizar como grounded
 
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         spr = GetComponent<SpriteRenderer>();
         puedeSaltar = false;
+        contactFilter.SetLayerMask (Physics2D.GetLayerCollisionMask(gameObject.layer)); //el filtro detecta las colisiones en la layer del player
+        contactFilter.useLayerMask = true;
     }
     private void Update()
     {
@@ -105,7 +108,7 @@ public class PlayerController : MonoBehaviour
                 }
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                SoundManager.instance.RunSFX();
+                //SoundManager.instance.RunSFX();
             }
 
             else if (Input.GetAxisRaw("Horizontal") == -1) //Mira izq
@@ -145,7 +148,7 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, gancho.transform.GetChild(0).position, step);
             if (Vector2.Distance(transform.position, gancho.transform.position) < 0.8f)
             {
-                gancho.cambiaEstado(HookState.Quieto);
+                //gancho.cambiaEstado(HookState.Quieto);
                 CambiaEstado(false);
                 rb.isKinematic = false;
             }
@@ -155,7 +158,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()//Mueve al personaje
     {
 
-        if (enganchado == false) //aseguramos que no se ejecute cuando sea cinematico
+        if (!enganchado) //aseguramos que no se ejecute cuando sea cinematico
         {
 
             rb.velocity = new Vector2(moveX * Speed, rb.velocity.y);
@@ -176,32 +179,29 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, -10);
             }
         }
-
+        else //Detectamos colisiones cuando está enganchado
+        {
+            RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
+            int count = rb.Cast(gancho.GetDir(), contactFilter, hitBuffer, 0.25f);
+            if (count > 0)
+                print(count );
+            for (int i=0; i<count; ++i)
+            {
+                print(hitBuffer[i].transform.name);
+                print(hitBuffer[i].distance);
+            }
+            //Debug.Log("ContCollisions: " + count);
+            if (count > 0)      //& 
+                CambiaEstado(false);
+        }
+       // Debug.Log("Enganchado: " + enganchado);
     }
     private bool Salto()
     { 
         return puedeSaltar;
     }
 
-    /*****************************************************************************
- * Este OnTriggerEnter2D detecta cualquier colision que sufra el player      *
- * mientras se desplaza con el gancho.                                       *
- * (incluida la propia colision con el enganche)                             *
- * De forma provisional está metido como metodo dentro del PlayerController, *
- * si no fuese la manera más correcta de hacerlo, lo paso a una componente   *
- * externa.                                                 -Nico F. Thovar  *
- *****************************************************************************/
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (enganchado == true)
-        {
-            GetComponent<Rigidbody2D>().isKinematic = false;//Movimiento dinamico si player colisiona 
-            gancho.cambiaEstado(HookState.Quieto);
-            CambiaEstado(false);
-        }
-    }
-
-    //realiza un pequeño salto al entrar en contacto con un enemigo y sufrir daño
+    //realiza un pequeño salto al entrar en contacto con un enemigo y sufrir daño//Detecta colisión con la plataforma (cuando detecta 2 colisiones), si detecta 1, es con el suelo al principio, y esa no la queremos
     //public void EnemyKnockBack(float enemyPosX)
     //{
     //    jump = true;
@@ -217,27 +217,20 @@ public class PlayerController : MonoBehaviour
     }
     //Metodo para alternar el estado del jugador
     //bool "enganchado" true==>mov cinematico   false ==> mov fisico
-    public void CambiaEstado(bool estado)
+    public void CambiaEstado(bool estado) //modificado
     {
         enganchado = estado;
         if (estado)
         {
             GetComponent<Rigidbody2D>().isKinematic = true;
             GetComponent<Rigidbody2D>().simulated = false;
-            if (Input.GetButtonDown("Jump"))
-            {
-                jump = true;
-                gancho.cambiaEstado(HookState.Vuelta);
-                CambiaEstado(false);
-            }
         }
 
         else
         {
-
             GetComponent<Rigidbody2D>().isKinematic = false;
             GetComponent<Rigidbody2D>().simulated = true;
-
+            gancho.cambiaEstado(HookState.Vuelta);
         }
     }
     //Este metodo duelve la direccion del gancho, lleva un parametro para evitar un bug de que 
@@ -259,6 +252,12 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Daño");
         Invoke("HurtFalse", 0.1f);
         SoundManager.instance.CallSoundManager("hurt");
+    }
+
+    /*dis*/
+    public bool GetEnganchado()
+    {
+        return enganchado;
     }
 
     void HurtFalse()

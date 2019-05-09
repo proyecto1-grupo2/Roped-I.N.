@@ -26,7 +26,7 @@ public class Vida : MonoBehaviour {
     }
     private void Update()
     {
-        anim.SetBool("IsHurt", hurt);
+        anim.SetBool("IsHurting", hurt);
     }
 
     //Quitamos vida en funcion del daño que llega
