@@ -27,7 +27,7 @@ public class Damage : MonoBehaviour
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), other.GetComponent<Collider2D>(), true);
             }
             else {
-                if (other.gameObject.CompareTag("Enemy"))
+                if (other.gameObject.CompareTag("Enemy") && this.GetComponent<MovGancho>() != null && this.GetComponent<MovGancho>().daEstado() != HookState.Quieto)
                 {
                     //para que los enemigos no se hagan daño entre ellos 
                     //(por ejemplo balas perdidas que no hagan daño a otros enemigos)

@@ -41,12 +41,14 @@ public class MovGancho : MonoBehaviour
         {
             case HookState.Quieto:
                 {
+                    gameObject.GetComponent<Damage>().enabled = false;
                     shooting = 0;
                     transform.SetParent(Player.transform);
                     transform.localEulerAngles = Vector3.zero;
                     SetDir();
                     if (Input.GetButtonDown("Gancho"))
                     {
+                        gameObject.GetComponent<Damage>().enabled = true;
                         SetMovement(dir);
                         currState = HookState.Ida;
                     }
