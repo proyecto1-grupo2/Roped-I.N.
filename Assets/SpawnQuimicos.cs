@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class SpawnQuimicos : MonoBehaviour {
 
-    public GameObject Quimico;
-    public GameObject ObjetivoDelQuimico;
-    GameObject Quim;
+    public GameObject QuimicoQueRespawnea;//el quimico que hay en el nivel
+    public GameObject ObjetivoDelQuimico;//telaraña o puerta
+    public GameObject prefabQuim;//el prefab del quimico
 
-
-    // Use this for initialization
-    void Start () {
-        Quim = Instantiate(Quimico, transform.position, transform.rotation);
-    }
+  
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Vector3.Distance(transform.position, Quim.transform.position) > 5 && ObjetivoDelQuimico.activeSelf == true)
+        
+        if (QuimicoQueRespawnea == null  && ObjetivoDelQuimico !=null && ObjetivoDelQuimico.activeSelf == true)
         {
-            Quim = Instantiate(Quimico, transform.position, transform.rotation);
+            QuimicoQueRespawnea = Instantiate(prefabQuim, transform.position, transform.rotation);
         }
 
     }
