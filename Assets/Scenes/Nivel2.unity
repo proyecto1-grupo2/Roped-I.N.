@@ -22487,7 +22487,7 @@ Prefab:
     - target: {fileID: 114191338246614566, guid: a69716259f99e9f4db21c44b17265bd6,
         type: 2}
       propertyPath: nextLevel
-      value: PantallaInicial
+      value: Nivel3
       objectReference: {fileID: 0}
     - target: {fileID: 1479491770798470, guid: a69716259f99e9f4db21c44b17265bd6, type: 2}
       propertyPath: m_Layer
