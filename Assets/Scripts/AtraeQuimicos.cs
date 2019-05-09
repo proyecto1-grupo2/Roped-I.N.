@@ -28,10 +28,10 @@ public class AtraeQuimicos : MonoBehaviour
             Enganche();
         }
 
-        else if (hook != null)//para que cuando el gancho suelte al quimico, el gancho vuelva
-        {
-            hook.cambiaEstado(HookState.Vuelta);
-        }
+        //else if (hook != null)//para que cuando el gancho suelte al quimico, el gancho vuelva
+        //{
+        //    hook.cambiaEstado(HookState.Vuelta);
+        //}
 
         else colision = false;
 
@@ -64,7 +64,7 @@ public class AtraeQuimicos : MonoBehaviour
     void Update()
     {
 
-        if (hook != null && hook.GetComponent<MovGancho>().daEstado()==HookState.Quieto)
+        if (hook != null && hook.GetComponent<MovGancho>().daEstado() == HookState.Quieto)
         {
             Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
             if (dir == Vector2.up)
@@ -77,12 +77,12 @@ public class AtraeQuimicos : MonoBehaviour
             }
             else if (dir == Vector2.right)
             {
-                
+
                 transform.rotation = new Quaternion(0, 0, 0, 1);//Rotacion del spritegancho
 
             }
         }
-        
+
 
     }
 
