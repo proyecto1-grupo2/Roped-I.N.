@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float Speed,//ponemos un maximo de velocidad se puede poner publico
                  jumpForce; //acceleration no haría falta si se utiliza velocity
     private float moveX;
-    bool grounded, hurtanim = false, deadanim = false;
+    bool hurtanim = false, deadanim = false;
     bool camaraMov = false;
     int shooting;
     private SpriteRenderer spr;
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         //Animaciones
         shooting = gancho.GetShooting();
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-        anim.SetBool("Grounded", grounded);
+        anim.SetBool("Grounded", landed);
         anim.SetBool("IsHurting", hurtanim);
         anim.SetBool("IsDead", deadanim);
         anim.SetBool("Jump", jump);
@@ -239,10 +239,6 @@ public class PlayerController : MonoBehaviour
     {
         //izquierda = izq;
         return dirGancho;
-    }
-    public void SetGrounded(bool ground)
-    {
-        grounded = ground;
     }
 
     public void SetHurt(bool hurting)

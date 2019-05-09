@@ -1290,7 +1290,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4221649459113960, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.6
+      value: -10.6
       objectReference: {fileID: 0}
     - target: {fileID: 4221649459113960, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1321,7 +1321,13 @@ Prefab:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 2060542131}
-    m_RemovedComponents: []
+    - target: {fileID: 114721662107241760, guid: 5227f3ad70fbc1e4b80542848fb36e25,
+        type: 2}
+      propertyPath: range
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114572753316451808, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &431590466
