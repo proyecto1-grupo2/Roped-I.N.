@@ -48,13 +48,17 @@ public class ImpQuimicos : MonoBehaviour
 
             case EnemyState.Congelado:
                 //mientras esta congelado no se mueve ni hace daño
-                if(gameObject.GetComponent<PingPongMovement>())
+                if(gameObject.GetComponent<PingPongMovement>()!=null)
                 {
                     gameObject.GetComponent<PingPongMovement>().enabled = false;
                 }
-                else if (gameObject.GetComponent<PursuitTarget>())
+                else if (gameObject.GetComponent<PursuitTarget>() != null)
                 {
                     gameObject.GetComponent<PursuitTarget>().enabled = false;
+                }
+                else if (gameObject.GetComponent<ShootTurm>() != null)
+                {
+                    gameObject.GetComponent<ShootTurm>().enabled = false;
                 }
                 //Desactivar el daño al jugador
                 gameObject.GetComponent<Damage>().enabled = false;
@@ -105,13 +109,17 @@ public class ImpQuimicos : MonoBehaviour
     public void cambiaEstadoNada()
     {
         estadoEnemigo = EnemyState.Nada;
-        if (gameObject.GetComponent<PingPongMovement>())
+        if (gameObject.GetComponent<PingPongMovement>() != null)
         {
             gameObject.GetComponent<PingPongMovement>().enabled = true;
         }
-        else if (gameObject.GetComponent<PursuitTarget>())
+        else if (gameObject.GetComponent<PursuitTarget>() != null)
         {
             gameObject.GetComponent<PursuitTarget>().enabled = true;
+        }
+        else if (gameObject.GetComponent<ShootTurm>() != null)
+        {
+            gameObject.GetComponent<ShootTurm>().enabled = true;
         }
         gameObject.GetComponent<Damage>().enabled = true;
         // gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;

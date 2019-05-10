@@ -23,7 +23,7 @@ public class ShootTurm : MonoBehaviour {
 
         distancia = Vector3.Distance(Jugador.transform.position, transform.position);
 
-        if (distancia <= alcance)
+        if (distancia <= alcance && gameObject.GetComponent<ImpQuimicos>().daEstado()!=EnemyState.Congelado)
         {
             Instantiate(Bullet, transform.position, transform.rotation, pool);
         }
