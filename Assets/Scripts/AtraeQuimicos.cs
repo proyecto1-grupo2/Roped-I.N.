@@ -66,6 +66,7 @@ public class AtraeQuimicos : MonoBehaviour
 
         if (hook != null && hook.GetComponent<MovGancho>().daEstado() == HookState.Quieto)
         {
+            Debug.Log("jhfgjsdgfj  "+hook.name);
             Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
             if (dir == Vector2.up)
             {

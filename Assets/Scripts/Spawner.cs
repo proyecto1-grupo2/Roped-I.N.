@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
     //Instancia un oga y lo relaciona con este spawner
     private void instanciaOga()
     {
-        if (transform.GetComponent<ImpQuimicos>().daEstado() != EnemyState.Congelado) {
+        if (transform.parent.GetComponent<ImpQuimicos>().daEstado() != EnemyState.Congelado) {
             PursuitTarget newOga = Instantiate(oga, transform.position, transform.rotation, pool.transform);
             newOga.SetSpawner(this);
             cont++;
