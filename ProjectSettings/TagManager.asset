@@ -33,7 +33,7 @@ TagManager:
   - Quebradizo
   - Quimicos
   - Triggers
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: Interactuable
     uniqueID: 581344883
+    locked: 0
+  - name: Bullet
+    uniqueID: 2797898421
     locked: 0

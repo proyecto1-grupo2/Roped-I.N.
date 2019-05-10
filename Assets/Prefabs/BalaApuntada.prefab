@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 70203089442067804}
   - component: {fileID: 114148518751720092}
   - component: {fileID: 114879083215085510}
-  m_Layer: 8
+  m_Layer: 18
   m_Name: BalaApuntada
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb6b9cf76cd9fe4d856e9277f3115a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velBala: 10
+  velBala: 5
 --- !u!114 &114879083215085510
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -18,10 +18,12 @@ public class DeadZone : MonoBehaviour
             other.GetComponent<Vida>().OnDeadZone(spawnPoint);
             other.GetComponent<Vida>().LoseLife(damage);
         }
-        else if (other.CompareTag("QuimicoHielo"))
+        //destruye los quimicos si tocan el agua
+        else if (other.CompareTag("QuimicoHielo")|| other.CompareTag("QuimicoFuego")|| other.CompareTag("QuimicoElectrico"))
         {
             Destroy(other.gameObject);
         }
+
 
     }
 

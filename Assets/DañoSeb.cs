@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damage : MonoBehaviour
-{
+public class DañoSeb : MonoBehaviour {
+
     public int damage;
     bool muerto = false;
     Death dead;
@@ -15,9 +15,10 @@ public class Damage : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (this.GetComponent<MovGancho>() == null && dead!=null)
+        if (this.GetComponent<MovGancho>() == null)
             muerto = dead.GetDead();
     }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Vida>())
@@ -26,8 +27,9 @@ public class Damage : MonoBehaviour
             {
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), other.GetComponent<Collider2D>(), true);
             }
-            else {
-                if (other.gameObject.CompareTag("Enemy") && this.GetComponent<MovGancho>() != null && this.GetComponent<MovGancho>().daEstado() != HookState.Quieto)
+            else
+            {
+                if (other.gameObject.CompareTag("Enemy"))
                 {
                     //para que los enemigos no se hagan daño entre ellos 
                     //(por ejemplo balas perdidas que no hagan daño a otros enemigos)
@@ -50,5 +52,5 @@ public class Damage : MonoBehaviour
             //daño a enemigos
         }
     }
-    
+
 }
