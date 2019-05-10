@@ -6,7 +6,7 @@ public class AtraeQuimicos : MonoBehaviour
 {
 
     public LayerMask Mask;
-    Rigidbody2D Cajarb;
+    Rigidbody2D rb;
     //Animator ani;
     MovGancho hook;
 
@@ -47,9 +47,9 @@ public class AtraeQuimicos : MonoBehaviour
     void Start()
     {
         //ani = GetComponent<Animator>();
-        Cajarb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         //Si no tiene Rigidbody
-        if (Cajarb == null)
+        if (rb == null)
         {
             Debug.LogError("Falta RigidBody");
         }
@@ -66,7 +66,8 @@ public class AtraeQuimicos : MonoBehaviour
 
         if (hook != null && hook.GetComponent<MovGancho>().daEstado() == HookState.Quieto)
         {
-            Debug.Log("jhfgjsdgfj  "+hook.name);
+
+            rb.velocity =new Vector2(0, 0);
             Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
             if (dir == Vector2.up)
             {
