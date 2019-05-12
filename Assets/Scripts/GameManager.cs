@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
         {
             Pausa();
         }
-        //Debug.Log(vidasplayer);
+        Debug.Log(GetPlayerHealth());
        
     }
    
@@ -65,6 +65,11 @@ public class GameManager : MonoBehaviour {
     public void SetPlayerHealth(int playerHealth)
     {
         vidasplayer = playerHealth;
+    }
+
+    public int GetPlayerHealth()
+    {
+        return vidasplayer;
     }
     public void PlayerGanaVida(int vidasplayer)
     {

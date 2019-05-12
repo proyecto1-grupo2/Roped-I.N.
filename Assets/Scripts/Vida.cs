@@ -45,10 +45,8 @@ public class Vida : MonoBehaviour {
                 if (vida <= 0)
                 {
                     player.SetDead(true);
-                    //GameManager.instance.Pausa();
+                    GameManager.instance.Pausa();
                     Time.timeScale = 0;
-                    deathMenu.SetActive(true);
-
                 }
             }
 

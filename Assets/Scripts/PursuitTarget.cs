@@ -66,4 +66,9 @@ public class PursuitTarget : MonoBehaviour
         else if (transform.position.x >= target.transform.position.x)
             lookingRight = false;
     }
+
+    public void Deactivate()
+    {
+        this.enabled = false;
+    }
 }

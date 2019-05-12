@@ -54,4 +54,9 @@ public class PingPongMovement : MonoBehaviour {
         }
       
     }
+
+    public void Deactivate()
+    {
+        this.enabled = false;
+    }
 }

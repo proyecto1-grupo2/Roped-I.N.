@@ -21,6 +21,7 @@ public class Death : MonoBehaviour
     public void OnDead()
     {
         oga = this.GetComponent<PursuitTarget>();
+        PlayerController player = GetComponent<PlayerController>();
         if (oga != null && oga.GetGenerated()) //Podria especificarse que el padre es la ogaPool
         {
             //Debug.Log("Soy un oga spawneado");
