@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4114831802764986}
   - component: {fileID: 212493287553181490}
-  - component: {fileID: 114149913293652506}
   - component: {fileID: 61210508790211994}
   - component: {fileID: 50904238085362802}
+  - component: {fileID: 114149913293652506}
   - component: {fileID: 114434226785016722}
   m_Layer: 0
   m_Name: QuimicoElectrico

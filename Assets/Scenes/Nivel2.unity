@@ -19060,6 +19060,15 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1402095922242294, guid: 76b91e913b71d674bbad1a16dde481e1, type: 2}
+      propertyPath: m_Name
+      value: BasePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114032674768608460, guid: 76b91e913b71d674bbad1a16dde481e1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Nivel3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b91e913b71d674bbad1a16dde481e1, type: 2}
   m_IsPrefabAsset: 0
@@ -20431,6 +20440,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4966398842856188, guid: 9a4101bed9ecf764b9ef32c2ad33252a,
     type: 2}
   m_PrefabInternal: {fileID: 399846407}
+--- !u!1 &1417182366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1453060104114626, guid: 76b91e913b71d674bbad1a16dde481e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 725007394}
 --- !u!1001 &1435170569
 Prefab:
   m_ObjectHideFlags: 0
@@ -22901,6 +22915,11 @@ Prefab:
       propertyPath: m_Layer
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114191338246614566, guid: a69716259f99e9f4db21c44b17265bd6,
+        type: 2}
+      propertyPath: levelCompleteScreen
+      value: 
+      objectReference: {fileID: 1417182366}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a69716259f99e9f4db21c44b17265bd6, type: 2}
   m_IsPrefabAsset: 0
