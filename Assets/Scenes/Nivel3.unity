@@ -283,6 +283,98 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2956405, y: 1.886919}
   m_EdgeRadius: 0
+--- !u!1001 &267940603
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 74.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -16.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 212286995084963746, guid: adbb901d84363ec40b8e91ab1bbdd70c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 5ef585356fc5c6f4fa4d0c17ed3708d2,
+        type: 3}
+    - target: {fileID: 61263544282485132, guid: adbb901d84363ec40b8e91ab1bbdd70c,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 1.519947
+      objectReference: {fileID: 0}
+    - target: {fileID: 61263544282485132, guid: adbb901d84363ec40b8e91ab1bbdd70c,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 11.855701
+      objectReference: {fileID: 0}
+    - target: {fileID: 61263544282485132, guid: adbb901d84363ec40b8e91ab1bbdd70c,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 4.08169
+      objectReference: {fileID: 0}
+    - target: {fileID: 61263544282485132, guid: adbb901d84363ec40b8e91ab1bbdd70c,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 8.3233795
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272834912600328, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272834912600328, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.39687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.39687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635272660785280, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.39687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957181045303158, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+      propertyPath: m_Name
+      value: PopUpSoltar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: adbb901d84363ec40b8e91ab1bbdd70c, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &268319060
 Prefab:
   m_ObjectHideFlags: 0
@@ -20614,12 +20706,12 @@ Prefab:
     - target: {fileID: 212838944081989724, guid: 37d36f5f936cb0d4e87b95cc39be92d2,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.16288736
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212838944081989724, guid: 37d36f5f936cb0d4e87b95cc39be92d2,
         type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d36f5f936cb0d4e87b95cc39be92d2, type: 2}
