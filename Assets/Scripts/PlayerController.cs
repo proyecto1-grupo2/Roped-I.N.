@@ -247,7 +247,6 @@ public class PlayerController : MonoBehaviour
     {
         hurtanim = hurting;
         spr.color = Color.red;
-        Debug.Log("Daño");
         Invoke("HurtFalse", 0.1f);
         SoundManager.instance.CallSoundManager("hurt");
     }

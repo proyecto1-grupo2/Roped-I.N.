@@ -28,13 +28,10 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         //se puede pausar el juego siempre que el jugador este vivo
-        //(sino en el menu de muerte podias llamar al menu de pausa)
         if (Input.GetButtonDown("Pausa") && vidasplayer>0)
         {
             Pausa();
-        }
-        Debug.Log(GetPlayerHealth());
-       
+        }       
     }
    
     
@@ -85,23 +82,11 @@ public class GameManager : MonoBehaviour {
     //devuelve el num de vidas
     public int getVidas()
     {
-        Debug.Log(vidasplayer + "fggh");
         return vidasplayer;
-    }
-    public void resetGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        pausado = true;
-        Pausa();
-    }
-
-    public void finishGame()
-    {
-        resetGame();
     }
 
     public void ChangeScene(string sceneName)
-    {        
+    {
         SceneManager.LoadScene(sceneName);
         pausado = true;
         Pausa();
@@ -109,7 +94,6 @@ public class GameManager : MonoBehaviour {
 
     public void Save()
     {
-        Debug.Log("Saved");
         PlayerPrefs.SetInt("lives", vidasplayer);
         PlayerPrefs.SetString("scene", SceneManager.GetActiveScene().name);
         savedData = true;
@@ -117,7 +101,6 @@ public class GameManager : MonoBehaviour {
 
     public void Load()
     {
-        Debug.Log("Loaded");
         if(savedData)
         {
             vidasplayer = PlayerPrefs.GetInt("lives");

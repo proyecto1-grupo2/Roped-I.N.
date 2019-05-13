@@ -40,12 +40,11 @@ public class Vida : MonoBehaviour {
             if (!isInmune)
             {
                 player.SetHurt(true);
-                Debug.Log("vidas:" + vida);
                 GameManager.instance.PlayerLoseLife(vida);
                 if (vida <= 0)
                 {
                     player.SetDead(true);
-                    GameManager.instance.Pausa();
+                    deathMenu.SetActive(true);
                     Time.timeScale = 0;
                 }
             }

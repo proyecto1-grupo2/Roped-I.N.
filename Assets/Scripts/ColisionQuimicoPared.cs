@@ -9,7 +9,7 @@ public class ColisionQuimicoPared : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (transform.parent != null && other.CompareTag("Suelo"))
+        if (transform.parent != null  && (other.CompareTag("Suelo") || other.CompareTag("Enganches")))
         {
             Debug.Log("hola");
             if (transform.parent.parent.GetComponent<MovGancho>() != null)
