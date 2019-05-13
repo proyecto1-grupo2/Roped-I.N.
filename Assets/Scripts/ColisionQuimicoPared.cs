@@ -11,10 +11,10 @@ public class ColisionQuimicoPared : MonoBehaviour {
     {
         if (transform.parent != null  && (other.CompareTag("Suelo") || other.CompareTag("Enganches")))
         {
-            Debug.Log("hola");
+            //Debug.Log("hola");
             if (transform.parent.parent.GetComponent<MovGancho>() != null)
             {
-                Debug.Log("adios");
+                //Debug.Log("adios");
                 transform.parent.parent.GetComponent<MovGancho>().cambiaEstado(HookState.Vuelta);
             }
                 

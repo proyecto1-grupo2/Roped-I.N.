@@ -535,11 +535,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4221649459113960, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 38.13
+      value: 38.1
       objectReference: {fileID: 0}
     - target: {fileID: 4221649459113960, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -29.15
+      value: -29.6
       objectReference: {fileID: 0}
     - target: {fileID: 4221649459113960, guid: 5227f3ad70fbc1e4b80542848fb36e25, type: 2}
       propertyPath: m_LocalPosition.z
@@ -22004,15 +22004,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1547444706973982, guid: a650d69bab5f3034caf97c74b5d05bf9, type: 2}
-      propertyPath: m_Name
-      value: Turm (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 114387214814313444, guid: a650d69bab5f3034caf97c74b5d05bf9,
         type: 2}
       propertyPath: hielo
       value: 
       objectReference: {fileID: 178032786}
+    - target: {fileID: 1547444706973982, guid: a650d69bab5f3034caf97c74b5d05bf9, type: 2}
+      propertyPath: m_Name
+      value: Turm (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a650d69bab5f3034caf97c74b5d05bf9, type: 2}
   m_IsPrefabAsset: 0
@@ -28773,11 +28773,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4013538922625106, guid: a650d69bab5f3034caf97c74b5d05bf9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -14.956045
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 4013538922625106, guid: a650d69bab5f3034caf97c74b5d05bf9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 14.229817
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 4013538922625106, guid: a650d69bab5f3034caf97c74b5d05bf9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -28812,6 +28812,11 @@ Prefab:
       propertyPath: hielo
       value: 
       objectReference: {fileID: 178032786}
+    - target: {fileID: 114301892111576776, guid: a650d69bab5f3034caf97c74b5d05bf9,
+        type: 2}
+      propertyPath: alcance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a650d69bab5f3034caf97c74b5d05bf9, type: 2}
   m_IsPrefabAsset: 0
