@@ -90,7 +90,18 @@ public class ImpQuimicos : MonoBehaviour
                     //Debug.Log("Veces");
                     QuitaVida();
                 }
-                gameObject.GetComponent<PingPongMovement>().enabled = false;
+                if (gameObject.GetComponent<PingPongMovement>() != null)
+                {
+                    gameObject.GetComponent<PingPongMovement>().enabled = false;
+                }
+                else if (gameObject.GetComponent<PursuitTarget>() != null)
+                {
+                    gameObject.GetComponent<PursuitTarget>().enabled = false;
+                }
+                else if (gameObject.GetComponent<ShootTurm>() != null)
+                {
+                    gameObject.GetComponent<ShootTurm>().enabled = false;
+                }
                 Invoke("cambiaEstadoNada", tStun);
            
                 break;

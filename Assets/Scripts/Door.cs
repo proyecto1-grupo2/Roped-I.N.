@@ -15,5 +15,5 @@ public class Door : MonoBehaviour {
         anim.SetBool("Opened", true);
     }
     //Se desactiva cuando termina la animación de abrirse la puerta
-    public void Deactivate() { this.gameObject.SetActive(false); }
+    public void Deactivate() { Destroy(this.gameObject); }
 }

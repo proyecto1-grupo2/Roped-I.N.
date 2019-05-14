@@ -26,6 +26,7 @@ public class QuimicoExplosivo : MonoBehaviour
             estadoGancho = estadoAct.daEstado();
             SoltarQuimico();
         }
+
     }
 
     //Coge la componente MovGancho del gancho 
@@ -49,6 +50,7 @@ public class QuimicoExplosivo : MonoBehaviour
      */
     void SoltarQuimico()
     {
+
         //la primera vez que va
         if (estadoGancho == HookState.Ida && !ida)
         {
@@ -60,7 +62,7 @@ public class QuimicoExplosivo : MonoBehaviour
          * y además lo desactivamos para que no pueda mover el quimico mientras explota
          * por ultimo se ejecuta la animacion de explosion
          */
-        else if (ida && estadoGancho == HookState.Vuelta)
+        else if ((ida && estadoGancho == HookState.Vuelta) || transform.parent==null)
         {
             //Debug.Log("Soltado");
             ida = false;
