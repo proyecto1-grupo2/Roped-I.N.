@@ -257,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 15614069}
-  spawn: {fileID: 251762395}
 --- !u!61 &251762397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -500,7 +499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 15614069}
-  spawn: {fileID: 314258213}
 --- !u!61 &314258215
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20507,7 +20505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 15614069}
-  spawn: {fileID: 708093828}
 --- !u!1001 &711955821
 Prefab:
   m_ObjectHideFlags: 0
@@ -21198,7 +21195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 15614069}
-  spawn: {fileID: 1155362801}
 --- !u!61 &1155362803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28091,7 +28087,7 @@ Prefab:
     - target: {fileID: 114032674768608460, guid: 76b91e913b71d674bbad1a16dde481e1,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: PantallaInicial
+      value: Nivel4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b91e913b71d674bbad1a16dde481e1, type: 2}
