@@ -12,13 +12,6 @@ public class Eks : MonoBehaviour
 
     private float counter;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         counter += Time.deltaTime;

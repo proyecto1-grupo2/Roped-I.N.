@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61445555517735502}
   - component: {fileID: 50155204148438378}
   - component: {fileID: 114417331347742990}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: QuimicoHielo
   m_TagString: QuimicoHielo
   m_Icon: {fileID: 0}
@@ -100,9 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1417321880ba8aa46860f4aedeafe062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mask:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &114417331347742990
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -24,21 +24,15 @@ public class Death : MonoBehaviour
         PlayerController player = GetComponent<PlayerController>();
         if (oga != null && oga.GetGenerated()) //Podria especificarse que el padre es la ogaPool
         {
-            //Debug.Log("Soy un oga spawneado");
             oga.DecreaseCount();
             dead = true;
             Invoke("DeadFalse", 0.7f);
-            //Debug.Log("Soy otra cosa");
         }
         else
         {
             dead = true;
-            Invoke("DeadFalse", 1f);
-            //Debug.Log("Soy otra cosa");
-            
-        }
-
-        
+            Invoke("DeadFalse", 1f);            
+        }       
     }
     void DeadFalse()
     {

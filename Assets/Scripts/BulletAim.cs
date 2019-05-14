@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalaApuntaJugador : MonoBehaviour {
+public class BulletAim : MonoBehaviour {
 
     public float velBala;
-    GameObject Jugador;
+    GameObject Player;
 
-    // Use this for initialization
+    //Coge la rotacion de la bala segun la posicion del player 
     void Start()
     {
-        Jugador = GameObject.FindWithTag("Player");
-        Vector3 dir = Jugador.transform.position - transform.position;
+        Player = GameObject.FindWithTag("Player");
+        Vector3 dir = Player.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
-    // Update is called once per frame
+    //mueve la bala
     void Update()
     {
         transform.position += transform.right * velBala * Time.deltaTime;

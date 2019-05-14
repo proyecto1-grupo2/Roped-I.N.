@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114199795742221394}
   - component: {fileID: 114506442500166236}
   - component: {fileID: 114095125551798074}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: QuimicoVida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,9 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1417321880ba8aa46860f4aedeafe062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mask:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!212 &212890531808497052
 SpriteRenderer:
   m_ObjectHideFlags: 1

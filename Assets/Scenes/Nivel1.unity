@@ -557,7 +557,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 192662021}
-  spawn: {fileID: 228834710}
 --- !u!61 &228834712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -625,7 +624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 192662021}
-  spawn: {fileID: 251762395}
 --- !u!61 &251762397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -744,7 +742,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 2037253904}
-  spawn: {fileID: 314258213}
 --- !u!61 &314258215
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16639,7 +16636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 2037253904}
-  spawn: {fileID: 708093828}
 --- !u!1 &767606656
 GameObject:
   m_ObjectHideFlags: 0
@@ -17313,7 +17309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 192662021}
-  spawn: {fileID: 1074983729}
 --- !u!61 &1074983731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17449,6 +17444,11 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114573109815300520, guid: 1981ceb532ad6944eb2cf26a2a7a17b9,
+        type: 2}
+      propertyPath: Gancho
+      value: 
+      objectReference: {fileID: 31006453}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1981ceb532ad6944eb2cf26a2a7a17b9, type: 2}
   m_IsPrefabAsset: 0
@@ -17743,7 +17743,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agua: {fileID: 192662021}
-  spawn: {fileID: 1526682723}
 --- !u!1 &1542570204
 GameObject:
   m_ObjectHideFlags: 0
@@ -20020,6 +20019,11 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114573109815300520, guid: 1981ceb532ad6944eb2cf26a2a7a17b9,
+        type: 2}
+      propertyPath: Gancho
+      value: 
+      objectReference: {fileID: 31006453}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1981ceb532ad6944eb2cf26a2a7a17b9, type: 2}
   m_IsPrefabAsset: 0

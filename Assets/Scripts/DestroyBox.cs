@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CajaDestruible : MonoBehaviour {
+//Cuando se destruye la caja se instancia un quimico
+public class DestroyBox : MonoBehaviour {
     public GameObject Quimico;//Es el quimico que vamos a crear cuando se destruye la caja
 
     void Start()

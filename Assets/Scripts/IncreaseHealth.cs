@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DaVida : MonoBehaviour
+public class IncreaseHealth : MonoBehaviour
 {
-  
-    void OnTriggerEnter2D(Collider2D other)// metodo para detectar colision
+    // condicion para detectar si colisiona con el gancho del player y incrementar su vida
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // condicion para detectar si colisiona con el gancho del player y 
-        //que además el componente daño esté desactivado (lo que implica que esta usando el gancho de agarre)
-        
         if (other.gameObject.CompareTag("Player"))
         {
             SoundManager.instance.CallSoundManager("salud");
