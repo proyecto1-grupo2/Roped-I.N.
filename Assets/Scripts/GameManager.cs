@@ -115,12 +115,12 @@ public class GameManager : MonoBehaviour {
         if (pausado)
         {
             Time.timeScale = 0;
-            UIManager.ModifyMenu(true);
+            UIManager.ModifyPauseMenu(true);
         }
         else if (!pausado)
         {
             Time.timeScale = 1;
-            UIManager.ModifyMenu(false);
+            UIManager.ModifyPauseMenu(false);
         }
     }
 }

@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour
 {
     public Image[] lives;
     public GameObject pauseMenu;
+    public GameObject controlsMenu;
+    public GameObject levelsMenu;
+    public GameObject cheatsMenu;
 
     void Start()
     {
@@ -43,10 +46,31 @@ public class UIManager : MonoBehaviour
         if (vida >= lives.Length - 1) vida = lives.Length - 1;//Para evitar algun posible bug
         lives[vida].enabled = true;
     }
-    public void ModifyMenu(bool mode)
+
+    public void ModifyPauseMenu(bool mode)
     {
-        if(pauseMenu!=null)
-        pauseMenu.SetActive(mode);            
+        ModifyMenu(pauseMenu, mode);
+    }
+
+    public void ModifyControlsMenu(bool mode)
+    {
+        ModifyMenu(controlsMenu, mode);
+    }
+    
+    public void ModifyLevelsMenu(bool mode)
+    {
+        ModifyMenu(levelsMenu ,mode);
+    }
+
+    public void ModifyCheatsMenu(bool mode)
+    {
+        ModifyMenu(cheatsMenu, mode);
+    }
+
+    private void ModifyMenu(GameObject menu, bool mode)
+    {
+        if(menu !=null)
+            menu.SetActive(mode);            
     }
 
     public void CierraJuego()
@@ -58,4 +82,6 @@ public class UIManager : MonoBehaviour
     {
         SceneChange(SceneManager.GetActiveScene().name);
     }
+
+
 }
