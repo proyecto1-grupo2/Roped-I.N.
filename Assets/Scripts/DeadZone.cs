@@ -12,10 +12,12 @@ public class DeadZone : MonoBehaviour
     //si es un quimico, lo destruye (comprueba que esté en la layer Químicos que es la 16)
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerController>() && !congelada )
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null && !congelada )
         {
             other.GetComponent<Vida>().OnDeadZone(spawnPoint);
             other.GetComponent<Vida>().LoseLife(damage);
+            other.GetComponentInChildren<MovGancho>().cambiaEstado(HookState.Quieto);
         }
 
         else if (other.gameObject.layer == 16)

@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+
         gancho = transform.GetChild(0).GetComponent<MovGancho>();
         rb = GetComponent<Rigidbody2D>();
         //Si no tiene Rigidbody

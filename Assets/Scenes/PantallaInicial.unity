@@ -2671,7 +2671,7 @@ GameObject:
   - component: {fileID: 1044723846}
   - component: {fileID: 1044723847}
   m_Layer: 5
-  m_Name: ToggleFreeMovement
+  m_Name: ToggleNoGravity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2741,7 +2741,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1080916002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,7 +2985,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1203369318
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,7 +3053,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enable Free Movement
+  m_Text: Enable No Gravity
 --- !u!222 &1203369321
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3689,6 +3689,8 @@ MonoBehaviour:
   controlsMenu: {fileID: 639494964}
   levelsMenu: {fileID: 330725652}
   cheatsMenu: {fileID: 474171829}
+  immuneToggle: {fileID: 1163295679}
+  nogravToggle: {fileID: 1044723847}
 --- !u!1 &1482508926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4147,6 +4149,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1435220723}
         m_MethodName: ModifyCheatsMenu
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1435220723}
+        m_MethodName: CheckToggle
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

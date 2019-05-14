@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     UIManager UIManager;// hace referencia al script UIManager
     bool savedData = false;
     bool pausado = false;
+    bool immuneCheat = false, nogravityCheat = false; //cheats
 
     void Awake()
     {
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetButtonDown("Pausa") && vidasplayer>0)
         {
             Pausa();
-        }       
+        }
     }
    
     
@@ -122,5 +123,22 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1;
             UIManager.ModifyPauseMenu(false);
         }
+    }
+
+    //Cheats
+    public bool GetImmuneCheat()
+    {
+        return immuneCheat;
+    }
+
+    public bool GetNoGravityCheat()
+    {
+        return nogravityCheat;
+    }
+
+    public void SetCheats(bool immune, bool nogravity)
+    {
+        immuneCheat = immune;
+        nogravityCheat = nogravity;
     }
 }

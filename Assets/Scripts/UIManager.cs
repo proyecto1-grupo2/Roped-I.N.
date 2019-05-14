@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public GameObject controlsMenu;
     public GameObject levelsMenu;
     public GameObject cheatsMenu;
+    public Toggle immuneToggle;
+    public Toggle nogravToggle;
 
     void Start()
     {
@@ -73,6 +75,11 @@ public class UIManager : MonoBehaviour
             menu.SetActive(mode);            
     }
 
+
+    public void CheckToggle()
+    {
+        GameManager.instance.SetCheats(immuneToggle.isOn, nogravToggle.isOn);            
+    }
     public void CierraJuego()
     {
         Debug.Log("CerrandoJuego");
