@@ -5,10 +5,9 @@ using UnityEngine.EventSystems;
 
 public class SetSelectedUIObject : MonoBehaviour {
 
-    void Start () {
+    void OnEnable () {
         EventSystem eventSystem = EventSystem.current;
-        eventSystem.SetSelectedGameObject(this.gameObject);
-        
+        eventSystem.SetSelectedGameObject(this.gameObject);      
 	}
 	
 }
