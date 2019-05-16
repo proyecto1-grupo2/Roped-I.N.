@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 02b57ee828e8e104bae4e34771a76d56
+guid: ceb7c8c47c8465f449f5303c06387d95
 TextureImporter:
   fileIDToRecycleName:
-    21300000: mandoyteclado_0
-    21300002: mandoyteclado_1
+    21300000: menuSpriteEmptyMult_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -86,13 +85,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mandoyteclado_0
+      name: menuSpriteEmptyMult_0
       rect:
         serializedVersion: 2
-        x: 54
-        y: 774
-        width: 1102
-        height: 627
+        x: 22
+        y: 25
+        width: 329
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,27 +99,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c73e0bf0db01c642aac05a09ee0229c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mandoyteclado_1
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 76
-        width: 1102
-        height: 621
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 100ba7e04920b3d4cb7254b19bea86e2
+      spriteID: 369da61e9b9514b4e858a0830aef6259
       vertices: []
       indices: 
       edges: []
@@ -128,7 +107,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 750bf8a34d943bc48b93ae02588e656d
+    spriteID: db7c7d4c46ac5df42ae678311df88b5b
     vertices: []
     indices: 
     edges: []
