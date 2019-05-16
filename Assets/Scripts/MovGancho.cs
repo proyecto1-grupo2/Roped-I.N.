@@ -11,8 +11,6 @@ public class MovGancho : MonoBehaviour
 
     //La posicion (dentro del jugador) desde la que el jugador lanza el gancho
     private Transform puntoLanzamiento;
-    //booleano para saber si está en modo agarre o en modo gancho
-    //bool agarre;
     //Recoge el vector de la dirección a la que mira el personaje y el del propio movimiento del gancho
     Vector2 dir,
             movement;
@@ -91,7 +89,6 @@ public class MovGancho : MonoBehaviour
                     shooting = 2;
                     if (Input.GetButtonDown("Soltar"))
                     {
-                        Debug.Log("Me solté");    
                         Player.CambiaEstado(false);
                         currState = HookState.Vuelta;
                         
@@ -99,6 +96,8 @@ public class MovGancho : MonoBehaviour
                 }
                 break;
         }
+
+        //Si tiene algun quimico, lo suelta
         if (transform.childCount > 0 && Input.GetButtonDown("Soltar"))
         {
             if (transform.GetChild(0).GetComponentInChildren<PullChemical>() != null)
@@ -108,7 +107,7 @@ public class MovGancho : MonoBehaviour
             }
         }
     }
-
+    //Pone la direccion del gancho al dispararse
     void SetDir()
     {
         dir = Player.DevuelveDireccion();
@@ -122,7 +121,7 @@ public class MovGancho : MonoBehaviour
                 break;
         }
     }
-
+    //Da la direccion
     public Vector2 GetDir()
     {
         return dir;
@@ -148,6 +147,7 @@ public class MovGancho : MonoBehaviour
     {
         currState = estado;
     }
+    //para animaciones
     public int GetShooting()
     {
         return shooting;

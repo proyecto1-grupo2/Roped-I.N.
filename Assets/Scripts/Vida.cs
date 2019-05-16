@@ -62,7 +62,7 @@ public class Vida : MonoBehaviour {
     public void OnDeadZone(Transform spawnPoint)
     {
         
-        if (GameManager.instance.getVidas() >= 0)
+        if (GameManager.instance.getLives() >= 0)
         {
            
             transform.position = spawnPoint.position;

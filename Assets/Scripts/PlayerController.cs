@@ -8,21 +8,13 @@ public class PlayerController : MonoBehaviour
                  jumpForce; //acceleration no haría falta si se utiliza velocity
     private float moveX;
     bool hurtanim = false, deadanim = false;
-    //bool camaraMov = false;
     int shooting;
     private SpriteRenderer spr;
     private Animator anim;
-    //public AudioClip hurt;
-    //public AudioClip playerJump;
-    //public AudioClip playerRun;
-    //public AudioClip dead;
     private ContactFilter2D contactFilter; //Para detectar colisiones cuando el jugador está enganchado
-    public Transform debugDir;//para pruebas
     bool jump, landed, puedeSaltar; //landed no se si se podria utilizar como grounded
 
 
-
-   
     Vector2 dirGancho; //movement eliminado
     Rigidbody2D rb;
 
@@ -74,13 +66,6 @@ public class PlayerController : MonoBehaviour
 
             //Leo entrada de teclado para moverme en el ejeX
             moveX = Input.GetAxis("Horizontal");
-            //// Para que el jugador se pare al soltal el teclado
-            // if (Input.GetButtonUp("Derecha") ||  Input.GetButtonUp("Izquierda"))
-            // {
-            //     rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            // }
-            //if (!mov)                moveX = 0;
-
             //Salto  si estoy en el suelo, landed lo comprueba 
 
             jump = Input.GetButtonDown("Jump");
@@ -104,9 +89,7 @@ public class PlayerController : MonoBehaviour
                     //cambia la rotacion en el eje Y del player cuando se mueve a la izquierda
                     transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, 0);
                 }
-                //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                //SoundManager.instance.RunSFX();
             }
 
             else if (Input.GetAxisRaw("Horizontal") == -1) //Mira izq
@@ -118,7 +101,6 @@ public class PlayerController : MonoBehaviour
                     //pone la rotacion en el eje Y del jugador a 0 si se mueve a la derecha
                     transform.rotation = new Quaternion(transform.rotation.x, -180, transform.rotation.z, 0);
                 }
-                //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
                 SoundManager.instance.RunSFX();
@@ -134,7 +116,8 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        else if (enganchado)  //Estado Enganchado
+       //Se encarga de mover al jugador cuando está enganchado
+        else if (enganchado)  
         {
             float step = velocidadEnganchado * Time.deltaTime;
             posGancho = gancho.GetComponent<Transform>().position;
@@ -143,7 +126,6 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, gancho.transform.GetChild(0).position, step);
             if (Vector2.Distance(transform.position, gancho.transform.position) < 0.8f)
             {
-                //gancho.cambiaEstado(HookState.Quieto);
                 CambiaEstado(false);
                 rb.isKinematic = false;
             }
@@ -174,7 +156,10 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, -10);
             }
         }
-        else //Detectamos colisiones cuando está enganchado
+        //Estado Enganchado: Detecta colisiones haciendo un cast collider, 
+        //una distancia de 0,8f hacia la direccion en la que se haya lanzado el gancho
+        //porque cuando esta enganchado se desactiva la simulacion fisica(para solucionar muchos bugs)
+        else 
         {
             RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
             int count = rb.Cast(gancho.GetDir(), contactFilter, hitBuffer, 0.25f);
@@ -185,26 +170,16 @@ public class PlayerController : MonoBehaviour
             {
                 if (hitBuffer[i].distance != 0) x = i; //por si no se guarda en el primer elemento del array
             }
-            //Debug.Log("ContCollisions: " + count);
             if (count > 0 && hitBuffer[x].distance != 0)
                 CambiaEstado(false);
         }
-       // Debug.Log("Enganchado: " + enganchado);
     }
     private bool Salto()
     { 
         return puedeSaltar;
     }
 
-    //realiza un pequeño salto al entrar en contacto con un enemigo y sufrir daño//Detecta colisión con la plataforma (cuando detecta 2 colisiones), si detecta 1, es con el suelo al principio, y esa no la queremos
-    //public void EnemyKnockBack(float enemyPosX)
-    //{
-    //    jump = true;
-    //    float side = Mathf.Sign(enemyPosX - transform.position.x); //devuelve -1, 0 o 1 dependiendo de si un numero es positivo, negativo o 0. Asi sabremos la direccion donde aplicar la fuerza. 
-    //    rb.AddForce(Vector2.left * side * jumpForce / 2, ForceMode2D.Impulse); //aplicamos una fuerza diagonal
-    //    mov = false;//desactivamos mov mientras estemos sufriendo daño
-    //    Invoke("EnableMovementandColision", Timedmg);//volvemos activar mov despues de un tiempo
-    //}
+    
     //activa/desactiva el movimiento
     public bool EnabledMovement(bool valor)
     {
@@ -228,14 +203,12 @@ public class PlayerController : MonoBehaviour
             gancho.cambiaEstado(HookState.Vuelta);
         }
     }
-    //Este metodo duelve la direccion del gancho, lleva un parametro para evitar un bug de que 
-    //el input de derecha e izquierda hacian que el gancho no se disparaba hacia donde debia
+    //Este metodo duelve la direccion del gancho
     public Vector2 DevuelveDireccion()
     {
-        //izquierda = izq;
         return dirGancho;
     }
-
+    //animaciones
     public void SetHurt(bool hurting)
     {
         hurtanim = hurting;
@@ -243,13 +216,7 @@ public class PlayerController : MonoBehaviour
         Invoke("HurtFalse", 0.1f);
         SoundManager.instance.CallSoundManager("hurt");
     }
-
-    /*dis*/
-    public bool GetEnganchado()
-    {
-        return enganchado;
-    }
-
+    
     void HurtFalse()
     {
         hurtanim = false;

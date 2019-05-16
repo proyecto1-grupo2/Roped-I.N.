@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class ImpQuimicos : MonoBehaviour
+public class ImpChemist : MonoBehaviour
 {
     EnemyState estadoEnemigo;
     int time;
@@ -36,7 +36,7 @@ public class ImpQuimicos : MonoBehaviour
                 if (!quemado)
                 {
                     quemado = true;
-                    InvokeRepeating("QuitaVida", 1f, 1f);//Cada segundo invoca al metodo
+                    InvokeRepeating("QuitaVida", 0, 1f);//Cada segundo invoca al metodo
                 }
                 else if (time >= 3)
                 {
@@ -71,23 +71,16 @@ public class ImpQuimicos : MonoBehaviour
                 {
                     gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
                 }
-                //Instantiate(hielo, transform.position, transform.rotation);
                 hielo.transform.position = transform.position;
                 hielo.GetComponent<SpriteRenderer>().enabled = true;
-                //hielo.GetComponent<SpriteRenderer>().enabled = true;
                 hielo.transform.localScale = transform.localScale*2;
-                //Cambiar sprite (De momento solo cambia el tono a un más azulado)
-                /*SpriteRenderer sprit = gameObject.GetComponent<SpriteRenderer>();
-                sprit.material.color = Color.blue;*/
                 Invoke("cambiaEstadoNada", tStun);
 
                 break;
             case EnemyState.Paralizado:
                 //mientras esta paralizado no se puede mover
-                //Debug.Log("PARALIZADO");
                 if (time < 1)
                 {
-                    //Debug.Log("Veces");
                     QuitaVida();
                 }
                 if (gameObject.GetComponent<PingPongMovement>() != null)
@@ -108,15 +101,17 @@ public class ImpQuimicos : MonoBehaviour
         }
 
     }
+    //da el estado del enemigo
     public EnemyState daEstado()
     {
         return estadoEnemigo;
     }
-
+    //cambia el estado
     public void cambiaEstado(EnemyState estado)
     {
         estadoEnemigo = estado;
     }
+    //Cambia al estado Nada, se usa cuando esta congelado y paralizado
     public void cambiaEstadoNada()
     {
         estadoEnemigo = EnemyState.Nada;
@@ -133,7 +128,6 @@ public class ImpQuimicos : MonoBehaviour
             gameObject.GetComponent<ShootTurm>().enabled = true;
         }
         gameObject.GetComponent<Damage>().enabled = true;
-        // gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
         hielo.GetComponent<SpriteRenderer>().enabled = false;
         if (gameObject.GetComponent<BoxCollider2D>())
         {
@@ -144,9 +138,11 @@ public class ImpQuimicos : MonoBehaviour
             gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
         }
     }
+    //si colisiona con algun quimico cambiamos a ese estado y lo destruimos.
+    //Ademas hacemos que el gancho vuelva
     void OnTriggerEnter2D(Collider2D other)
     {
-        //si colisiona con el quimico de fuego cambiamos de estado a quemado y hacemos que el gancho vuelva
+      
         if (other.gameObject.CompareTag("QuimicoFuego"))
         {
             estadoEnemigo = EnemyState.Quemado;
@@ -159,17 +155,21 @@ public class ImpQuimicos : MonoBehaviour
         {
             estadoEnemigo = EnemyState.Paralizado;
             Destroy(other.gameObject);
+            MovGancho mov = other.GetComponentInParent<MovGancho>();
+            if (mov != null) mov.cambiaEstado(HookState.Vuelta);
             SoundManager.instance.CallSoundManager("electrico");
         }
         else if (other.gameObject.CompareTag("QuimicoHielo"))
         {
             estadoEnemigo = EnemyState.Congelado;
             Destroy(other.gameObject);
+            MovGancho mov = other.GetComponentInParent<MovGancho>();
+            if (mov != null) mov.cambiaEstado(HookState.Vuelta);
             SoundManager.instance.CallSoundManager("hielo");
         }
 
     }
-    //quita vida al jugador
+    //quita vida 
     void QuitaVida()
     {
 

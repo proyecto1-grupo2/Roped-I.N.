@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     private Vector2 dir;//variable para guardar donde mira el personaje
-    int vidasplayer;
-    //bool isInmune = false;
+    int playerLives;
     UIManager UIManager;// hace referencia al script UIManager
     bool savedData = false;
     bool pausado = false;
@@ -22,29 +21,17 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            Destroy(this.gameObject);//si ya existe un objeto GameObject, no necestiamos otro
+            Destroy(this.gameObject);//si ya existe un objeto GameManager, no necestiamos otro
         }
     }
 
     void Update()
     {
         //se puede pausar el juego siempre que el jugador este vivo
-        if (Input.GetButtonDown("Pausa") && vidasplayer>0)
+        if (Input.GetButtonDown("Pausa") && playerLives>0)
         {
             Pausa();
         }
-    }
-   
-    
-    public void direccion(Vector2 direc)//metodo para obtener la direccion (se llama desde PlayerController)
-    {
-       
-        dir = direc;
-    }
-    public Vector2 dirGancho()//sirve para dar la direccion al gancho
-    {
-        
-        return dir;
     }
 
     //establece el atributo uimanager
@@ -52,24 +39,20 @@ public class GameManager : MonoBehaviour {
     {
         UIManager = ui;
     }
-    //resta vida, llama a Lifelost y devuelve true si el jugador aun tiene vidas
+    //resta las vidas de la UI
     public void PlayerLoseLife(int vidasplayer)
     {
         UIManager.LifeLost(vidasplayer);
-        this.vidasplayer = vidasplayer;
+        playerLives = vidasplayer;
 
     }
-
+    //inicializa las vidas que tiene el jugador
     public void SetPlayerHealth(int playerHealth)
     {
-        vidasplayer = playerHealth;
+        playerLives = playerHealth;
     }
-
-    public int GetPlayerHealth()
-    {
-        return vidasplayer;
-    }
-    public void PlayerGanaVida(int vidasplayer)
+    //Suma uno a la vida del jugador
+    public void PlayerGetLife(int vidasplayer)
     {
         
         if (vidasplayer < 3)
@@ -78,37 +61,37 @@ public class GameManager : MonoBehaviour {
             UIManager.GanaVida(vidasplayer);
             vidasplayer += 1;
         }
-        this.vidasplayer = vidasplayer;
+        playerLives = vidasplayer;
     }
     //devuelve el num de vidas
-    public int getVidas()
+    public int getLives()
     {
-        return vidasplayer;
+        return playerLives;
     }
-
+    //Cambia de escena 
     public void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
         pausado = true;
         Pausa();
     }
-
+    //Guarda la partida. Solo guarda la escena en la que estas
     public void Save()
     {
-        PlayerPrefs.SetInt("lives", vidasplayer);
+       
         PlayerPrefs.SetString("scene", SceneManager.GetActiveScene().name);
         savedData = true;
     }
 
+    //carga partida si hay una guardada
     public void Load()
     {
         if(savedData)
         {
-            vidasplayer = PlayerPrefs.GetInt("lives");
             ChangeScene(PlayerPrefs.GetString("scene"));
         }
     }
-
+    //Si no esta pausado, se pausa y salta el menu pausa y viceversa 
     public void Pausa()
     {
         pausado = !pausado;

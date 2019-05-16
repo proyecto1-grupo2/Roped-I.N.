@@ -1,61 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Script para que la camara siga al jugador
 public class FollowTarget : MonoBehaviour
 {
 
-    public Transform target;
+    public Transform target;//target=player
     Vector3 posicion;
-    public int mueveCamara;
-    Vector3 pos;
-
     void Start()
     {
-        posicion = new Vector3(0, 0, -5);
+        posicion = new Vector3(0, 0, -5);//una posicion por si no encuentra al player
     }
-
+    //mueve la camara hacia el jugador
     void LateUpdate()
     {
         if (target != null)
-        {
-            if(Input.GetKey("left shift") && Input.GetButton("Arriba"))
-            {
-                if (transform.position.y < pos.y + mueveCamara)
-                {
-                    transform.Translate(0, 15 * Time.deltaTime, 0);
-                }
-            }
-            else if (Input.GetKey("left shift") && Input.GetButton("Abajo"))
-            {
-                if (transform.position.y > pos.y - mueveCamara)
-                {
-                    transform.Translate(0, -15 * Time.deltaTime, 0);
-                }
-            }
-            /*else if (Input.GetAxisRaw("MueveCamara")==-1)//arriba
-            {
-                if (transform.position.y < pos.y + mueveCamara)
-                {
-                    transform.Translate(0, 15 * Time.deltaTime, 0);
-                }
-            }
-            else if (Input.GetAxisRaw("MueveCamara") == 1)//abajo
-            {
-                if (transform.position.y > pos.y - mueveCamara)
-                {
-                    transform.Translate(0, -15 * Time.deltaTime, 0);
-                }
-            }*/
-            else
-            {
-
-                posicion = new Vector3(target.position.x, target.position.y, -5);
-                transform.position = posicion;
-                pos = transform.position;
-            }
+        {           
+            posicion = new Vector3(target.position.x, target.position.y, -5);
+            transform.position = posicion;
         }
-     
-
     }
 }

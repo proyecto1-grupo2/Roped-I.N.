@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Lo que hace es cambiar el spawn del agua a la posicion de este trigger cuando lo toca el player
-public class CambiarSpawn : MonoBehaviour
+public class ChangeSpawnPoint : MonoBehaviour
 {
     public GameObject agua;
     

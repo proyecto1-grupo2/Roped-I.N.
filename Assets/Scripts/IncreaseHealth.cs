@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class IncreaseHealth : MonoBehaviour
 {
-    // condicion para detectar si colisiona con el gancho del player y incrementar su vida
+    // Si el quimico colisiona con el jugador, le suma una vida y destruye el quimico
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             SoundManager.instance.CallSoundManager("salud");
             int vida = other.gameObject.GetComponent<Vida>().vida;
-            GameManager.instance.PlayerGanaVida(vida);
+            GameManager.instance.PlayerGetLife(vida);
             if (other.gameObject.GetComponent<Vida>().vida <3) {
                 other.gameObject.GetComponent<Vida>().vida += 1;
             }
