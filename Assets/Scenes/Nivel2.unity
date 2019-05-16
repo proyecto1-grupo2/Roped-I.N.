@@ -2681,7 +2681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 318644799}
-  mueveCamara: 5
 --- !u!1 &609355957
 GameObject:
   m_ObjectHideFlags: 0
@@ -19355,11 +19354,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4069786549141682, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -25.28
+      value: -25.31
       objectReference: {fileID: 0}
     - target: {fileID: 4069786549141682, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.95
+      value: 9.98
       objectReference: {fileID: 0}
     - target: {fileID: 4069786549141682, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
       propertyPath: m_LocalPosition.z
@@ -19391,7 +19390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4069786549141682, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.1125
       objectReference: {fileID: 0}
     - target: {fileID: 114454404677615680, guid: 675c921d02e1f2941ae565dd335c4842,
         type: 2}
@@ -19410,7 +19409,7 @@ Prefab:
     - target: {fileID: 61704816637265510, guid: 675c921d02e1f2941ae565dd335c4842,
         type: 2}
       propertyPath: m_Offset.x
-      value: 7.514021
+      value: 7.5515985
       objectReference: {fileID: 0}
     - target: {fileID: 61704816637265510, guid: 675c921d02e1f2941ae565dd335c4842,
         type: 2}
@@ -19420,7 +19419,7 @@ Prefab:
     - target: {fileID: 61704816637265510, guid: 675c921d02e1f2941ae565dd335c4842,
         type: 2}
       propertyPath: m_Size.x
-      value: 15.028042
+      value: 14.952887
       objectReference: {fileID: 0}
     - target: {fileID: 1563822365589408, guid: 675c921d02e1f2941ae565dd335c4842, type: 2}
       propertyPath: m_TagString
