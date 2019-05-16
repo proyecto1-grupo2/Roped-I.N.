@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         {
 
             //Leo entrada de teclado para moverme en el ejeX
-            moveX = Input.GetAxis("Horizontal");
+            moveX = Input.GetAxisRaw("Horizontal");
             //// Para que el jugador se pare al soltal el teclado
             // if (Input.GetButtonUp("Derecha") ||  Input.GetButtonUp("Izquierda"))
             // {
