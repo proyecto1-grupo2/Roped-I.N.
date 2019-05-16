@@ -19798,6 +19798,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SceneChange
       objectReference: {fileID: 0}
+    - target: {fileID: 1843261979385010, guid: 76b91e913b71d674bbad1a16dde481e1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114106427052710420, guid: 76b91e913b71d674bbad1a16dde481e1,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 02b57ee828e8e104bae4e34771a76d56,
+        type: 3}
+    - target: {fileID: 224181344779279156, guid: 76b91e913b71d674bbad1a16dde481e1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -210
+      objectReference: {fileID: 0}
+    - target: {fileID: 224181344779279156, guid: 76b91e913b71d674bbad1a16dde481e1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -56
+      objectReference: {fileID: 0}
+    - target: {fileID: 224181344779279156, guid: 76b91e913b71d674bbad1a16dde481e1,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 116.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224181344779279156, guid: 76b91e913b71d674bbad1a16dde481e1,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 119.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b91e913b71d674bbad1a16dde481e1, type: 2}
   m_IsPrefabAsset: 0
