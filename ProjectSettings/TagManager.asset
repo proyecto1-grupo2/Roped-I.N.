@@ -29,8 +29,8 @@ TagManager:
   - Gancho
   - Terreno
   - Enganches
-  - "Telara\xF1a"
-  - Quebradizo
+  - TerrenoInteractuable
+  - 
   - Quimicos
   - Triggers
   - Bullet

@@ -102,7 +102,7 @@ MonoBehaviour:
   Mask:
     serializedVersion: 2
     m_Bits: 5632
-  target: {fileID: 0}
+  Gancho: {fileID: 0}
 --- !u!212 &212575923266216668
 SpriteRenderer:
   m_ObjectHideFlags: 1

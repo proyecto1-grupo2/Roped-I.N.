@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50102072706056446}
   m_Layer: 0
   m_Name: CajaDestrubile
-  m_TagString: Untagged
+  m_TagString: Caja
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
