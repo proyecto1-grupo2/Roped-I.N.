@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547444706973982}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3360939, y: 4.2614956, z: 0.0859375}
+  m_LocalPosition: {x: -10.866045, y: 0.32981682, z: 0.171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   Bullet: {fileID: 1903685806504220, guid: 329ba74f5099bf54a956a59ff9aa9543, type: 2}
   timeBetweenShots: 2
   pool: {fileID: 0}
-  alcance: 15
+  alcance: 10
 --- !u!114 &114387214814313444
 MonoBehaviour:
   m_ObjectHideFlags: 1

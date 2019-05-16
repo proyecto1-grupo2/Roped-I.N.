@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Transicion : MonoBehaviour {
-    public string nextLevel;
+    public GameObject levelCompleteScreen;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerController>() != null)
-        {
-            GameManager.instance.ChangeScene(nextLevel);
-        }
+        other.gameObject.SetActive(false);
+        levelCompleteScreen.gameObject.SetActive(true);
     }
 }

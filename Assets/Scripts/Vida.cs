@@ -26,7 +26,9 @@ public class Vida : MonoBehaviour {
     }
     private void Update()
     {
+
         anim.SetBool("IsHurting", hurt);
+        //if (this.gameObject.CompareTag("Player")) Debug.Log("Immune?: " + isInmune);
     }
 
     //Quitamos vida en funcion del daño que llega
@@ -40,15 +42,12 @@ public class Vida : MonoBehaviour {
             if (!isInmune)
             {
                 player.SetHurt(true);
-                Debug.Log("vidas:" + vida);
                 GameManager.instance.PlayerLoseLife(vida);
                 if (vida <= 0)
                 {
                     player.SetDead(true);
-                    //GameManager.instance.Pausa();
-                    Time.timeScale = 0;
                     deathMenu.SetActive(true);
-
+                    Time.timeScale = 0;
                 }
             }
 
@@ -85,7 +84,11 @@ public class Vida : MonoBehaviour {
     {
         isInmune = true;
         Invoke("NoInmune", tiempoinmune);
+    }
 
+    public void InmuneCheat()
+    {
+        isInmune = true;
     }
     public bool DaInmune()
     {

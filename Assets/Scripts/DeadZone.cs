@@ -6,39 +6,33 @@ public class DeadZone : MonoBehaviour
 {
     public Transform spawnPoint;
     public int damage;
-    int i = 0;//sirve para evitar un bug
     bool congelada = false;
 
-    //si el Player, llama al metodo onDead de ese componente
+    //si es Player, llama al metodo onDead de ese componente,
+    //si es un quimico, lo destruye (comprueba que esté en la layer Químicos que es la 16)
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerController>() && i == 0 && !congelada)
+        PlayerController player = other.GetComponent<PlayerController>();
+        if (player != null && !congelada )
         {
-            i = 1;
             other.GetComponent<Vida>().OnDeadZone(spawnPoint);
             other.GetComponent<Vida>().LoseLife(damage);
+            other.GetComponentInChildren<MovGancho>().cambiaEstado(HookState.Quieto);
         }
-        //destruye los quimicos si tocan el agua
-        else if (other.CompareTag("QuimicoHielo")|| other.CompareTag("QuimicoFuego")|| other.CompareTag("QuimicoElectrico"))
+
+        else if (other.gameObject.layer == 16)
         {
             Destroy(other.gameObject);
         }
 
 
     }
-
-    //Si no ponemos esto, ocurre un bug que el jugador pierde dos vidas si cae rapido al DeadZone
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.GetComponent<PlayerController>())
-        {
-            i = 0;
-        }
-    }
+    //cuando se congela
     public void DeadZoneOnOff()
     {
         congelada = !congelada;
     }
+    //para cambiar el punto de respawn
     public void CambioSpawn(Transform newspawn)
     {
         spawnPoint = newspawn;

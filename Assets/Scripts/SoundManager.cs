@@ -63,7 +63,6 @@ public class SoundManager : MonoBehaviour {
     {
         if (run)
         {
-            Debug.Log("run");
             RandomizeSfx(playerRun);
             run = false;
             Invoke("RunControl", repeatRate);
@@ -82,47 +81,38 @@ public class SoundManager : MonoBehaviour {
         if(sfx == "jump")
         {
             RandomizeSfx(playerJump);
-            Debug.Log(sfx);
         }
         else if (sfx == "hurt")
         {
             RandomizeSfx(hurt);
-            Debug.Log(sfx);
         }
         else if (sfx == "dead")
         {
             RandomizeSfx(dead);
-            Debug.Log(sfx);
         }
         else if (sfx == "enemyDamage")
         {
             RandomizeSfx(enemyDamage);
-            Debug.Log(sfx);
         }
         else if (sfx == "salud")
         {
             RandomizeSfx(salud);
-            Debug.Log(sfx);
         }
         else if (sfx == "hielo")
         {
             RandomizeSfx(hielo);
-            Debug.Log(sfx);
         }
         else if (sfx == "explosivo")
         {
             RandomizeSfx(explosivo);
-            Debug.Log(sfx);
         }
         else if (sfx == "fuego")
         {
             RandomizeSfx(fuego);
-            Debug.Log(sfx);
         }
         else if (sfx == "electrico")
         {
             RandomizeSfx(electrico);
-            Debug.Log(sfx);
         }
     }
 

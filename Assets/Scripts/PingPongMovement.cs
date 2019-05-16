@@ -33,15 +33,6 @@ public class PingPongMovement : MonoBehaviour {
     }
     
     //Cambia de direccion si colisiona con algo
-    void OnCollisionEnter2D()
-    {
-        if (destino == Ainicio)
-        {
-            destino = Bfin;
-        }
-        else destino = Ainicio;
-    }
-    //Cambia de direccion si colisiona con algo
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.CompareTag("Gancho"))
@@ -53,5 +44,10 @@ public class PingPongMovement : MonoBehaviour {
             else destino = Ainicio;
         }
       
+    }
+
+    public void Deactivate()
+    {
+        this.enabled = false;
     }
 }

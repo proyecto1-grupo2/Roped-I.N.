@@ -56,7 +56,6 @@ public class PursuitTarget : MonoBehaviour
         generated = true;
     }
     public bool GetGenerated() {
-        Debug.Log("GENERADO"); 
         return generated; }
 
     private void CheckPosition()
@@ -65,5 +64,10 @@ public class PursuitTarget : MonoBehaviour
             lookingRight = true;
         else if (transform.position.x >= target.transform.position.x)
             lookingRight = false;
+    }
+
+    public void Deactivate()
+    {
+        this.enabled = false;
     }
 }

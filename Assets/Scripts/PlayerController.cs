@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
                  jumpForce; //acceleration no haría falta si se utiliza velocity
     private float moveX;
     bool hurtanim = false, deadanim = false;
-    bool camaraMov = false;
+    //bool camaraMov = false;
     int shooting;
     private SpriteRenderer spr;
     private Animator anim;
@@ -21,10 +21,8 @@ public class PlayerController : MonoBehaviour
     bool jump, landed, puedeSaltar; //landed no se si se podria utilizar como grounded
 
 
-    bool izq = false;
 
    
-    int tiempoinmune;
     Vector2 dirGancho; //movement eliminado
     Rigidbody2D rb;
 
@@ -42,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+
         gancho = transform.GetChild(0).GetComponent<MovGancho>();
         rb = GetComponent<Rigidbody2D>();
         //Si no tiene Rigidbody
@@ -97,7 +96,6 @@ public class PlayerController : MonoBehaviour
             //(para saber donde disparar el gancho)
             if (Input.GetAxisRaw("Horizontal") == 1) //Mira dcha.
             {
-                izq = false;
                 //dirGancho = Vector2.right;
                 dirGancho = Vector2.right;
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
@@ -113,7 +111,6 @@ public class PlayerController : MonoBehaviour
 
             else if (Input.GetAxisRaw("Horizontal") == -1) //Mira izq
             {
-                izq = true;
                 dirGancho = Vector2.right;
                 //esta condicion es necesaria porque sino mientras el gancho esta en ida/vuelta y el jugador rota, el gancho tambien
                 if (gancho.daEstado() == HookState.Quieto)
@@ -128,13 +125,11 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetAxisRaw("Vertical") == -1) //Mira abajo
             {
-                izq = false;
                 dirGancho = Vector2.down;
 
             }
             else if (Input.GetAxisRaw("Vertical") == 1) //Mira arriba
             {
-                izq = false;
                 dirGancho = Vector2.up;
             }
 
@@ -183,15 +178,15 @@ public class PlayerController : MonoBehaviour
         {
             RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
             int count = rb.Cast(gancho.GetDir(), contactFilter, hitBuffer, 0.25f);
+            int x = 0;
             if (count > 0)
-                print(count );
+
             for (int i=0; i<count; ++i)
             {
-                print(hitBuffer[i].transform.name);
-                print(hitBuffer[i].distance);
+                if (hitBuffer[i].distance != 0) x = i; //por si no se guarda en el primer elemento del array
             }
             //Debug.Log("ContCollisions: " + count);
-            if (count > 0)      //& 
+            if (count > 0 && hitBuffer[x].distance != 0)
                 CambiaEstado(false);
         }
        // Debug.Log("Enganchado: " + enganchado);
@@ -245,7 +240,6 @@ public class PlayerController : MonoBehaviour
     {
         hurtanim = hurting;
         spr.color = Color.red;
-        Debug.Log("Daño");
         Invoke("HurtFalse", 0.1f);
         SoundManager.instance.CallSoundManager("hurt");
     }

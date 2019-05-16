@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     UIManager UIManager;// hace referencia al script UIManager
     bool savedData = false;
     bool pausado = false;
+    bool immuneCheat = false, nogravityCheat = false; //cheats
 
     void Awake()
     {
@@ -28,13 +29,10 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         //se puede pausar el juego siempre que el jugador este vivo
-        //(sino en el menu de muerte podias llamar al menu de pausa)
         if (Input.GetButtonDown("Pausa") && vidasplayer>0)
         {
             Pausa();
         }
-        //Debug.Log(vidasplayer);
-       
     }
    
     
@@ -66,6 +64,11 @@ public class GameManager : MonoBehaviour {
     {
         vidasplayer = playerHealth;
     }
+
+    public int GetPlayerHealth()
+    {
+        return vidasplayer;
+    }
     public void PlayerGanaVida(int vidasplayer)
     {
         
@@ -80,23 +83,11 @@ public class GameManager : MonoBehaviour {
     //devuelve el num de vidas
     public int getVidas()
     {
-        Debug.Log(vidasplayer + "fggh");
         return vidasplayer;
-    }
-    public void resetGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        pausado = true;
-        Pausa();
-    }
-
-    public void finishGame()
-    {
-        resetGame();
     }
 
     public void ChangeScene(string sceneName)
-    {        
+    {
         SceneManager.LoadScene(sceneName);
         pausado = true;
         Pausa();
@@ -104,7 +95,6 @@ public class GameManager : MonoBehaviour {
 
     public void Save()
     {
-        Debug.Log("Saved");
         PlayerPrefs.SetInt("lives", vidasplayer);
         PlayerPrefs.SetString("scene", SceneManager.GetActiveScene().name);
         savedData = true;
@@ -112,7 +102,6 @@ public class GameManager : MonoBehaviour {
 
     public void Load()
     {
-        Debug.Log("Loaded");
         if(savedData)
         {
             vidasplayer = PlayerPrefs.GetInt("lives");
@@ -127,12 +116,29 @@ public class GameManager : MonoBehaviour {
         if (pausado)
         {
             Time.timeScale = 0;
-            UIManager.ModifyMenu(true);
+            UIManager.ModifyPauseMenu(true);
         }
         else if (!pausado)
         {
             Time.timeScale = 1;
-            UIManager.ModifyMenu(false);
+            UIManager.ModifyPauseMenu(false);
         }
+    }
+
+    //Cheats
+    public bool GetImmuneCheat()
+    {
+        return immuneCheat;
+    }
+
+    public bool GetNoGravityCheat()
+    {
+        return nogravityCheat;
+    }
+
+    public void SetCheats(bool immune, bool nogravity)
+    {
+        immuneCheat = immune;
+        nogravityCheat = nogravity;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    PursuitTarget oga;
+    
     bool dead = false;
     private Animator anim;
 
@@ -20,24 +20,18 @@ public class Death : MonoBehaviour
     //Distingue el caso de la muerte de un enemigo spawneado y hace que los otros objetos mueran
     public void OnDead()
     {
-        oga = this.GetComponent<PursuitTarget>();
+        PursuitTarget oga = this.GetComponent<PursuitTarget>();
         if (oga != null && oga.GetGenerated()) //Podria especificarse que el padre es la ogaPool
         {
-            //Debug.Log("Soy un oga spawneado");
             oga.DecreaseCount();
             dead = true;
             Invoke("DeadFalse", 0.7f);
-            //Debug.Log("Soy otra cosa");
         }
         else
         {
             dead = true;
-            Invoke("DeadFalse", 1f);
-            //Debug.Log("Soy otra cosa");
-            
-        }
-
-        
+            Invoke("DeadFalse", 1f);            
+        }       
     }
     void DeadFalse()
     {
