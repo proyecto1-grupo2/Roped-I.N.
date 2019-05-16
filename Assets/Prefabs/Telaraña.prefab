@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212838944081989724}
   - component: {fileID: 114123082719411694}
   - component: {fileID: 61868006049449182}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: "Telara\xF1a"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.82, y: 6.82}
+    oldSize: {x: 1.364, y: 1.364}
     newSize: {x: 6.82, y: 6.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

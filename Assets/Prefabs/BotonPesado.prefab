@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61105683600422524}
   - component: {fileID: 114712920701760946}
   - component: {fileID: 95770664815625852}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: BotonPesado
   m_TagString: Boton
   m_Icon: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4252711707694396}
   - component: {fileID: 212079351269970146}
   - component: {fileID: 61528338516262032}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ParedQuebradiza
   m_TagString: Quebradizo
   m_Icon: {fileID: 0}

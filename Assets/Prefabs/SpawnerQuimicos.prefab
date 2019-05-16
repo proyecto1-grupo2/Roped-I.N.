@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4363947284283164}
   - component: {fileID: 114510858148389164}
   - component: {fileID: 212181371718975388}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SpawnerQuimicos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,8 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b1a44a2e6d41847a3e7b3344a9e33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Quimico: {fileID: 1247208050553502, guid: e90186afb014223468185a3aadf04b15, type: 2}
+  QuimicoQueRespawnea: {fileID: 0}
   ObjetivoDelQuimico: {fileID: 0}
+  prefabQuim: {fileID: 0}
 --- !u!212 &212181371718975388
 SpriteRenderer:
   m_ObjectHideFlags: 1
