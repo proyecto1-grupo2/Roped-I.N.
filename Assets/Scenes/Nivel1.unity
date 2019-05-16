@@ -2827,7 +2827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 276139019}
-  mueveCamara: 5
 --- !u!4 &594707944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4907214002049224, guid: 9877d4266ff1b604c84ea79effddd065,
@@ -17361,10 +17360,6 @@ Prefab:
     - target: {fileID: 224144793346264482, guid: 76b91e913b71d674bbad1a16dde481e1,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1535229025291056, guid: 76b91e913b71d674bbad1a16dde481e1, type: 2}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
