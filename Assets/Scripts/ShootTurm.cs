@@ -13,7 +13,6 @@ public class ShootTurm : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        float bulletTime = timeBetweenShots;
         InvokeRepeating("ShootBullet", 2f, timeBetweenShots);
         Jugador = GameObject.FindWithTag("Player");
     }

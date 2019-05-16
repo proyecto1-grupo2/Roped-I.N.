@@ -63,7 +63,6 @@ public class SoundManager : MonoBehaviour {
     {
         if (run)
         {
-            Debug.Log("run");
             RandomizeSfx(playerRun);
             run = false;
             Invoke("RunControl", repeatRate);

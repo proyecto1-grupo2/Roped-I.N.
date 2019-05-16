@@ -7,7 +7,6 @@ public class PullChemical : MonoBehaviour
 
     Rigidbody2D rb;
     MovGancho hook;
-    bool colision;//si es true pasa a ser hijo del gancho
 
     void Start()
     {
@@ -17,7 +16,6 @@ public class PullChemical : MonoBehaviour
         {
             Debug.LogError("Falta RigidBody");
         }
-        colision = false;
 
     }
 
@@ -57,11 +55,8 @@ public class PullChemical : MonoBehaviour
         if (other.gameObject.CompareTag("Gancho"))
         {
             hook = other.gameObject.GetComponent<MovGancho>();
-            colision = true;
             Enganche();
         }
-
-        else colision = false;
 
     }
 

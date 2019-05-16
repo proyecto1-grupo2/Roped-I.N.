@@ -5,7 +5,6 @@ using UnityEngine;
 public class QuimicoExplosivo : MonoBehaviour
 {
     public GameObject explosion;
-    Animator ani;
     HookState estadoGancho;
     MovGancho estadoAct;
     public int daño;//el daño que causa a los enemigos
@@ -14,7 +13,6 @@ public class QuimicoExplosivo : MonoBehaviour
     void Start()
     {
         ida = false;
-        ani = GetComponent<Animator>();
         estadoAct = null;
     }
 

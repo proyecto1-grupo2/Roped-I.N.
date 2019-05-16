@@ -26,8 +26,9 @@ public class Vida : MonoBehaviour {
     }
     private void Update()
     {
+
         anim.SetBool("IsHurting", hurt);
-        if (this.gameObject.CompareTag("Player")) Debug.Log("Immune?: " + isInmune);
+        //if (this.gameObject.CompareTag("Player")) Debug.Log("Immune?: " + isInmune);
     }
 
     //Quitamos vida en funcion del daño que llega
