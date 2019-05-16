@@ -180,11 +180,9 @@ public class PlayerController : MonoBehaviour
             int count = rb.Cast(gancho.GetDir(), contactFilter, hitBuffer, 0.25f);
             int x = 0;
             if (count > 0)
-                print(count );
+
             for (int i=0; i<count; ++i)
             {
-                print(hitBuffer[i].transform.name + " " + i);
-                print(hitBuffer[i].distance);
                 if (hitBuffer[i].distance != 0) x = i; //por si no se guarda en el primer elemento del array
             }
             //Debug.Log("ContCollisions: " + count);
