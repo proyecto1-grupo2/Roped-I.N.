@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Destruye las telarañas
 public class Telaraña : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -18,14 +19,6 @@ public class Telaraña : MonoBehaviour {
 
        
 
-    }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            transform.GetComponent<BoxCollider2D>().isTrigger = false;
-        }
-        
     }
     
 }

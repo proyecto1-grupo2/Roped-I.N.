@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotacionSpriteGancho : MonoBehaviour {
+public class Chain : MonoBehaviour {
 
     /*
      * Extiende la cadena según la posición del gancho
