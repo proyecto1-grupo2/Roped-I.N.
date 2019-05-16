@@ -27,23 +27,28 @@ public class PullChemical : MonoBehaviour
 
         if (hook != null && hook.GetComponent<MovGancho>().daEstado() == HookState.Quieto)
         {
-            if(transform.parent != null)
+            if (transform.parent != null)
+            {
                 rb.velocity = new Vector2(0, 0);//esto es para evitar un bug que el quimico se movía solo
-            Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
-            if (dir == Vector2.up)
-            {
-                transform.rotation = new Quaternion(0, 0, 0, 0);
             }
-            else if (dir == Vector2.down)
+            if (hook.transform.parent != null)
             {
-                transform.rotation = new Quaternion(0, 0, 0, 1);
+                Vector2 dir = hook.transform.parent.GetComponent<PlayerController>().DevuelveDireccion();
+                if (dir == Vector2.up)
+                {
+                    transform.rotation = new Quaternion(0, 0, 0, 0);
+                }
+                else if (dir == Vector2.down)
+                {
+                    transform.rotation = new Quaternion(0, 0, 0, 1);
+                }
+                else if (dir == Vector2.right)
+                {
+                    transform.rotation = new Quaternion(0, 0, 0, 1);
+                }
             }
-            else if (dir == Vector2.right)
-            {
-
-                transform.rotation = new Quaternion(0, 0, 0, 1);
-
-            }
+                
+            
         }
 
 
